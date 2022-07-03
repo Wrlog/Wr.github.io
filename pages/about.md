@@ -21,5 +21,3 @@ permalink: /about/
 职位： 研究助理
 
 Github： https://github.com/WenruiTan
-
-<div style="text-align:center"><img src ="https://raw.githubusercontent.com/feedliu/feedliu.github.io/master/images/pages/qrcode.bmp" /></div>
