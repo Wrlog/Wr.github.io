@@ -14,8 +14,6 @@ permalink: /about/
 
 学校： 本科毕业于马来西亚理科大学，博士在读辛辛那提医学院
 
-公司：辛辛那提儿童医院 
-
 职位： 研究助理
 
 Github： https://github.com/WenruiTan
