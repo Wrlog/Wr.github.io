@@ -10,4 +10,19 @@ Not all kinds of pharmacokinetic changes need a dose adjustment. This article tr
 
 ## Drug-drug interaction
 
+According to FDA guidance on Clinical Drug Interaction Studies — Cytochrome P450 Enzyme- and Transporter-Mediated Drug Interactions Guidance for Industry (Available : https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-drug-interaction-studies-cytochrome-p450-enzyme-and-transporter-mediated-drug-interactions )
+
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/DDI%20CYP.png?raw=true)
+
+This classification information helps to determine whether other drugs that have not been investigated in a DDI study have clinically significant DDIs with the investigational drug and therefore need to be mentioned in labeling.  For example, if an investigational drug is a strong CYP3A inhibitor, its potential to interact with drugs that have clinically significant interactions with other strong CYP3A inhibitors should be considered, and the sponsor should add appropriate language regarding these additional interactions to the investigational drug’s labeling. 
+
+
+To test whether the investigational drug is a perpetrator, sponsors should use index substrates, which have defined changes in systemic exposure when administered with a strong inhibitor for a specific drug elimination pathway. A list of currently recommended index drugs for specific CYP pathways (either as substrates, inhibitors, or inducers) is maintained on the FDA’s Web site for Drug Development and Drug Interactions. (Available :https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers#table2-1 )
+
+##  Special Population
+
+**Renal Dysfunction**
+Drug may require adjustment when :
+
+1) Drug >50% clearaed by renal excretion
+2) Renal <50% of normal
