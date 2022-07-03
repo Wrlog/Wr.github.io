@@ -2,29 +2,30 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://feedliu.github.io
+url: https://wenruitan.github.io/Wenrui97.github.io/
 date_format: "ordinal"
-title: "Feedliu's Blogs"
-subtitle: "Share My Coding Life"
-description: "Share My Coding Life"
-keywords: Feedliu
-timezone: Asia/Shanghai
+title: Wenrui's Blog
+subtitle: "Share My Life"
+description: "Share My Life"
+keywords: Wenrui
+timezone: United Stae/Eastern Time Zone
 encoding: "utf-8"
 side_bar_repo_limit: 5
 
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: feedliu
+author: WenRui
 organization: 
 organization_url: 
-github_username: feedliu
-location: Beijing, China
-email: feedliu15@gmail.com
+github_username: WenruiTan
+location: Ohio, United State
+email: tan.wenrui213@gmail.com
 
 # ---------------- #
 #    Navigation    #
 # ---------------- #
+
 navs:
   -
     href: /
@@ -36,16 +37,16 @@ navs:
 
 #   -
 #     href: /archives/
-#     label: 归档
+#     label: Archives
+
+#   -
+#     href: /open-source/
+#     label: open-source
 
   -
     href: /wiki/
     label: Wiki
-
-#  -
-#    href: /links/
-#    label: Link
-
+    
   -
     href: /about/
     label: About
@@ -67,7 +68,7 @@ lsi: false
 quiet: false
 excerpt_separator: "\n\n"
 permalink: /:year/:month/:day/:title/
-gems:
+plugins:
     - jekyll-github-metadata
     - rouge
 #     - jekyll-html-pipeline
@@ -80,32 +81,28 @@ collections:
     wiki:
         output: true
         permalink: /wiki/:path/
-
-repository: feedliu/feedliu.github.io
+        
+repository: https://wenruitan.github.io/Wenrui97.github.io/
 
 # ---------------- #
 #      Comments    #
 # ---------------- #
-# support provider: disqus, gitment, gitalk
-comments_provider: gitalk
+# support provider: disqus, gitment, gitalk, utterances, beaudar
+comments_provider: gitment
 # !!!重要!!! 请修改下面这些信息为你自己申请的
 # !!!Important!!! Please modify infos below to yours
-# https://disqus.com
+# gitment 配置参考：https://imsun.net/posts/gitment-introduction/
+
 disqus:
     username: 
-# https://imsun.net/posts/gitment-introduction/
+
 gitment:
-    owner: mzlogin
+    owner: WenruiTan
     repo: blog-comments
     oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
-# https://github.com/gitalk/gitalk#install
-gitalk:
-    owner: feedliu
-    repo: blog-comments
-    clientID: ca4598e672bce6a2e7c7
-    clientSecret: 8daa564a7d0c2e664c5771ab2869dd7041345b09
+        client_id: ce2239587a9dc9830236
+        client_secret: 0eeeea7ac0249f02c36935ddfc995efea5572481
+        
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
@@ -119,7 +116,7 @@ simple_jekyll_search:
     limit: 10
 
 # ---------------- #
-#    Analytics     #
+#      Google      #
 # ---------------- #
 google:
-    analytics_id: UA-134594282-1
+    analytics_id:G-7WJEV91PM7
