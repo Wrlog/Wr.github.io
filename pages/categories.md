@@ -8,7 +8,8 @@ menu: 分类
 permalink: /categories/
 ---
 
->因为淋过雨，所以想替别人撑把伞。
+>因为淋过雨，所以想给别人撑伞。
+
 
 <section class="container posts-content">
 {% assign sorted_categories = site.categories | sort %}
