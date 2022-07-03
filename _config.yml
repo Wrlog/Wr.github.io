@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://wenruitan.github.io/Wenrui97.github.io/
+url: https://wenruitan.github.io/Wr.github.io/
 date_format: "ordinal"
 title: Wenrui's Blog
 subtitle: "Share My Life"
@@ -82,7 +82,7 @@ collections:
         output: true
         permalink: /wiki/:path/
         
-repository: https://wenruitan.github.io/Wenrui97.github.io/
+repository: https://wenruitan.github.io/Wr.github.io/
 
 # ---------------- #
 #      Comments    #
