@@ -8,7 +8,7 @@ menu: 分类
 permalink: /categories/
 ---
 
->当所有人都不相信你的时候，你选择相信了自己，并且成功了，这就是成为英雄的道路。
+>因为淋过雨，所以想替别人撑把伞。
 
 <section class="container posts-content">
 {% assign sorted_categories = site.categories | sort %}
