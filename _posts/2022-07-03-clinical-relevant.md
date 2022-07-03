@@ -6,7 +6,7 @@ description: 药代动力学临床相关性
 keywords:  Pharmacokinetic,Clinical
 ---
 
-Not all kinds of pharmacokinetic changes need a dose adjustment. This article tries to summarise some clinically relevant pharmacokinetic changes where dose adjustment is crucial.
+Not all kinds of pharmacokinetic changes need a dose adjustment. This article tries to summarise some clinically relevant pharmacokinetic changes where dose adjustment is crucial.(Updating slowly....)
 
 ## Drug-drug interaction
 
@@ -25,4 +25,5 @@ To test whether the investigational drug is a perpetrator, sponsors should use i
 Drug may require adjustment when :
 
 1) Drug >50% clearaed by renal excretion
+
 2) Renal <50% of normal
