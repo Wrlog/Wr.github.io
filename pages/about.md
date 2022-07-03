@@ -8,22 +8,18 @@ menu: About
 permalink: /about/
 ---
 
->我宁愿犯错，也不愿什么都不做。
+姓名： 陈文睿
 
-姓名： 刘耀
+学历： 博士生
 
-学历： 研究生
+学校： 本科毕业于马来西亚理科大学，博士在读辛辛那提医学院
 
-学校： 本科毕业于武汉大学，研究生毕业于中国科学院大学
+专业： 药理学和系统生理学
 
-专业： 机器学习
+公司：辛辛那提儿童医院 
 
-公司： 百度，核心搜索部
+职位： 研究助理
 
-职位： 算法工程师
-
-Github： https://github.com/feedliu
-
-微信公众号： feedliu
+Github： https://github.com/WenruiTan
 
 <div style="text-align:center"><img src ="https://raw.githubusercontent.com/feedliu/feedliu.github.io/master/images/pages/qrcode.bmp" /></div>
