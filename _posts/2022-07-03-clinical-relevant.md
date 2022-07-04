@@ -20,7 +20,7 @@ This classification information helps to determine whether other drugs that have
 To test whether the investigational drug is a perpetrator, sponsors should use index substrates, which have defined changes in systemic exposure when administered with a strong inhibitor for a specific drug elimination pathway. A list of currently recommended index drugs for specific CYP pathways (either as substrates, inhibitors, or inducers) is maintained on the FDA’s Web site for Drug Development and Drug Interactions. (Available :https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers#table2 ). 
 
 
-![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/Probe%20for%20P450.png?raw=true))
+![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/Probe%20for%20P450.png?raw=true)
 
 
 The above table is prepared to provide examples of clinical substrates and not intended to be an exhaustive list 
