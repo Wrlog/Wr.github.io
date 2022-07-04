@@ -10,6 +10,17 @@ This short essay summarize some information on drug-drug interaction based on FD
 
 ## Drug-drug interaction
 
+
+https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20marker%20reaction.png
+
+
+https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20selective%20inhibitor.png
+
+
+https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20selective%20inducer.png
+
+
+
 According to FDA guidance on Clinical Drug Interaction Studies — Cytochrome P450 Enzyme- and Transporter-Mediated Drug Interactions Guidance for Industry (Available : https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-drug-interaction-studies-cytochrome-p450-enzyme-and-transporter-mediated-drug-interactions )
 
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/DDI%20CYP.png?raw=true)
