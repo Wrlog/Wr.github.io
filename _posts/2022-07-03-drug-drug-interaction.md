@@ -6,7 +6,7 @@ description: 药物-药物相互作用
 keywords:  Pharmacokinetic,Clinical
 ---
 
-This short essay summarize some information on drug0drug interaction based on FDA guidance.
+This short essay summarize some information on drug-drug interaction based on FDA guidance.
 
 ## Drug-drug interaction
 
