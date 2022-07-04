@@ -6,7 +6,7 @@ description: 药物-药物相互作用
 keywords:  Pharmacokinetic,Clinical,Drug Development, Drug Interactions
 ---
 
-This short essay summarize some information on drug-drug interaction focues on CYP enzyme based on FDA guidance.
+This short essay summarize some information on drug-drug interaction focues on CYP enzyme based on FDA guidance. (Available :https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers )
 
 ## Drug-drug interaction
 
