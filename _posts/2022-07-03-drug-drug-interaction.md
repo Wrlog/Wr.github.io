@@ -6,7 +6,7 @@ description: 药物-药物相互作用
 keywords:  Pharmacokinetic,Clinical
 ---
 
-Not all kinds of pharmacokinetic changes need a dose adjustment. This article tries to summarise some clinically relevant pharmacokinetic changes where dose adjustment is crucial.(Updating slowly....)
+This short essay summarize some information on drug0drug interaction based on FDA guidance.
 
 ## Drug-drug interaction
 
