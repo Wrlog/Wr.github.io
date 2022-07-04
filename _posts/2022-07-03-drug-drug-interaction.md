@@ -1,15 +1,16 @@
 ---
 layout: post
-title: 【药代动力学】药物-药物相互作用
+title: 【药代动力学】药物开发和药物-药物相互作用
 categories: pharmacokinetic
 description: 药物-药物相互作用
-keywords:  Pharmacokinetic,Clinical
+keywords:  Pharmacokinetic,Clinical,Drug Development, Drug Interactions
 ---
 
-This short essay summarize some information on drug-drug interaction based on FDA guidance.
+This short essay summarize some information on drug-drug interaction focues on CYP enzyme based on FDA guidance.
 
 ## Drug-drug interaction
 
+**In vitro**
 
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20marker%20reaction.png?raw=true)
 
@@ -20,6 +21,7 @@ This short essay summarize some information on drug-drug interaction based on FD
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20selective%20inducer.png?raw=true)
 
 
+**Clinical index drugs**
 
 According to FDA guidance on Clinical Drug Interaction Studies — Cytochrome P450 Enzyme- and Transporter-Mediated Drug Interactions Guidance for Industry (Available : https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-drug-interaction-studies-cytochrome-p450-enzyme-and-transporter-mediated-drug-interactions )
 
@@ -45,7 +47,7 @@ The above table is prepared to provide examples of clinical sensitive or moderat
  Index inhibitors predictably inhibit metabolism via a given pathway and are commonly used in prospective clinical DDI studies.
  
  
- This table is prepared to provide examples of clinical index inhibitors and is not intended to be an exhaustive list. Index inhibitors listed in this table were selected based on potency and selectivity of inhibition, safety profiles, and adequate number of reported clinical DDI studies with different in vivo substrates [≥ 3 for CYP3A, ≥ 2 for CYP1A2, 2C9, 2C19, and 2D6, or ≥ 1 for CYP2C8 (strong inhibitors)].
+This table is prepared to provide examples of clinical index inhibitors and is not intended to be an exhaustive list. Index inhibitors listed in this table were selected based on potency and selectivity of inhibition, safety profiles, and adequate number of reported clinical DDI studies with different in vivo substrates [≥ 3 for CYP3A, ≥ 2 for CYP1A2, 2C9, 2C19, and 2D6, or ≥ 1 for CYP2C8 (strong inhibitors)].
  
  
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/clinical%20index%20inducer.png?raw=true)
@@ -60,6 +62,8 @@ This table is prepared to provide examples of clinical index inducers and not in
 
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/Probe%20for%20P450.png?raw=true)
 
+
+**Examples of clinical substrates, inhibitors, and inducers**
 
 Sensitive substrates are drugs that demonstrate an increase in AUC of ≥5-fold with strong index inhibitors of a given metabolic pathway in clinical DDI studies. Moderate sensitive substrates are drugs that demonstrate an increase in AUC of ≥2 to <5-fold with strong index inhibitors of a given metabolic pathway in clinical DDI studies.
 
