@@ -20,19 +20,52 @@ This classification information helps to determine whether other drugs that have
 To test whether the investigational drug is a perpetrator, sponsors should use index substrates, which have defined changes in systemic exposure when administered with a strong inhibitor for a specific drug elimination pathway. A list of currently recommended index drugs for specific CYP pathways (either as substrates, inhibitors, or inducers) is maintained on the FDA’s Web site for Drug Development and Drug Interactions. (Available :https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers#table2 ). 
 
 
+![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/clinical%20index%20substrate.png?raw=true)
+
+
+Sensitive index substrates are index drugs that demonstrate an increase in AUC of ≥5-fold with strong index inhibitors of a given metabolic pathway in clinical DDI studies. Moderate sensitive substrates are drug that demonstrate an increase in AUC of ≥2 to <5-fold with strong index inhibitors of a given metabolic pathway in clinical DDI studies.
+
+
+The above table is prepared to provide examples of clinical sensitive or moderate sensitive index substrates and is not intended to be an exhaustive list. Index substrates listed in this table were selected considering their sensitivity, specificity, safety profiles, and adequate number of reported clinical DDI studies with different in vivo inhibitors (≥ 3 for CYP3A or ≥ 2 for CYP1A2, 2C8, 2C9, 2C19, and 2D6).
+
+
+![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/clinical%20index%20inhibitor.png?raw=true)
+
+ Index inhibitors predictably inhibit metabolism via a given pathway and are commonly used in prospective clinical DDI studies.
+ 
+ 
+ This table is prepared to provide examples of clinical index inhibitors and is not intended to be an exhaustive list. Index inhibitors listed in this table were selected based on potency and selectivity of inhibition, safety profiles, and adequate number of reported clinical DDI studies with different in vivo substrates [≥ 3 for CYP3A, ≥ 2 for CYP1A2, 2C9, 2C19, and 2D6, or ≥ 1 for CYP2C8 (strong inhibitors)].
+ 
+ 
+![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/clinical%20index%20inducer.png?raw=true)
+ 
+ 
+Index inducers predictably induce metabolism via a given pathway and are commonly used in prospective clinical DDI studies.
+
+
+This table is prepared to provide examples of clinical index inducers and not intended to be an exhaustive list. Index inducers listed in this table were selected based on potency of induction, safety profiles, and number of reported clinical DDI studies with different in vivo substrates (≥ 2 substrates).
+
+
+
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/Probe%20for%20P450.png?raw=true)
 
+
+Sensitive substrates are drugs that demonstrate an increase in AUC of ≥5-fold with strong index inhibitors of a given metabolic pathway in clinical DDI studies. Moderate sensitive substrates are drugs that demonstrate an increase in AUC of ≥2 to <5-fold with strong index inhibitors of a given metabolic pathway in clinical DDI studies.
 
 The above table is prepared to provide examples of clinical substrates and not intended to be an exhaustive list 
 
 
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/clinical%20inhibitor%20of%20P450.png?raw=true)
 
+ Strong, moderate, and weak inhibitors are drugs that increase the AUC of sensitive index substrates of a given metabolic pathway ≥5-fold, ≥2 to <5-fold, and ≥1.25 to <2-fold, respectively. 
+
 
 This table is prepared to provide examples of clinical inhibitors and is not intended to be an exhaustive list.
 
 
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/clinical%20inducer%20of%20P450.png?raw=true)
+
+Strong, moderate, and weak inducers are drugs that decreases the AUC of sensitive index substrates of a given metabolic pathway by ≥80%, ≥50% to <80%, and ≥20% to <50%, respectively.
 
 
 This table is prepared to provide examples of clinical index inducers and not intended to be an exhaustive list.
