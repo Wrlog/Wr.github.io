@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 【药代动力学】临床相关性
+title: 【药代动力学】药物-药物相互作用
 categories: pharmacokinetic
-description: 药代动力学临床相关性
+description: 药物-药物相互作用
 keywords:  Pharmacokinetic,Clinical
 ---
 
@@ -36,13 +36,3 @@ This table is prepared to provide examples of clinical inhibitors and is not int
 
 
 This table is prepared to provide examples of clinical index inducers and not intended to be an exhaustive list.
-
-##  Special Population
-
-**Renal Dysfunction**
-
-Drug may require adjustment when :
-
-1) Drug >50% clearaed by renal excretion
-
-2) Renal <50% of normal
