@@ -17,7 +17,7 @@ Drug may require adjustment when :
 2) Renal <50% of normal
 
 
-## Pregnancy
+**Pregnancy**
 
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/PK%20in%20pregnancy.png?raw=true)
 
