@@ -8,7 +8,7 @@ menu: 维基
 permalink: /wiki/
 ---
 
-> 开往未来的路上 没有人会再回返
+> 活在当下 过去不悔 未来不追
 
 <ul class="listing">
 {% for wiki in site.wiki %}
