@@ -11,13 +11,13 @@ This short essay summarize some information on drug-drug interaction based on FD
 ## Drug-drug interaction
 
 
-https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20marker%20reaction.png
+![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20marker%20reaction.png?raw=true)
 
 
-https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20selective%20inhibitor.png
+![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20selective%20inhibitor.png?raw=true)
 
 
-https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20selective%20inducer.png
+![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/invitro%20selective%20inducer.png?raw=true)
 
 
 
