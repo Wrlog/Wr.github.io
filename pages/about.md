@@ -16,4 +16,4 @@ permalink: /about/
 
 职位： 研究助理
 
-Github： https://github.com/WenruiTan
+Github： https://github.com/Wrlog
