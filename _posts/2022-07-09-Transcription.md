@@ -6,7 +6,7 @@ description: Transcription
 keywords:  Transcription factor,RNA polymerase,DNA,genomic
 ---
 
-**Transcription Factor
+**Transcription Factor**
 
 
 Transcription factors are proteins involved in the process of converting, or transcribing, DNA into RNA. Transcription factors include a wide number of proteins, excluding RNA polymerase, that initiate and regulate the transcription of genes. One distinct feature of transcription factors is that they have DNA-binding domains 
@@ -19,7 +19,7 @@ These regulatory sequences can be thousands of base pairs upstream or downstream
 The action of transcription factors allows for unique expression of each gene in different cell types and during development.
 
 
-**Chromatin and Nucleosome
+**Chromatin and Nucleosome**
 
 Chromatin is a complex of DNA and proteins that forms chromosomes within the nucleus of eukaryotic cells. The main purpose of chromatin is to tightly pack the DNA inside the cell nucleus. 
 Chromatin regulates the gene expression and allows DNA replication in addition to the packaging. It also prevents DNA damage. 
