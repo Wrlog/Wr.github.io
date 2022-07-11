@@ -12,7 +12,7 @@ Name： Wen Rui Tan
 
 Education： PhD student
 
-University： Graduated from Universiti Sains Malaysia, Ph.D. in Cincinnati Medical College
+University： Graduated from Universiti Sains Malaysia, Ph.D. in University of Cincinnati College of Medicine
 
 Position： Graduate Research Assistant
 
