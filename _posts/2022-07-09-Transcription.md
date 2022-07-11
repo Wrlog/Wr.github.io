@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【Genomic】Basic Transcription Note
-categories: genomicc
+categories: genomic
 description: Transcription
 keywords:  Transcription factor,RNA polymerase,DNA,genomic
 ---
