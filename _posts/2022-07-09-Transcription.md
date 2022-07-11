@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Genomic】Basic Transcription note
+title: 【Genomic】Basic Transcription Note
 categories: genomicc
 description: Transcription
 keywords:  Transcription factor,RNA polymerase,DNA,genomic
@@ -26,3 +26,10 @@ Chromatin regulates the gene expression and allows DNA replication in addition t
 
 Nucleosome refers to the main structural unit of the eukaryotic chromatin that consists of a length of DNA coiled around a core of histones. This means the core particles that form chromatin are the nucleosomes. A nucleosome consists of 146 base pairs long DNA stretches, wrapped around a core of histone. 
 The histone core is made up of eight histone proteins. The histone octamer is formed by combining two of each four histones, H2A, H2B, H3, and H4. 
+
+
+**Cis-regulatory sequences**
+
+Cis-regulatory sequences, such as enhancers and promoters, control development and physiology by regulating gene expression. 
+
+A noncoding DNA sequence in or near a gene required for proper spatiotemporal expression of that gene, often containing binding sites for transcription factors.
