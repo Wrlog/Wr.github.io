@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【药代动力学】药物开发和药物-药物相互作用
+title: 【Pharmacokinetic】Drug Development and Drug-Drug Interactions
 categories: pharmacokinetic
 description: 药物-药物相互作用
 keywords:  Pharmacokinetic,Clinical,Drug Development, Drug Interactions
