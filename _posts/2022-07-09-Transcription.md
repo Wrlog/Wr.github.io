@@ -1,3 +1,4 @@
+---
 layout: post
 title: 【Genomic】Basic Transcription note
 categories: genomicc
