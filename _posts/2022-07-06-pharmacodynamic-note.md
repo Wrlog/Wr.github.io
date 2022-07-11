@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【药效学】随手笔记
+title: 【Pharmacodynamic】Handy Notes
 categories: pharmacodynamic
 description: 药效学
 keywords:  Pharmacodynamic,Clinical
