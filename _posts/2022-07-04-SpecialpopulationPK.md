@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【药代动力学】特殊人群药代动力学笔记
+title: 【Pharmacokinetic】Pharmacokinetic Notes for Special Populations
 categories: pharmacokinetic
 description: 特殊人群药代动力学笔记
 keywords:  Pharmacokinetic,Clinical
