@@ -8,12 +8,12 @@ menu: About
 permalink: /about/
 ---
 
-姓名： 陈文睿
+Name： Wen Rui Tan
 
-学历： 博士生
+Education： PhD student
 
-学校： 本科毕业于马来西亚理科大学，博士在读辛辛那提医学院
+University： Graduated from Universiti Sains Malaysia, Ph.D. in Cincinnati Medical College
 
-职位： 研究助理
+Position： Graduate Research Assistant
 
 Github： https://github.com/Wrlog
