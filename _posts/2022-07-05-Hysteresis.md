@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【药代动力学】Hysteresis
+title: 【Pharmacodynamic】Hysteresis
 categories: pharmacodynamic
 description: Hysteresis
 keywords:  Pharmacokinetic,Clinical
