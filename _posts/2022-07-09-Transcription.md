@@ -33,3 +33,8 @@ The histone core is made up of eight histone proteins. The histone octamer is fo
 Cis-regulatory sequences, such as enhancers and promoters, control development and physiology by regulating gene expression. 
 
 A noncoding DNA sequence in or near a gene required for proper spatiotemporal expression of that gene, often containing binding sites for transcription factors.
+
+
+**Primary Cell**
+
+Primary cells are cells taken directly from living tissue (e.g. biopsy material) and established for growth in vitro.
