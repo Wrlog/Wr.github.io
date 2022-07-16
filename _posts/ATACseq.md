@@ -1,0 +1,19 @@
+---
+layout: post
+title: 【Genomic】Basic Transcription Note
+categories: genomic
+description: Transcription
+keywords:  Transcription factor,ATAC-seq
+---
+
+Some good article worth reading for ATAC-seq beginner
+
+1) Transposition of native chromatin for fast and sensitive epigenomic profiling of open chromatin, DNA-binding proteins and nucleosome position
+
+2) From reads to insight: a hitchhiker’s guide to ATAC-seq data analysis
+
+3) ATACseqQC: a Bioconductor package for post-alignment quality assessment of ATAC-seq data
+
+4) ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia
+
+5) Model-based Analysis of ChIP-Seq (MACS)
