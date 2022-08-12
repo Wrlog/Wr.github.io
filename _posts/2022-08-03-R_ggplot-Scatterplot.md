@@ -62,7 +62,6 @@ ggplot(data=college) +
   scale_x_continuous(name="Tuition") +
   scale_y_continuous(name="SAT Scores")
 
-End Sub
 ```
 
 图
