@@ -70,4 +70,4 @@ End Sub
 ![](https://github.com/Wrlog/Wr.github.io/blob/master/images/posts/R/scatterplot.png)
 
 
-附上个很好的入门网址 https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/ggplot2.html
+附上个R很好的入门网址 https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/ggplot2.html
