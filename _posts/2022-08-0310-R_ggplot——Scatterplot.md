@@ -67,4 +67,4 @@ End Sub
 
 
 
-![image] (https://github.com/Wrlog/Wr.github.io/blob/master/images/posts/R/scatterplot.png)
+![](https://github.com/Wrlog/Wr.github.io/blob/master/images/posts/R/scatterplot.png)
