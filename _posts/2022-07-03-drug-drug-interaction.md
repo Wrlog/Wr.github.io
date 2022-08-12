@@ -6,7 +6,7 @@ description: 药物-药物相互作用
 keywords:  Pharmacokinetic,Clinical,Drug Development, Drug Interactions
 ---
 
-This short essay summarize some information on drug-drug interaction focues on CYP enzyme based on FDA guidance. (Available :https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers )
+This short essay summarize some information on drug-drug interaction focues on CYP enzyme based on FDA guidance. (Available :<https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers> )
 
 ## Drug-drug interaction
 
@@ -23,7 +23,7 @@ This short essay summarize some information on drug-drug interaction focues on C
 
 **Clinical index drugs**
 
-According to FDA guidance on Clinical Drug Interaction Studies — Cytochrome P450 Enzyme- and Transporter-Mediated Drug Interactions Guidance for Industry (Available : https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-drug-interaction-studies-cytochrome-p450-enzyme-and-transporter-mediated-drug-interactions )
+According to FDA guidance on Clinical Drug Interaction Studies — Cytochrome P450 Enzyme- and Transporter-Mediated Drug Interactions Guidance for Industry (Available : <https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-drug-interaction-studies-cytochrome-p450-enzyme-and-transporter-mediated-drug-interactions> )
 
 ![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/DDI%20CYP.png?raw=true)
 
