@@ -6,7 +6,7 @@ description: ggplot作图
 keywords:  R, visualization ,scatterplot
 ---
 
-代码
+Code
 
 ```vb
 library(tidyverse)
@@ -64,7 +64,7 @@ ggplot(data=college) +
 
 ```
 
-图
+Plot
 
 ![](https://github.com/Wrlog/Wr.github.io/blob/master/images/posts/R/scatterplot.png?raw=true)
 
