@@ -12,7 +12,7 @@ The following section will explain the ideas and differences of MLE and MAP in d
 Let's start with the difference between probability and statistics.
 
 
-##Probability and Statistics are the same thing?
+## Probability and Statistics are the same thing?
 
 Probability and statistics may seem like two similar concepts, but they actually study the opposite problem.
 
