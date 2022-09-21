@@ -30,3 +30,21 @@ Obviously, both MLE and MAP explained in this paper are problems in the field of
 They are both methods used to infer parameters. Why do two different methods exist? This requires an understanding of Bayesian thinking. 
 Let's take a look at the Bayesian formulation.
 
+
+## Bayesian Formula 
+## What is it really saying?
+
+
+Anyone studying machine learning and pattern recognition must have heard of the Bayes' Theorem formula:
+
+<img width="136" alt="image" src="https://user-images.githubusercontent.com/69442517/191628939-ec8bb412-3f23-4a00-9264-b299d50b8c6f.png">
+
+
+
+
+
+
+
+
+
+
