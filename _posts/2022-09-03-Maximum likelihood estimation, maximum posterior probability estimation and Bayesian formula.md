@@ -14,7 +14,7 @@ Let's start with the difference between probability and statistics.
 
 ## Probability and Statistics are the same thing?
 
-Probability and statistics may seem like two similar concepts, but they actually study the opposite problem.
+Probability and statistics may seem like two similar concepts, but they actually study the opposite research question.
 
 The problem of probabilistic research is how to predict the characteristics of the results produced by a model (e.g. mean, variance, covariance, etc.) when the model and parameters are known. For example, I want to study how to raise swine (the model is pigs), 
 I have chosen the breed I want to raise, the feeding method, the design of the shed, etc. (choose the parameters), and I want to know approximately how fat and how good the meat will be when I raise the swine (predict the outcome).
