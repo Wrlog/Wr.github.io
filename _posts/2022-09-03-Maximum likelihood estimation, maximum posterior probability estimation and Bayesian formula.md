@@ -40,7 +40,7 @@ Anyone studying machine learning and pattern recognition must have heard of the 
 <img width="136" alt="image" src="https://user-images.githubusercontent.com/69442517/191628939-ec8bb412-3f23-4a00-9264-b299d50b8c6f.png">
 
 
-The Bayesian formula looks simple and is nothing more than a formula for inverting the conditional probability and joint probability.
+The Bayesian formula looks simple and is nothing more than a formula for playing the conditional probability and joint probability.
 
 
 Expanding B, it can be written as follows :
