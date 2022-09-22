@@ -81,7 +81,7 @@ For this function :
 <img width="59" alt="image" src="https://user-images.githubusercontent.com/69442517/191629914-f5450c05-3804-4dee-b0fd-aa6c83b2d8a7.png">
 
 
-There are two inputs: x denotes a specific data; and the parameters of the model.
+There are two inputs: x denotes a specific data; and <img width="8" alt="image" src="https://user-images.githubusercontent.com/69442517/191634831-f19cfd90-2ce7-4bf7-83af-a14145d622e9.png"> is the parameters of the model.
 
 If <img width="10" alt="image" src="https://user-images.githubusercontent.com/69442517/191629984-d99a6cc5-03d6-4e9f-b6c2-594b01e7001f.png"> is known for sure and <img width="10" alt="image" src="https://user-images.githubusercontent.com/69442517/191630063-a6c3ff98-4c51-473f-9389-72480fa85e91.png"> is a variable, this function is called the probability function (probability function), which describes what the probability of occurrence is for different sample points x.
 
