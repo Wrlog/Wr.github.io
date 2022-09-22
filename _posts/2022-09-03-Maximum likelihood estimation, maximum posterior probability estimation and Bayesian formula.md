@@ -90,7 +90,7 @@ If <img width="10" alt="image" src="https://user-images.githubusercontent.com/69
 
 It's kind of like "two dishes in one". In fact, it is not uncommon for us to encounter such a form before. For example,<img width="55" alt="image" src="https://user-images.githubusercontent.com/69442517/191630310-166bfb8e-d0fb-4887-8604-883fca34abc4.png"> ,that is, x to the yth power. 
 
-If it is known for sure x(e.g.x = 2), this is<img width="45" alt="image" src="https://user-images.githubusercontent.com/69442517/191630500-2582097c-605e-448f-8d33-f6fc3e2762ef.png">, this is the exponential function. If it is known for sure y (e.g.y = 2), this is, this is the quadratic function. The same mathematical form can have different names when viewed from the perspective of different variables.
+If it is known for sure x(e.g.x = 2), this is<img width="45" alt="image" src="https://user-images.githubusercontent.com/69442517/191630500-2582097c-605e-448f-8d33-f6fc3e2762ef.png">, this is the exponential function <img width="43" alt="image" src="https://user-images.githubusercontent.com/69442517/191635139-4af81a52-90c1-4f37-aa32-62ea1e11efc9.png">. If it is known for sure y (e.g.y = 2), this is<img width="47" alt="image" src="https://user-images.githubusercontent.com/69442517/191635170-f6ba7748-1c45-44af-8b04-159e643c880c.png"> , this is the quadratic function. The same mathematical form can have different names when viewed from the perspective of different variables.
 
 That should make it clear, right? If it's not clear, don't worry, there will be specific examples below.
 
