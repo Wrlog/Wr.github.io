@@ -22,7 +22,7 @@ I have chosen the breed I want to raise, the feeding method, the design of the s
 The problem with statistical studies is the opposite. Statistics is that there is a pile of data that has to be used to predict models and parameters. 
 Still using the swine as an example. Now I get a pile of meat and through observation and judgment I determine that it is pork (which determines the model.) 
 In the actual research, also by observing the data to speculate the model is / like Gaussian distribution, exponential distribution, Laplace distribution, etc.), then, 
-you can further research to determine the breed of this pig, this is a captive pig or a running hill pig or a net pig, and so on (speculation model parameters).
+you can further research to determine the breed of this pig, this is a captive pig or a Wild Boar or other species, and so on (predict model parameters).
 
 **In a nutshell: probability is to predict the data with known model and parameters. Statistics is known data, predicting the model and parameters.**
 
