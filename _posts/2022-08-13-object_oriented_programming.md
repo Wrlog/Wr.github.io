@@ -27,6 +27,12 @@ class Person :
     self.eyecolor = "[no eye color]"
     self.age = -1
     
+    
+myPerson = Person()
+
+print(myPerson.name.firstname)
+print(myPerson.eyecolor)
+    
 ```
 
 **Object**: An object is a custom data structure that organizes and encapsulates variables and methods into a single data type. It is used near-interchangeably with “instance.”
