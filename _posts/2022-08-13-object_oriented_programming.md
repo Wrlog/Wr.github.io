@@ -37,7 +37,7 @@ class Person :
 The term 'object' is often used to refer both to actual data structures and to the general paradigm of object-oriented programming, we'll typically stick to the terms 'class' and 'instance' instead.
 
 
-## Explain the code meaning 
+## Explanation
 
 __inits__ is called when we first created a new instance for a class. This initializes an instance of that class.
 
