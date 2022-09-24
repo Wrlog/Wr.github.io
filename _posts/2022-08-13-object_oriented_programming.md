@@ -34,4 +34,9 @@ class Person :
 
 The term 'object' is often used to refer both to actual data structures and to the general paradigm of object-oriented programming, we'll typically stick to the terms 'class' and 'instance' instead.
 
-__inits__ is called when we first created a new instance for a class. This initializes an instance of that class 
+
+## Explain the code meaning 
+
+__inits__ is called when we first created a new instance for a class. This initializes an instance of that class.
+
+Self is used to tell Python to define the below variables for the instance as a whole. In other words, any other code inside the class would be able to see those variables, as long as it accessed them with self as well. And they persist even running this method is done. If we left off self,then the variable like age would cease to exist at the end of this method. But because it starts with self, the variable age exists, as long as this class or this instance exists. So writing self dot first name basically says any time we look at this instance's first name, it should be the same one. Every method defined inside a class should have self as the first parameter. We'll never have to pass in an argument for it though. Self by default just sees all the variables associated with this instance of the class.
