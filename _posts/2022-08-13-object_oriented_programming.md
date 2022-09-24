@@ -15,7 +15,7 @@ Programming languages designed primarily for OOP include: Pthon, Java, C++
 class Name :
   def __inits__(self) :
     self.firstname = "[no first name]"
-    self.lastname ="[no last name]"
+    self.lastname = "[no last name]"
 
 
 #Define the class person
@@ -23,7 +23,7 @@ class Person :
   #Create a new instance of person
   def__inits__(self) :
     #Person default value
-    self.Name = Nmae()
+    self.Name = Name()
     self.eyecolor = "[no eye color]"
     self.age = -1
     
