@@ -33,3 +33,5 @@ class Person :
 **Method**: A method is a programmed procedure that is defined as part of a class and included in any object of that class. A class (and thus an object) can have more than one method. Method = Function inside a class.
 
 The term 'object' is often used to refer both to actual data structures and to the general paradigm of object-oriented programming, we'll typically stick to the terms 'class' and 'instance' instead.
+
+__inits__ is called when we first created a new instance for a class. This initializes an instance of that class 
