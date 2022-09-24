@@ -11,13 +11,19 @@ keywords:  Python, Object Oriented Programming,
 Programming languages designed primarily for OOP include: Pthon, Java, C++
 
 ```
+#Define the class name
+class Name :
+  def __inits__(self) :
+    self.firstname = "[no first name]"
+    self.lastname ="[no last name]"
+
+
 #Define the class person
 class Person :
   #Create a new instance of person
   def__inits__(self) :
     #Person default value
-    self.firstname = "[no first name]"
-    self.lastname = "[no last name]"
+    self.Name = Nmae()
     self.eyecolor = "[no eye color]"
     self.age = -1
     
