@@ -28,11 +28,16 @@ Nucleosome refers to the main structural unit of the eukaryotic chromatin that c
 The histone core is made up of eight histone proteins. The histone octamer is formed by combining two of each four histones, H2A, H2B, H3, and H4. 
 
 
+**Trans-regulatory sequences**
+Trans-regulatory sequences are transcription factor proteins that regulate the process of transcription such as general TFs and RNA pol2, sequence specific TFs, co-activators/co-repressor and histones.
+
+
+
 **Cis-regulatory sequences**
 
-Cis-regulatory sequences, such as enhancers and promoters, control development and physiology by regulating gene expression. 
+Cis-regulatory sequences are noncoding DNA sequences in or near a gene required for proper spatiotemporal expression of that gene, often containing binding sites for transcription factors such as enhancers promoters and insulator, control development and physiology by regulating gene expression. 
 
-A noncoding DNA sequence in or near a gene required for proper spatiotemporal expression of that gene, often containing binding sites for transcription factors.
+
 
 
 **Primary Cell**
