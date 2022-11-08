@@ -9,8 +9,8 @@ keywords:  R, study material
 
 
 
-Good introductory website for R
+Good study website for R
 
 <https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/index.html>
 
-感谢北京大学李东风老师！
+https://bookdown.org/wangminjie/R4DS/
