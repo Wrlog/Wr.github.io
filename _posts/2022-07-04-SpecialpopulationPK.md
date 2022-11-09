@@ -30,7 +30,8 @@ The sizes of different organs change:
 
 Enzyme Expression and Metabolic Rate:
 
-<img width="536" alt="image" src="https://user-images.githubusercontent.com/69442517/200745580-a7dd6252-a785-4349-ab23-94d4776ca7df.png">
+<img width="517" alt="image" src="https://user-images.githubusercontent.com/69442517/200745707-63df9d23-a03a-45c8-beec-dc2df9f42082.png">
+
 
 
 
