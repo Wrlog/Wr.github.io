@@ -180,3 +180,5 @@ At <img width="49" alt="image" src="https://user-images.githubusercontent.com/69
 
 
 I believe that after reading the above, the difference between MLE and MAP should be clear, MAP is multiple  factors as a priori probability <img width="28" alt="image" src="https://user-images.githubusercontent.com/69442517/191633550-36b32c96-2fd5-4bc3-a530-67810fb369b6.png">. Alternatively, it can be reversed to consider MLE as the prior probability <img width="28" alt="image" src="https://user-images.githubusercontent.com/69442517/191633550-36b32c96-2fd5-4bc3-a530-67810fb369b6.png"> equal to 1, i.e.,take <img width="11" alt="image" src="https://user-images.githubusercontent.com/69442517/191633581-53441e20-190a-4afb-b109-8dd81fbe36bf.png"> as a uniform distribution.
+
+--From Wechat--
