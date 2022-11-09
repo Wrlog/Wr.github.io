@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【Pharmacokinetic】Pharmacokinetic Notes for Special Populations
-categories: pharmacokinetic
+categories: Pharmacokinetic
 description: 特殊人群药代动力学笔记
 keywords:  Pharmacokinetic,Clinical
 ---
