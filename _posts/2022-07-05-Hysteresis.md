@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【Pharmacodynamic】Hysteresis
-categories: pharmacodynamic
+categories: Pharmacodynamic
 description: Hysteresis
 keywords:  Pharmacokinetic,Clinical
 ---
