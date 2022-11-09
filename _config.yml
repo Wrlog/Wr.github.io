@@ -4,9 +4,9 @@
 baseurl:
 url: https://wrlog.github.io/Wr.github.io/
 date_format: "ordinal"
-title: Hi,I'm Wen Rui Tan,陈文睿
-subtitle: "Study Notes"
-description: "Study Notes"
+title: Hi,I'm Wen-Rui Tan,
+subtitle: "Short Notes"
+description: "Short Notes"
 keywords: Wenrui
 timezone: United State/Eastern Time Zone
 encoding: "utf-8"
