@@ -8,30 +8,24 @@ keywords:  Python, Object Oriented Programming,
 
 ## Object Oreineted Programming
 
-Programming languages designed primarily for OOP include: Pthon, Java, C++
+Programming languages designed primarily for OOP include: C++,Java,C#,Python,Ruby,PHP,Swift,JavaScript,Kotlin,Scala
 
 ```
-#Define the class name
-class Name :
-  def __inits__(self) :
-    self.firstname = "[no first name]"
-    self.lastname = "[no last name]"
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+        
+    def bark(self):
+        print("Woof!")
+        
+    def display(self):
+        print("Name: ", self.name)
+        print("Breed: ", self.breed)
 
-
-#Define the class person
-class Person :
-  #Create a new instance of person
-  def__inits__(self) :
-    #Person default value
-    self.Name = Name()
-    self.eyecolor = "[no eye color]"
-    self.age = -1
-    
-    
-myPerson = Person()
-
-print(myPerson.name.firstname)
-print(myPerson.eyecolor)
+dog1 = Dog("Fido", "Golden Retriever")
+dog1.bark()
+dog1.display()
     
 ```
 
@@ -51,6 +45,10 @@ The term 'object' is often used to refer both to actual data structures and to t
 
 ## Explanation
 
-__inits__ is called when we first created a new instance for a class. This initializes an instance of that class.
+In this example, the Dog class is defined with two instance variables name and breed which are passed as arguments to the __init__ method. The __init__ method is a special method in Python classes that is called when an object of the class is created. The bark and display methods are also defined in the class.
 
-Self is used to tell Python to define the below variables for the instance as a whole. In other words, any other code inside the class would be able to see those variables, as long as it accessed them with self as well. And they persist even after running this method is done. If we left off self, then variables like age would cease to exist at the end of this method. But because it starts with self, the variable age exists, as long as this class or this instance exists. So writing self-dot first name basically says any time we look at this instance's first name, it should be the same one. Every method defined inside a class should have self as the first parameter. We'll never have to pass in an argument for it though. Self by default just sees all the variables associated with this instance of the class.
+We can create an object of the Dog class by calling it as a function and passing the required arguments, as you can see in the last line of the code dog1 = Dog("Fido", "Golden Retriever").
+
+When we call the bark() method on the dog1 object, it will print "Woof!" to the console. The display() method prints the name and breed attributes of the dog1.
+
+This example illustrates the basic concepts of OOP in Python: encapsulation of data and behavior within a class, and creating objects (instances) of that class.
