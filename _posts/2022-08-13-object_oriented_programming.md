@@ -29,16 +29,17 @@ dog1.display()
     
 ```
 
-**Object**: An object is a custom data structure that organizes and encapsulates variables and methods into a single data type. It is used near-interchangeably with “instance.”
+**Object**: In object-oriented programming, an object is a piece of data that has a set of properties (also known as attributes) and methods that can be used to interact with the data. Objects are instances of classes, which are templates or blueprints for creating objects.
 
 
-**Class**: A custom data type comprised of multiple variables and/or methods. Instances or objects are created based on the template provided by the class.
+**Class**: A class is a blueprint or template for creating objects. It defines the properties (attributes) and methods that an object of that class will have. A class defines the structure of the object, but it does not contain any specific data.
 
 
-**Instance**: A single set of values of a particular class. Classes may be comprised of multiple variables; an instance is a set of values for these variables. The term “instance” is often used interchangeably with the term “object”.
+**Instance**: An instance is a specific object that is created from a class. When an object is created from a class, it is said to be an instance of that class. Each instance has its own unique properties, but all instances have the same methods and behaviors defined by the class.
 
 
-**Method**: A method is a programmed procedure that is defined as part of a class and included in any object of that class. A class (and thus an object) can have more than one method. Method = Function inside a class.
+**Method**: A method is a function that is defined within a class and is associated with an object. Methods define the behavior of the object, and they can be used to interact with the object's properties (attributes). Methods are typically used to retrieve or update the object's data.
+
 
 The term 'object' is often used to refer both to actual data structures and to the general paradigm of object-oriented programming, we'll typically stick to the terms 'class' and 'instance' instead.
 
