@@ -221,7 +221,9 @@ const Prism = (function () {
       }
       t.hooks.run('wrap', r)
       let o = ''
-      for (const l in r.attributes) { o += l + '="' + (r.attributes[l] || '') + '"' }
+      for (const l in r.attributes) {
+        o += l + '="' + (r.attributes[l] || '') + '"'
+      }
       return (
         '<' +
         r.tag +

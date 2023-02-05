@@ -419,83 +419,89 @@
                 ) {
                   if ((origin && origin !== 'bottom') || !isLeft) {
                     if ((origin && origin !== 'bottom') || !isRight) {
-                      if (origin && origin === 'right' && isLeft) { (line = drawLine(
-                        this.chart,
-                        right,
-                        [
-                          {
-                            x: right.x + lineLength / 2,
-                            y: right.y
-                          },
-                          {
-                            x: right.x + lineLength / 2,
-                            y: symbolTop.y - lineLength / 2
-                          },
-                          {
-                            x: symbolTop.x,
-                            y: symbolTop.y - lineLength / 2
-                          },
-                          {
-                            x: symbolTop.x,
-                            y: symbolTop.y
-                          },
-                        ],
-                        text
-                      )),
-                      (this.rightStart = !0),
-                      (symbol.topEnd = !0),
-                      (maxX = right.x + lineLength / 2) } else if (origin && origin === 'right' && isRight) { (line = drawLine(
-                        this.chart,
-                        right,
-                        [
-                          {
-                            x: symbolTop.x,
-                            y: right.y
-                          },
-                          {
-                            x: symbolTop.x,
-                            y: symbolTop.y
-                          },
-                        ],
-                        text
-                      )),
-                      (this.rightStart = !0),
-                      (symbol.topEnd = !0),
-                      (maxX = right.x + lineLength / 2) } else if (
+                      if (origin && origin === 'right' && isLeft) {
+                        (line = drawLine(
+                          this.chart,
+                          right,
+                          [
+                            {
+                              x: right.x + lineLength / 2,
+                              y: right.y
+                            },
+                            {
+                              x: right.x + lineLength / 2,
+                              y: symbolTop.y - lineLength / 2
+                            },
+                            {
+                              x: symbolTop.x,
+                              y: symbolTop.y - lineLength / 2
+                            },
+                            {
+                              x: symbolTop.x,
+                              y: symbolTop.y
+                            }
+                          ],
+                          text
+                        )),
+                        (this.rightStart = !0),
+                        (symbol.topEnd = !0),
+                        (maxX = right.x + lineLength / 2)
+                      } else if (origin && origin === 'right' && isRight) {
+                        (line = drawLine(
+                          this.chart,
+                          right,
+                          [
+                            {
+                              x: symbolTop.x,
+                              y: right.y
+                            },
+                            {
+                              x: symbolTop.x,
+                              y: symbolTop.y
+                            }
+                          ],
+                          text
+                        )),
+                        (this.rightStart = !0),
+                        (symbol.topEnd = !0),
+                        (maxX = right.x + lineLength / 2)
+                      } else if (
                         origin &&
                           origin === 'bottom' &&
                           isOnSameColumn &&
                           isUpper
-                      ) { (line = drawLine(
-                        this.chart,
-                        bottom,
-                        [
-                          {
-                            x: bottom.x,
-                            y: bottom.y + lineLength / 2
-                          },
-                          {
-                            x: right.x + lineLength / 2,
-                            y: bottom.y + lineLength / 2
-                          },
-                          {
-                            x: right.x + lineLength / 2,
-                            y: symbolTop.y - lineLength / 2
-                          },
-                          {
-                            x: symbolTop.x,
-                            y: symbolTop.y - lineLength / 2
-                          },
-                          {
-                            x: symbolTop.x,
-                            y: symbolTop.y
-                          },
-                        ],
-                        text
-                      )),
-                      (this.bottomStart = !0),
-                      (symbol.topEnd = !0),
-                      (maxX = bottom.x + lineLength / 2) } else if (
+                      ) {
+                        (line = drawLine(
+                          this.chart,
+                          bottom,
+                          [
+                            {
+                              x: bottom.x,
+                              y: bottom.y + lineLength / 2
+                            },
+                            {
+                              x: right.x + lineLength / 2,
+                              y: bottom.y + lineLength / 2
+                            },
+                            {
+                              x: right.x + lineLength / 2,
+                              y: symbolTop.y - lineLength / 2
+                            },
+                            {
+                              x: symbolTop.x,
+                              y: symbolTop.y - lineLength / 2
+                            },
+                            {
+                              x: symbolTop.x,
+                              y: symbolTop.y
+                            }
+                          ],
+                          text
+                        )),
+                        (this.bottomStart = !0),
+                        (symbol.topEnd = !0),
+                        (maxX = bottom.x + lineLength / 2)
+                      } else if (
                         origin === 'left' &&
                           isOnSameColumn &&
                           isUpper
@@ -529,7 +535,7 @@
                         (this.leftStart = !0),
                         (symbol.topEnd = !0),
                         (maxX = left.x)
-                      } else
+                      } else {
                         origin === 'left' &&
                             ((line = drawLine(
                               this.chart,
@@ -557,6 +563,7 @@
                             (this.leftStart = !0),
                             (symbol.topEnd = !0),
                             (maxX = left.x))
+                      }
                     } else {
                       (line = drawLine(
                         this.chart,
