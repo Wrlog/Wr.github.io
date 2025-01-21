@@ -8,8 +8,7 @@ menu: About
 permalink: /about/
 ---
 
-Name：Wen-Rui Tan
+Name：Wen Rui Tan
 
-Education：PhD student
-
+Education：PhD candidate
 
