@@ -3,11 +3,8 @@ layout: post
 title: 【R】R study material
 categories: R
 description: R
-keywords:  R, study material
+keywords: R, study material
 ---
-
-
-
 
 Good study website for R
 
