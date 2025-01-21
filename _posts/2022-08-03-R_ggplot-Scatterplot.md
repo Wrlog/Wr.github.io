@@ -3,7 +3,7 @@ layout: post
 title: 【R】ggplot--Scatterplot
 categories: R
 description: ggplot作图
-keywords:  R, visualization ,scatterplot
+keywords: R, visualization ,scatterplot
 ---
 
 Code
@@ -19,7 +19,7 @@ college <- college %>%
 
 # Create the scatterplot from Video 2.1
 ggplot(data=college) +
-  geom_point(mapping=aes(x=tuition, y=sat_avg, color=control, size=undergrads), alpha=1/2) 
+  geom_point(mapping=aes(x=tuition, y=sat_avg, color=control, size=undergrads), alpha=1/2)
 
 # Add a text annotation
 ggplot(data=college) +
@@ -67,4 +67,3 @@ ggplot(data=college) +
 Plot
 
 ![](https://github.com/Wrlog/Wr.github.io/blob/master/images/posts/R/scatterplot.png?raw=true)
-
