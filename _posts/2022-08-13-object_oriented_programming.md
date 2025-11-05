@@ -78,6 +78,7 @@ Let's modify the Dog class to protect its name. Instead of changing name directl
 
 Python
 
+```
 class Dog:
     def __init__(self, name, breed):
         # We make 'name' private
@@ -106,6 +107,8 @@ dog1.display()
 
 # We must use the getter method
 print("The dog's name is:", dog1.get_name())
+```
+
 2. Inheritance
 Inheritance allows you to create a new class (a child or derived class) that "inherits" all the attributes and methods from an existing class (a parent or base class). This promotes code reuse.
 
@@ -115,7 +118,7 @@ Example:
 
 Let's create a base Animal class. The Dog class can then inherit from Animal.
 
-
+```
 # 1. Define the Parent (Base) Class
 class Animal:
     def __init__(self, name, age):
@@ -154,7 +157,7 @@ my_dog.speak()      # This method was overridden by Dog
 my_cat = Cat("Whiskers", 3)
 my_cat.show_info()  # Inherited from Animal
 my_cat.speak()      # Inherited from Animal
-
+```
 
 **3. Polymorphism**
 Polymorphism (from Greek, meaning "many forms") is the ability of different objects to respond to the same method call in different ways.
@@ -164,7 +167,7 @@ This concept works hand-in-hand with inheritance. In our example, both the Dog a
 Example:
 
 Python
-
+```
 # Continuing from the Inheritance example...
 fido = Dog("Fido", 5, "Golden Retriever")
 whiskers = Cat("Whiskers", 3)
@@ -184,7 +187,7 @@ Output:
 --- Animal sounds ---
 Woof! Woof!
 This animal makes a sound.
-
+```
 
 **4. Abstraction**
 Abstraction is the concept of hiding complex, low-level implementation details and only showing the essential features (the "interface") to the user.
@@ -198,7 +201,7 @@ Example:
 Let's force all Animal subclasses to have a speak method.
 
 Python
-
+```
 from abc import ABC, abstractmethod
 
 # The Parent class is now an Abstract Base Class
@@ -235,6 +238,7 @@ whiskers = Cat("Whiskers")
 
 fido.speak()
 whiskers.speak()
+```
 This ensures that any object you create that is-an Animal is guaranteed to have the speak() functionality, which is very useful for reliable code.
 
 
