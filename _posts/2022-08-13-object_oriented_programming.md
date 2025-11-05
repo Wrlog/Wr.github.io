@@ -78,7 +78,6 @@ Example:
 
 Let's modify the Dog class to protect its name. Instead of changing name directly, we'll use a "getter" method.
 
-Python
 
 ```
 class Dog:
@@ -172,7 +171,7 @@ This concept works hand-in-hand with inheritance. In our example, both the Dog a
 
 Example:
 
-Python
+
 ```
 # Continuing from the Inheritance example...
 fido = Dog("Fido", 5, "Golden Retriever")
@@ -208,7 +207,7 @@ Example:
 
 Let's force all Animal subclasses to have a speak method.
 
-Python
+
 ```
 from abc import ABC, abstractmethod
 
