@@ -134,7 +134,7 @@ Your last example is the most important part!
 
 ---
 
-### 🏁 Summary: MLE vs. MAP
+### Summary: MLE vs. MAP
 
 | Feature | Maximum Likelihood (MLE) | Maximum A Posteriori (MAP) |
 | :--- | :--- | :--- |
