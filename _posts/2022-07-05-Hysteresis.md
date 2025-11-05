@@ -3,13 +3,12 @@ layout: post
 title: 【Pharmacodynamic】Hysteresis
 categories: Pharmacodynamic
 description: Hysteresis
-keywords:  Pharmacokinetic,Clinical
+keywords: Pharmacokinetic,Clinical
 ---
 
 ## Hysteresis
 
 Hysteresis may be defined as the retardation or lagging of an effect behind the cause of the effect.
-
 
 ## How hysteresis occur
 
@@ -34,9 +33,7 @@ Indirect Pharmacodynamic Response: The drug doesn't cause the effect directly. I
 
 Example: Warfarin (an anticoagulant). Warfarin works by inhibiting the synthesis of new vitamin K-dependent clotting factors. The effect (a change in blood clotting, measured by INR) is delayed because the body must first clear out the clotting factors that already exist in the circulation. The peak warfarin concentration happens long before the peak anticoagulant effect.
 
-
 **Clockwise hysteresis**
-
 
 This type of loop is less common but signifies an important biological response.
 
