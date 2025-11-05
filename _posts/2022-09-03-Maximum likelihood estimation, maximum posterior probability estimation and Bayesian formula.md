@@ -31,22 +31,24 @@ They are both methods used to infer parameters. Why do two different methods exi
 Let's take a look at the Bayesian formulation.
 
 
-## Bayesian Formula 
-## What is it really saying?
+### Bayes' Theorem: Updating Your Beliefs
 
+Bayes' theorem is the engine that powers MAP. At its heart, it's a simple, powerful rule for updating your beliefs in light of new evidence.
 
-Bayes' theorem is the engine that powers MAP. At its heart, it's a simple, powerful rule for updating your beliefs in light of new evidence.The formula is:$$P(A | B) = \frac{P(B | A) \times P(A)}{P(B)}
-$$Let's label these parts, as they have special names:
+The formula is:
+$$
+P(A | B) = \fracP(B | A) \times P(A)}{P(B)}
+$$
+Let's label these parts, as they have special names:
 
-* $P(A | B)$ = **Posterior:** "What is the probability of $A$ *after* I see evidence $B$?"
-* $P(B | A)$ = **Likelihood:** "If $A$ were true, what is the probability I would see evidence $B$?"
-* $P(A)$ = **Prior:** "What did I believe about $A$ *before* I saw any evidence?"
-* $P(B)$ = **Evidence:** "What is the total probability of seeing evidence $B$?"
+* **$P(A | B)$ = Posterior:** "What is the probability of $A$ *after* I see evidence $B$?"
+* **$P(B | A)$ = Likelihood:** "If $A$ were true, what is the probability I would see evidence $B$?"
+* **$P(A)$ = Prior:** "What did I believe about $A$ *before* I saw any evidence?"
+* **$P(B)$ = Evidence:** "What is the total probability of seeing evidence $B$?"
 
 #### The Car Alarm Analogy
 
 Let's use your great example:
-
 * $A$ = Your car was smashed.
 * $B$ = Your car alarm is going off.
 
@@ -58,9 +60,9 @@ We want to find $P(\text{Smashed} | \text{Alarm})$. How likely is your car smash
 
 Bayes' theorem forces you to consider the **prior** (smashing is rare) and the **evidence** (alarms go off for many reasons) instead of just the **likelihood** (smashing causes alarms). This is why you (correctly) don't panic every time you hear an alarm.
 
------
+---
 
-### 🤔 The Likelihood Function: A Shift in Perspective
+### The Likelihood Function: A Shift in Perspective
 
 This is a key concept. The expression $P(x | \theta)$ can be read in two ways, where $x$ is our data and $\theta$ is our parameter.
 
@@ -74,9 +76,9 @@ Your $x^y$ analogy is perfect. The function $f(x, y) = x^y$ is:
 
 It's the same formula, just a different perspective.
 
------
+---
 
-### 📈 Maximum Likelihood Estimation (MLE)
+### Maximum Likelihood Estimation (MLE)
 
 **The Goal:** Find the one parameter value ($\theta$) that makes your observed data ($x$) **most probable**.
 
@@ -88,13 +90,28 @@ It's the same formula, just a different perspective.
 
 * **Data ($x$):** You flip a coin 10 times and get 7 Heads, 3 Tails.
 * **Parameter ($\theta$):** The (unknown) probability of getting Heads.
-* **Likelihood Function:** The probability of getting this *exact* sequence is:$$$$L(\\theta) = P(\\text{Data} | \\theta) = \\theta \\times \\theta \\times (1-\\theta) \\times ... = \\theta^7 (1-\\theta)^3
-$$
-$$
-MLE: What value of $\theta$ makes this function $L(\theta)$ as large as possible?If you guess $\theta = 0.5$, $L(0.5) = (0.5)^7 (0.5)^3 \approx 0.00097$If you guess $\theta = 0.7$, $L(0.7) = (0.7)^7 (0.3)^3 \approx 0.00222$As your graph showed, the function peaks at $\theta = 0.7$. This is the MLE. It's the most intuitive answer: the best guess for the coin's probability is the frequency you observed.
+* **Likelihood Function:** The probability of getting this *exact* sequence is:
+    $$
+    L(\theta) = P(\text{Data} | \theta) = \theta \times \theta \times (1-\theta) \times ... = \theta^7 (1-\theta)^3
+    $$
+* **MLE:** What value of $\theta$ makes this function $L(\theta)$ as large as possible?
+    * If you guess $\theta = 0.5$, $L(0.5) = (0.5)^7 (0.5)^3 \approx 0.00097$
+    * If you guess $\theta = 0.7$, $L(0.7) = (0.7)^7 (0.3)^3 \approx 0.00222$
+* As your graph showed, the function peaks at **$\theta = 0.7$**. This is the MLE. It's the most intuitive answer: the best guess for the coin's probability is the frequency you observed.
 
-Maximum A Posteriori (MAP) EstimationThe Goal: Find the one parameter value ($\theta$) that is most probable given the data and your prior beliefs.The Question: "What parameter $\theta$ provides the best balance between explaining the data and fitting what I already believed to be true?"The Method: You use Bayes' theorem to find the posterior probability, 2$P(\theta | x)$, and maximize that.3$$\text{Maximize } P(\theta | x) \propto P(x | \theta) \times P(\theta)
-$$We ignore the denominator $P(x)$ because it's just a normalizing constant and doesn't change *where* the peak is.
+---
+
+###  Maximum A Posteriori (MAP) Estimation
+
+**The Goal:** Find the one parameter value ($\theta$) that is **most probable** given the data *and* your prior beliefs.
+
+**The Question:** "What parameter $\theta$ provides the best *balance* between explaining the data and fitting what I already believed to be true?"
+
+**The Method:** You use Bayes' theorem to find the **posterior probability**, $P(\theta | x)$, and maximize that.
+$$
+\text{Maximize } P(\theta | x) \propto P(x | \theta) \times P(\theta)
+$$
+We ignore the denominator $P(x)$ because it's just a normalizing constant and doesn't change *where* the peak is.
 
 So, MAP maximizes: **$\text{Likelihood} \times \text{Prior}$**.
 
@@ -103,16 +120,25 @@ So, MAP maximizes: **$\text{Likelihood} \times \text{Prior}$**.
 * **Data ($x$):** 7 Heads, 3 Tails.
 * **Likelihood $P(x | \theta)$:** Same as before, $\theta^7 (1-\theta)^3$.
 * **Prior $P(\theta)$:** Now, you add your *belief*. You believe coins are almost always fair. You could represent this belief with a probability distribution peaked at $\theta = 0.5$ (like the Gaussian in your example).
-* **MAP:** You are now maximizing the product:$$$$\\text{Maximize } [\\theta^7 (1-\\theta)^3] \\times [\\text{Your Gaussian function peaked at 0.5}]
-$$
-$$
-The Result: The likelihood "pulls" the estimate toward 0.7 (the data). The prior "pulls" it toward 0.5 (your belief). The final MAP estimate is a compromise between the two, landing somewhere like $\theta = 0.68$ (as in your graph).What if You Have More Data?Your last example is the most important part!If you flip 1000 times and get 700 Heads, the likelihood becomes $\theta^{700} (1-\theta)^{300}$.This function is incredibly sharply peaked at $\theta = 0.7$. It's so strong that it completely overwhelms your "gentle" prior belief.The MAP estimate will now be extremely close to 0.7 (e.g., $\theta = 0.699$). This shows that with enough data, the data speaks for itself and overcomes your initial beliefs.
+* **MAP:** You are now maximizing the product:
+    $$
+    \text{Maximize } [\theta^7 (1-\theta)^3] \times [\text{Your Gaussian function peaked at 0.5}]
+    $$
+* **The Result:** The likelihood "pulls" the estimate toward 0.7 (the data). The prior "pulls" it toward 0.5 (your belief). The final MAP estimate is a **compromise** between the two, landing somewhere like $\theta = 0.68$ (as in your graph).
 
+#### What if You Have More Data?
+Your last example is the most important part!
+* If you flip 1000 times and get 700 Heads, the likelihood becomes $\theta^{700} (1-\theta)^{300}$.
+* This function is *incredibly* sharply peaked at $\theta = 0.7$. It's so strong that it completely overwhelms your "gentle" prior belief.
+* The MAP estimate will now be extremely close to 0.7 (e.g., $\theta = 0.699$). This shows that **with enough data, the data speaks for itself and overcomes your initial beliefs.**
 
+---
 
+### 🏁 Summary: MLE vs. MAP
 
-Feature,Maximum Likelihood (MLE),Maximum A Posteriori (MAP)
-What it Maximizes,Likelihood: $P(x,\theta)$
-Philosophical Idea,"""Find the parameter that best explains the data.""","""Find the parameter that best balances the data and my prior beliefs."""
-What it Considers,Data only.,Data + Prior Belief.
-Connection,MLE is a special case of MAP where the prior P(θ) is a uniform distribution (meaning you have no prior belief and assume all θ values are equally likely).,
+| Feature | Maximum Likelihood (MLE) | Maximum A Posteriori (MAP) |
+| :--- | :--- | :--- |
+| **What it Maximizes** | **Likelihood:** $P(x | \theta)$ | **Posterior:** $P(\theta | x) \propto P(x | \theta) P(\theta)$ |
+| **Philosophical Idea** | "Find the parameter that best explains the data." | "Find the parameter that best balances the data and my prior beliefs." |
+| **What it Considers** | Data only. | Data + Prior Belief. |
+| **Connection** | MLE is a special case of MAP where the **prior $P(\theta)$ is a uniform distribution** (meaning you have no prior belief and assume all $\theta$ values are equally likely). | |
