@@ -8,7 +8,7 @@ menu: 维基
 permalink: /wiki/
 ---
 
-> 都清醒 都独立
+> 
 
 <ul class="listing">
 {% for wiki in site.wiki %}
