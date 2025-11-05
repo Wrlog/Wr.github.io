@@ -117,14 +117,7 @@ So, MAP maximizes: **$\text{Likelihood} \times \text{Prior}$**.
 
 #### The Coin Toss Example (Revisited)
 
-* **Data ($x$):** 7 Heads, 3 Tails.
-* **Likelihood $P(x | \theta)$:** Same as before, $\theta^7 (1-\theta)^3$.
-* **Prior $P(\theta)$:** Now, you add your *belief*. You believe coins are almost always fair. You could represent this belief with a probability distribution peaked at $\theta = 0.5$ (like the Gaussian in your example).
-* **MAP:** You are now maximizing the product:
-    $$
-    \text{Maximize } [\theta^7 (1-\theta)^3] \times [\text{Your Gaussian function peaked at 0.5}]
-    $$
-* **The Result:** The likelihood "pulls" the estimate toward 0.7 (the data). The prior "pulls" it toward 0.5 (your belief). The final MAP estimate is a **compromise** between the two, landing somewhere like $\theta = 0.68$ (as in your graph).
+Data ($x$): 7 Heads, 3 Tails.Likelihood $P(x | \theta)$: Same as before, $\theta^7 (1-\theta)^3$.Prior $P(\theta)$: Now, you add your belief. You believe coins are almost always fair. You could represent this belief with a probability distribution peaked at $\theta = 0.5$ (like the Gaussian in your example).MAP: You are now maximizing the product:$$  \text{Maximize } [\theta^7 (1-\theta)^3] \times [\text{Your Gaussian function peaked at 0.5}]$$The Result: The likelihood "pulls" the estimate toward 0.7 (the data). The prior "pulls" it toward 0.5 (your belief). The final MAP estimate is a compromise between the two, landing somewhere like $\theta = 0.68$ (as in your graph).
 
 #### What if You Have More Data?
 Your last example is the most important part!
