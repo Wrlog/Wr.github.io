@@ -110,7 +110,7 @@ dog1.display()
 print("The dog's name is:", dog1.get_name())
 ```
 
-2. Inheritance
+**2. Inheritance**
 
    
 Inheritance allows you to create a new class (a child or derived class) that "inherits" all the attributes and methods from an existing class (a parent or base class). This promotes code reuse.
