@@ -91,9 +91,9 @@ It's the same formula, just a different perspective.
 * **Data ($x$):** You flip a coin 10 times and get 7 Heads, 3 Tails.
 * **Parameter ($\theta$):** The (unknown) probability of getting Heads.
 * **Likelihood Function:** The probability of getting this *exact* sequence is:
-    $$
-    L(\theta) = P(\text{Data} | \theta) = \theta \times \theta \times (1-\theta) \times ... = \theta^7 (1-\theta)^3
-    $$
+    
+    $$P(\theta | x) \propto P(x | \theta) \times P(\theta)$$
+    
 * **MLE:** What value of $\theta$ makes this function $L(\theta)$ as large as possible?
     * If you guess $\theta = 0.5$, $L(0.5) = (0.5)^7 (0.5)^3 \approx 0.00097$
     * If you guess $\theta = 0.7$, $L(0.7) = (0.7)^7 (0.3)^3 \approx 0.00222$
