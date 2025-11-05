@@ -64,6 +64,8 @@ This example illustrates the basic concepts of OOP in Python: encapsulation of d
 
 
 **1. Encapsulation**
+
+
 Encapsulation is the practice of bundling data (attributes) and the methods that operate on that data into a single unit—the class.
 
 It also includes the idea of data hiding, which means restricting direct access to an object's attributes. This prevents data from being changed in unexpected ways. In Python, we don't have true "private" variables, but we use conventions:
@@ -110,6 +112,8 @@ print("The dog's name is:", dog1.get_name())
 ```
 
 2. Inheritance
+
+   
 Inheritance allows you to create a new class (a child or derived class) that "inherits" all the attributes and methods from an existing class (a parent or base class). This promotes code reuse.
 
 The child class can use all the parent's functionality and can also override methods (give them a new definition) or add its own new methods.
@@ -160,6 +164,8 @@ my_cat.speak()      # Inherited from Animal
 ```
 
 **3. Polymorphism**
+
+
 Polymorphism (from Greek, meaning "many forms") is the ability of different objects to respond to the same method call in different ways.
 
 This concept works hand-in-hand with inheritance. In our example, both the Dog and Cat objects inherited from Animal and have a speak() method. Polymorphism allows us to treat them as if they are the same type of thing (an Animal) and trust that when we call speak(), each object will know how to perform its specific version of that action.
@@ -190,6 +196,8 @@ This animal makes a sound.
 ```
 
 **4. Abstraction**
+
+
 Abstraction is the concept of hiding complex, low-level implementation details and only showing the essential features (the "interface") to the user.
 
 When you drive a car, you use the steering wheel, pedals, and gear stick. You don't need to know how the engine's internal combustion works—that complexity is abstracted away.
@@ -239,6 +247,8 @@ whiskers = Cat("Whiskers")
 fido.speak()
 whiskers.speak()
 ```
+
+
 This ensures that any object you create that is-an Animal is guaranteed to have the speak() functionality, which is very useful for reliable code.
 
 
