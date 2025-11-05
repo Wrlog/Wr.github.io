@@ -8,7 +8,7 @@ menu: 维基
 permalink: /wiki/
 ---
 
-> 
+> 人越学越觉得自己无知
 
 <ul class="listing">
 {% for wiki in site.wiki %}
