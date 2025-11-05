@@ -19,7 +19,7 @@ This is the most common type of hysteresis loop.
 
 As plasma concentration rises (the "up" curve), the effect lags behind. After the plasma concentration peaks and starts to fall (the "down" curve), the effect continues to increase, or decreases much more slowly. We see a greater effect at a later time point for the same plasma concentration. This suggests the effect is delayed.
 
-Common Causes of Counter-Clockwise Hysteresis:
+**Common Causes of Counter-Clockwise Hysteresis:**
 Delayed Distribution to the Effect Site: The drug concentration in the plasma (where it's easily measured) is not the same as the concentration at the site of action (e.g., in the brain, in a specific tissue). It takes time for the drug to travel from the blood to this "effect compartment" or "biophase."
 
 Example: Many central nervous system (CNS) drugs. It takes time for them to cross the blood-brain barrier and build up to an effective concentration in the brain tissue where they act.
@@ -46,7 +46,7 @@ What it means: As plasma concentration rises, you get a strong initial effect. H
 
 The key takeaway: You see a lesser effect at a later time point for the same plasma concentration. This indicates the body is developing acute tolerance.
 
-Common Causes of Clockwise Hysteresis:
+**Common Causes of Clockwise Hysteresis:**
 
 Acute Tolerance (Tachyphylaxis): This is the most common cause. The body rapidly adapts to the drug's presence, becoming less sensitive to it.
 Example: Cocaine or amphetamines. The first dose produces a strong euphoric effect. With repeated exposure over a short period (even during the elimination of a single dose), the same blood concentration produces a much weaker response. This is due to mechanisms like the depletion of neurotransmitters (like dopamine) that the drug relies on to work.
