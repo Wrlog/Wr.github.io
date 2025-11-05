@@ -60,7 +60,7 @@ This example illustrates the basic concepts of OOP in Python: encapsulation of d
 
 
 
-##The Four Pillars of OOP
+## The Four Pillars of OOP
 
 
 **1. Encapsulation**
