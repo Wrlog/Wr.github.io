@@ -17,6 +17,8 @@ In a simple "direct" model, we assume the drug concentration directly drives the
 An indirect response model is used when the drug does not act directly on the measured effect. Instead, the drug influences the turnover (the synthesis or degradation) of an endogenous (natural) substance, and it's the level of this substance that we measure as the effect.
 
 **The "Bathtub" Analogy**
+
+
 This is the easiest way to understand it. Think of the effect you are measuring (like the level of a clotting factor, a hormone, or a biomarker) as the water level in a bathtub.
 
 $k_{in}$ (or $R_{syn}$): This is the faucet, representing the body's constant, zero-order production rate of the substance.
@@ -28,6 +30,7 @@ Baseline ($R_0$): With no drug, the faucet ($k_{in}$) and drain ($k_{out}$) are 
 The drug does not directly change the water level. Instead, the drug interferes with the faucet or the drain.
 
 **How the Drug Intervenes: The Four Basic Models**
+
 
 There are four primary ways a drug can act in this system. The drug's effect is often described by a function of its concentration, such as $S(C)$ for stimulation or $I(C)$ for inhibition.
 
