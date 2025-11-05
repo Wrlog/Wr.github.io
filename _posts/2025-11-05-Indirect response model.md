@@ -43,10 +43,10 @@ Inhibition of Loss: The drug "partially clogs the drain." The drug's effect $I(C
 Stimulation of Loss: The drug "opens the drain wider." The drug's effect $S(C)$ speeds up the rate of elimination, $k_{out}$
 
 
-ls**Why We Use IDR Modelsls**
+**Why We Use IDR Modelsls**
 
 
-This is the key to your question. We use these models because they solve major problems that simple, direct models cannot.
+We use these models because they solve major problems that simple, direct models cannot.
 
 1. To Mechanistically Explain Hysteresis (Time Lags)
 This is the most important reason. IDR models are one of the best ways to "collapse" a counter-clockwise hysteresis loop.
