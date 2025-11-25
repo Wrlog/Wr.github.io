@@ -1,159 +1,180 @@
 ---
 layout: default
 class: home
-css: ['pages/index.css']
+css: ["pages/index.css"]
 comments: false
 ---
 
 <!-- Hero Section -->
 <section class="hero-section">
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">{{ site.title }}</h1>
-            <p class="hero-subtitle">{{ site.subtitle }}</p>
-            <p class="hero-description">{{ site.description }}</p>
-            <div class="hero-links">
-                <a href="https://github.com/{{ site.github_username }}" class="btn btn-primary" target="_blank">
-                    <span class="octicon octicon-mark-github"></span> GitHub
-                </a>
-                <a href="{{ site.url }}/about/" class="btn btn-outline">Learn More</a>
-                <a href="{{ site.url }}/portfolio/" class="btn btn-outline">Portfolio</a>
-            </div>
-            <div class="hero-meta">
-                <span class="meta-info">
-                    <span class="octicon octicon-location"></span>
-                    {{ site.location }}
-                </span>
-                <span class="meta-info">
-                    <span class="octicon octicon-mail"></span>
-                    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-                </span>
-            </div>
-        </div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ site.title }}</h1>
+      <p class="hero-subtitle">{{ site.subtitle }}</p>
+      <p class="hero-description">{{ site.description }}</p>
+      <div class="hero-links">
+        <a
+          href="https://github.com/{{ site.github_username }}"
+          class="btn btn-primary"
+          target="_blank"
+        >
+          <span class="octicon octicon-mark-github"></span> GitHub
+        </a>
+        <a href="{{ site.url }}/about/" class="btn btn-outline">Learn More</a>
+        <a href="{{ site.url }}/portfolio/" class="btn btn-outline"
+          >Portfolio</a
+        >
+      </div>
+      <div class="hero-meta">
+        <span class="meta-info">
+          <span class="octicon octicon-location"></span>
+          {{ site.location }}
+        </span>
+        <span class="meta-info">
+          <span class="octicon octicon-mail"></span>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </span>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Skills Section -->
 <section class="skills-section">
-    <div class="container">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Pharmacometric Tools</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">NONMEM</span>
-                    <span class="skill-tag">R</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">vibe coding</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Core Expertise</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">PK/PD Modeling</span>
-                    <span class="skill-tag">Population Modeling</span>
-                    <span class="skill-tag">Clinical Trial Design</span>
-                    <span class="skill-tag">Model Validation</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Research Focus</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Pharmacokinetics</span>
-                    <span class="skill-tag">Pharmacodynamics</span>
-                    <span class="skill-tag">Modeling & Simulation</span>
-                    <span class="skill-tag">Precision Dosing</span>
-                </div>
-            </div>
+  <div class="container">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Pharmacometric Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">NONMEM</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">vibe coding</span>
         </div>
+      </div>
+      <div class="skill-category">
+        <h3>Core Expertise</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">PK/PD Modeling</span>
+          <span class="skill-tag">Population Modeling</span>
+          <span class="skill-tag">Clinical Trial Design</span>
+          <span class="skill-tag">Model Validation</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Research Focus</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Pharmacokinetics</span>
+          <span class="skill-tag">Pharmacodynamics</span>
+          <span class="skill-tag">Modeling & Simulation</span>
+          <span class="skill-tag">Precision Dosing</span>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Recent Posts Section -->
 <section class="container content">
-    <div class="section-header">
-        <h2 class="section-title">Recent Blog Posts</h2>
-        <a href="{{ site.url }}/categories/" class="view-all">View All Posts →</a>
-    </div>
-    <div class="columns">
-        <div class="column two-thirds">
-            <ol class="repo-list">
-                {% assign post_count = 0 %}
-                {% for post in paginator.posts %}
-                    {% if post.title and post.title != "template page" and post.title != "" and post_count < 5 %}
-                        {% assign post_count = post_count | plus: 1 %}
-                        <li class="repo-list-item modern-card">
-                            <h3 class="repo-list-name">
-                                <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                            </h3>
-                            <p class="repo-list-description">
-                                {% if post.excerpt %}
-                                    {{ post.excerpt | strip_html | strip | truncatewords: 30 }}
-                                {% elsif post.description %}
-                                    {{ post.description | strip_html | strip | truncatewords: 30 }}
-                                {% endif %}
-                            </p>
-                            <p class="repo-list-meta">
-                                <span class="meta-info">
-                                    <span class="octicon octicon-calendar"></span> 
-                                    {{ post.date | date: "%Y/%m/%d" }}
-                                </span>
-                                {% for cat in post.categories %}
-                                <span class="meta-info">
-                                    <span class="octicon octicon-file-directory"></span>
-                                    <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
-                                </span>
-                                {% endfor %}
-                            </p>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ol>
-            {% if paginator.total_pages > 1 %}
-            <div class="pagination text-align">
-                <div class="btn-group">
-                    {% if paginator.previous_page %}
-                        {% if paginator.previous_page == 1 %}
-                            <a href="{{ site.url }}/" class="btn btn-outline">&laquo;</a>
-                        {% else %}
-                            <a href="{{ site.url }}/page{{paginator.previous_page}}" class="btn btn-outline">&laquo;</a>
-                        {% endif %}
-                    {% else %}
-                        <button disabled="disabled" href="javascript:;" class="btn btn-outline">&laquo;</button>
-                    {% endif %}
-                    {% if paginator.page == 1 %}
-                        <a href="javascript:;" class="active btn btn-outline">1</a>
-                    {% else %}
-                        <a href="{{ site.url }}/" class="btn btn-outline">1</a>
-                    {% endif %}
-                    {% for count in (2..paginator.total_pages) %}
-                        {% if count == paginator.page %}
-                            <a href="javascript:;" class="active btn btn-outline">{{count}}</a>
-                        {% else %}
-                            <a href="{{ site.url }}/page{{count}}" class="btn btn-outline">{{count}}</a>
-                        {% endif %}
-                    {% endfor %}
-                    {% if paginator.next_page %}
-                        <a href="{{ site.url }}/page{{paginator.next_page}}" class="btn btn-outline">&raquo;</a>
-                    {% else %}
-                        <button disabled="disabled" href="javascript:;" class="btn btn-outline">&raquo;</button>
-                    {% endif %}
-                </div>
-            </div>
-            {% endif %}
+  <div class="section-header">
+    <h2 class="section-title">Recent Blog Posts</h2>
+    <a href="{{ site.url }}/categories/" class="view-all">View All Posts →</a>
+  </div>
+  <div class="columns">
+    <div class="column two-thirds">
+      <ol class="repo-list">
+        {% assign post_count = 0 %} {% for post in paginator.posts %} {% if
+        post.title and post.title != "template page" and post.title != "" and
+        post_count < 5 %} {% assign post_count = post_count | plus: 1 %}
+        <li class="repo-list-item modern-card">
+          <h3 class="repo-list-name">
+            <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+          </h3>
+          <p class="repo-list-description">
+            {% if post.excerpt %} {{ post.excerpt | strip_html | strip |
+            truncatewords: 30 }} {% elsif post.description %} {{
+            post.description | strip_html | strip | truncatewords: 30 }} {%
+            endif %}
+          </p>
+          <p class="repo-list-meta">
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span>
+              {{ post.date | date: "%Y/%m/%d" }}
+            </span>
+            {% for cat in post.categories %}
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}"
+                >{{ cat }}</a
+              >
+            </span>
+            {% endfor %}
+          </p>
+        </li>
+        {% endif %} {% endfor %}
+      </ol>
+      {% if paginator.total_pages > 1 %}
+      <div class="pagination text-align">
+        <div class="btn-group">
+          {% if paginator.previous_page %} {% if paginator.previous_page == 1 %}
+          <a href="{{ site.url }}/" class="btn btn-outline">&laquo;</a>
+          {% else %}
+          <a
+            href="{{ site.url }}/page{{paginator.previous_page}}"
+            class="btn btn-outline"
+            >&laquo;</a
+          >
+          {% endif %} {% else %}
+          <button
+            disabled="disabled"
+            href="javascript:;"
+            class="btn btn-outline"
+          >
+            &laquo;
+          </button>
+          {% endif %} {% if paginator.page == 1 %}
+          <a href="javascript:;" class="active btn btn-outline">1</a>
+          {% else %}
+          <a href="{{ site.url }}/" class="btn btn-outline">1</a>
+          {% endif %} {% for count in (2..paginator.total_pages) %} {% if count
+          == paginator.page %}
+          <a href="javascript:;" class="active btn btn-outline">{{count}}</a>
+          {% else %}
+          <a href="{{ site.url }}/page{{count}}" class="btn btn-outline"
+            >{{count}}</a
+          >
+          {% endif %} {% endfor %} {% if paginator.next_page %}
+          <a
+            href="{{ site.url }}/page{{paginator.next_page}}"
+            class="btn btn-outline"
+            >&raquo;</a
+          >
+          {% else %}
+          <button
+            disabled="disabled"
+            href="javascript:;"
+            class="btn btn-outline"
+          >
+            &raquo;
+          </button>
+          {% endif %}
         </div>
-        <div class="column one-third">
-            {% include sidebar-popular-repo.html %}
-        </div>
+      </div>
+      {% endif %}
     </div>
+    <div class="column one-third">{% include sidebar-popular-repo.html %}</div>
+  </div>
 </section>
 
 <!-- Call to Action -->
 <section class="cta-section">
-    <div class="container">
-        <h2>Interested in Collaborating?</h2>
-        <p>Feel free to reach out for research opportunities, collaborations, or just to connect!</p>
-        <a href="mailto:{{ site.email }}" class="btn btn-primary">Get In Touch</a>
-    </div>
+  <div class="container">
+    <h2>Interested in Collaborating?</h2>
+    <p>
+      Feel free to reach out for research opportunities, collaborations, or just
+      to connect!
+    </p>
+    <a href="mailto:{{ site.email }}" class="btn btn-primary">Get In Touch</a>
+  </div>
 </section>
-
