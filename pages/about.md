@@ -124,7 +124,7 @@ My research focuses on:
 - **PK/PD Modeling**: Developing and validating integrated pharmacokinetic-pharmacodynamic models
 - **Population Pharmacokinetics**: Characterizing variability in drug exposure and response across populations
 - **Modeling & Simulation**: Using NONMEM, R, Python, and mrgsolve for quantitative pharmacology
-- **Clinical Trial Analysis**: Analyzing pharmacokinetic and pharmacodynamic data from clinical studies
+- **Clinical Trial Design**: Designing and optimizing clinical trial protocols using model-informed approaches
 - **Machine Learning Integration**: Applying ML/DL techniques to enhance pharmacometric modeling
 - **Model-Informed Precision Dosing (MIPD)**: Optimizing individualized dosing regimens for pediatric patients
 
