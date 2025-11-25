@@ -40,11 +40,20 @@ class AboutPageEnhancer {
                 return;
             }
             console.log('AboutPageEnhancer: Initializing...');
+            
+            // Verify CSS is loaded
+            const testElement = document.querySelector('.about-section');
+            if (testElement) {
+                const styles = window.getComputedStyle(testElement);
+                console.log('AboutPageEnhancer: CSS loaded - padding:', styles.padding);
+            }
 
             this.skillCategories = document.querySelectorAll('.skill-item, .markdown-body h3');
             this.timelineItems = document.querySelectorAll('.timeline-item, .markdown-body h3 + p');
             this.contactSection = document.querySelector('.contact-info, .markdown-body h2:last-of-type');
             this.sections = document.querySelectorAll('.about-section .markdown-body > h2');
+            
+            console.log('AboutPageEnhancer: Found', this.sections.length, 'sections');
 
             this.setupSkillTagsAnimation();
             this.setupTimelineAnimation();
