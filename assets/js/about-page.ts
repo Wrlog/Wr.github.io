@@ -35,16 +35,16 @@ class AboutPageEnhancer {
     private setup(): void {
         try {
             // Only run on about page
-            if (!document.querySelector('.about-section')) {
+            const aboutSection = document.querySelector('.about-section');
+            if (!aboutSection) {
                 console.log('AboutPageEnhancer: .about-section not found, skipping');
                 return;
             }
             console.log('AboutPageEnhancer: Initializing...');
             
             // Verify CSS is loaded
-            const testElement = document.querySelector('.about-section');
-            if (testElement) {
-                const styles = window.getComputedStyle(testElement);
+            if (aboutSection) {
+                const styles = window.getComputedStyle(aboutSection);
                 console.log('AboutPageEnhancer: CSS loaded - padding:', styles.padding);
             }
 
@@ -130,6 +130,7 @@ class AboutPageEnhancer {
                 
                 const sectionContent = this.getNextSiblingUntil(element, 'h2') as HTMLElement;
                 
+                // Check if sectionContent exists before accessing style
                 if (sectionContent && sectionContent.style) {
                     sectionContent.style.opacity = '0';
                     sectionContent.style.transform = 'translateY(20px)';
@@ -137,7 +138,7 @@ class AboutPageEnhancer {
 
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
-                            if (entry.isIntersecting && sectionContent.style) {
+                            if (entry.isIntersecting) {
                                 sectionContent.style.opacity = '1';
                                 sectionContent.style.transform = 'translateY(0)';
                                 observer.unobserve(sectionContent);
@@ -157,7 +158,7 @@ class AboutPageEnhancer {
     private getNextSiblingUntil(element: Element, selector: string): Element | null {
         if (!element || !element.nextElementSibling) return null;
         
-        let next = element.nextElementSibling;
+        let next: Element | null = element.nextElementSibling;
         const siblings: Element[] = [];
         
         while (next) {
@@ -179,7 +180,7 @@ class AboutPageEnhancer {
             element.style.cursor = 'pointer';
             element.title = 'Click to copy';
             
-            link.addEventListener('click', (e) => {
+            link.addEventListener('click', (e: Event) => {
                 e.preventDefault();
                 const href = link.getAttribute('href');
                 if (href) {
@@ -205,7 +206,11 @@ class AboutPageEnhancer {
             textArea.style.opacity = '0';
             document.body.appendChild(textArea);
             textArea.select();
-            document.execCommand('copy');
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Fallback copy failed', err);
+            }
             document.body.removeChild(textArea);
         }
     }
@@ -250,7 +255,8 @@ class AboutPageEnhancer {
         cards.forEach(card => {
             const element = card as HTMLElement;
             
-            element.addEventListener('mousemove', (e) => {
+            // Fix: Explicitly type 'e' as MouseEvent to access clientX/Y
+            element.addEventListener('mousemove', (e: MouseEvent) => {
                 const rect = element.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -296,8 +302,6 @@ class AboutPageEnhancer {
 
     // Subtle parallax effects for background elements
     private setupParallaxEffects(): void {
-        const parallaxElements = document.querySelectorAll('.about-section::before, .about-section::after');
-        
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const rate = scrolled * 0.5;
@@ -305,7 +309,9 @@ class AboutPageEnhancer {
             // Apply parallax to background gradients
             const section = document.querySelector('.about-section') as HTMLElement;
             if (section) {
-                section.style.backgroundPositionY = `${rate}px`;
+                // Fix: backgroundPositionY is not standard in strictly typed CSSStyleDeclaration.
+                // We use 'backgroundPosition' instead or a type cast if specific Y control is needed.
+                section.style.backgroundPosition = `center ${rate}px`;
             }
         }, { passive: true });
     }
@@ -353,4 +359,3 @@ try {
 } catch (error) {
     console.error('AboutPageEnhancer: Failed to initialize', error);
 }
-
