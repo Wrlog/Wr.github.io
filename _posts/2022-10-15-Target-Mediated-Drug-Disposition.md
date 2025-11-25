@@ -5,7 +5,6 @@ categories: Pharmacokinetic
 description: Comprehensive overview of target-mediated drug disposition, its mathematical framework, and implications for biologics pharmacokinetics
 keywords: TMDD, Target-Mediated Drug Disposition, Nonlinear Pharmacokinetics, Biologics, Monoclonal Antibodies, Michaelis-Menten, Pharmacokinetics
 date: 2022-10-15
-published: true
 ---
 
 ## Introduction
