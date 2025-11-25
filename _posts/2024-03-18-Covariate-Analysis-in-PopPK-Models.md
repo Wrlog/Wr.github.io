@@ -137,7 +137,7 @@ $THETA
 The forward selection process evaluates each potential covariate-parameter relationship:
 
 1. **Univariate Testing:** Test each covariate individually on each parameter
-2. **Statistical Criteria:** 
+2. **Statistical Criteria:**
    - ΔOFV > 3.84 (p < 0.05, 1 degree of freedom)
    - ΔOFV > 6.63 (p < 0.01, 1 degree of freedom)
    - Improvement in AIC/BIC
@@ -256,6 +256,7 @@ $$
 ### Information Criteria
 
 **Akaike Information Criterion (AIC):**
+
 $$
 AIC = OFV + 2 \times p
 $$
@@ -263,6 +264,7 @@ $$
 where $p$ is the number of parameters.
 
 **Bayesian Information Criterion (BIC):**
+
 $$
 BIC = OFV + \ln(n) \times p
 $$
