@@ -10,11 +10,11 @@ keywords:  Pharmacokinetic,Clinical
 
 **Renal Dysfunction**
 
-Drug may require adjustment when :
+Drugs may require adjustment when:
 
-1) Drug >50% clearaed by renal excretion
+1) Drug >50% cleared by renal excretion
 
-2) Renal <50% of normal
+2) Renal function <50% of normal
 
 
 **Pregnancy**

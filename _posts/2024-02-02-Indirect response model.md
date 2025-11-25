@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Pharmacodynamic】Exposrue Response Model
+title: 【Pharmacodynamic】Exposure Response Model
 categories: Pharmacodynamic
 description: PD
 keywords:  Pharmacodynamic, Clinical
@@ -40,10 +40,10 @@ Stimulation of Production: The drug "turns up the faucet." The drug's effect $S(
 
 Inhibition of Loss: The drug "partially clogs the drain." The drug's effect $I(C)$ slows the rate of elimination, $k_{out}$.
 
-Stimulation of Loss: The drug "opens the drain wider." The drug's effect $S(C)$ speeds up the rate of elimination, $k_{out}$
+Stimulation of Loss: The drug "opens the drain wider." The drug's effect $S(C)$ speeds up the rate of elimination, $k_{out}$.
 
 
-**Why We Use IDR Modelsls**
+**Why We Use IDR Models**
 
 
 We use these models because they solve major problems that simple, direct models cannot.
