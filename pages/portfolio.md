@@ -34,14 +34,12 @@ This project focuses on developing mechanistic Population PK/PD models for Infli
   - Implemented XGBoost (gradient boosting) and Random Forest (bagging) algorithms to predict disease response
   - Developed Variational Autoencoder (VAE) models for feature extraction and dimensionality reduction
   - Compared ML model performance with traditional PK/PD models
-- **Tool Development**: Created interactive R-Shiny dashboards for visualizing PK simulation data and supporting biomarker-guided decision-making
-- **Software/Tools**: NONMEM, R (Tidyverse, ggplot2), Python (scikit-learn, TensorFlow/PyTorch), mrgsolve, Git/GitHub
+- **Software/Tools**: NONMEM, R (Tidyverse, ggplot2), Python (scikit-learn, TensorFlow/PyTorch), mrgsolve
 
 **Key Findings**:
 - Identified critical covariates affecting Infliximab pharmacokinetics in pediatric patients
 - Established exposure-response relationships that inform optimal dosing strategies
 - Demonstrated improved predictive performance through ML/DL model integration
-- Developed user-friendly tools that reduce data interpretation time for clinical teams
 - Contributed to personalized dosing recommendations for pediatric patients
 
 **Publications/Presentations**: 
@@ -71,7 +69,8 @@ This research project focuses on optimizing prophylactic dosing regimens for pip
 - **Covariate Analysis**: Evaluated the impact of body size (weight, BSA), renal function (creatinine clearance), and critical illness status on drug clearance and volume of distribution
 - **Model-Informed Simulations**: Conducted Monte Carlo simulations to evaluate different dosing regimens and determine optimal dosing strategies
 - **Target Attainment Analysis**: Assessed the probability of target attainment (PTA) for prophylactic efficacy endpoints
-- **Software/Tools**: NONMEM, R (Tidyverse, ggplot2), Pirana, mrgsolve
+- **Tool Development (R-Shiny)**: Designed and deployed interactive R-Shiny dashboards to visualize PK simulation data, reducing data interpretation time for clinical teams and supporting biomarker-guided decision-making
+- **Software/Tools**: NONMEM, R (Tidyverse, ggplot2, R-Shiny), Pirana, mrgsolve
 
 **Key Findings**:
 - Identified body size and renal function as critical covariates affecting piperacillin pharmacokinetics
@@ -87,44 +86,6 @@ This research project focuses on optimizing prophylactic dosing regimens for pip
 
 **Links**:
 - [Publication Link](https://journals.asm.org/doi/full/10.1128/aac.01227-24)
-- [GitHub Repository](https://github.com/WenruiTan/) (if code is available)
-
----
-
-### Research Project 3: Machine Learning and Deep Learning Applications in Pharmacometrics
-*Cincinnati Children's Hospital Medical Center | Aug 2022 - Present*
-
-**Description**: 
-This project explores the integration of advanced machine learning and deep learning techniques with traditional pharmacometric modeling approaches. The research focuses on developing novel ML/DL methodologies to enhance predictive performance, handle complex non-linear relationships, and improve model interpretability in pharmacometric applications.
-
-**Objectives**: 
-- Evaluate the performance of ML algorithms (XGBoost, Random Forest) in pharmacometric applications
-- Develop Variational Autoencoder (VAE) models for feature extraction and dimensionality reduction
-- Compare ML/DL approaches with traditional PK/PD modeling methods
-- Integrate ML predictions with mechanistic models for enhanced performance
-- Develop tools and workflows for ML/DL implementation in pharmacometrics
-
-**Methodology**: 
-- **XGBoost (Gradient Boosting)**: Implemented gradient boosting algorithms for disease response prediction, handling complex non-linear relationships and feature interactions
-- **Random Forest (Bagging)**: Applied ensemble bagging methods for robust predictions and feature importance analysis
-- **Variational Autoencoders (VAE)**: Developed deep learning models for unsupervised feature learning, dimensionality reduction, and data generation
-- **Neural ODEs**: Explored neural ordinary differential equations for modeling dynamic systems
-- **Model Integration**: Combined ML predictions with mechanistic PK/PD models for hybrid approaches
-- **Software/Tools**: Python (scikit-learn, XGBoost, TensorFlow, PyTorch), R, Git/GitHub
-
-**Key Findings**:
-- Demonstrated improved predictive performance using ML algorithms compared to traditional approaches
-- Identified key features and biomarkers through ML feature importance analysis
-- Developed VAE models capable of capturing complex data distributions
-- Established workflows for integrating ML/DL with pharmacometric modeling
-- Contributed to the advancement of model-informed precision dosing (MIPD) approaches
-
-**Publications/Presentations**: 
-- Research findings integrated into Infliximab PK/PD modeling project
-- Methodology presented at various conferences and research forums
-
-**Links**:
-- [GitHub Repository](https://github.com/WenruiTan/) (if code is available)
 
 ---
 
