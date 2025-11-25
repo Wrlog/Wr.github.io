@@ -4,6 +4,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
         this.currentFilter = 'all';
         this.init();
     }
+
     PortfolioPageEnhancer.prototype.init = function () {
         var _this = this;
         if (document.readyState === 'loading') {
@@ -13,6 +14,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
             this.setup();
         }
     };
+
     PortfolioPageEnhancer.prototype.setup = function () {
         // Only run on portfolio page
         if (!document.querySelector('.portfolio-section')) {
@@ -22,15 +24,109 @@ var PortfolioPageEnhancer = /** @class */ (function () {
         console.log('PortfolioPageEnhancer: Initializing...');
         this.projectCards = document.querySelectorAll('.project-card, .markdown-body h3');
         this.techTags = document.querySelectorAll('.tech-tag, .markdown-body ul li');
+        
+        // Initialize all features
         this.setupProjectCards();
         this.setupTechTags();
-        this.setupFiltering();
+        this.setupFiltering(); // This is the fixed version
         this.setupProjectAnimations();
         this.setupPublicationLinks();
         this.setupAwardAnimations();
         this.setupImageLazyLoading();
         this.setupShareButtons();
     };
+
+    // --- FIXED FILTERING LOGIC START ---
+
+    // Create filter button container
+    PortfolioPageEnhancer.prototype.createFilterContainer = function () {
+        var _this = this;
+        var existingFilter = document.querySelector('.portfolio-filters');
+        if (existingFilter) return null;
+
+        var container = document.createElement('div');
+        container.className = 'portfolio-filters';
+        
+        // Note: Styles are now handled in the CSS string at the bottom of the file
+        
+        var filters = ['All', 'Research', 'Publications', 'Awards'];
+        
+        filters.forEach(function (filter) {
+            var button = document.createElement('button');
+            button.textContent = filter;
+            button.className = 'filter-btn';
+            
+            // Set 'All' as active initially
+            if (filter.toLowerCase() === 'all') {
+                button.classList.add('active');
+            }
+
+            button.addEventListener('click', function () { 
+                _this.filterProjects(filter.toLowerCase()); 
+            });
+            
+            container.appendChild(button);
+        });
+
+        return container;
+    };
+
+    // Filter projects by category/tag
+    PortfolioPageEnhancer.prototype.setupFiltering = function () {
+        // Create filter buttons
+        var filterContainer = this.createFilterContainer();
+        if (filterContainer) {
+            var parent = document.querySelector('.portfolio-section .markdown-body');
+            // Insert at the very top of the markdown body, regardless of what tags are there
+            if (parent) {
+                parent.insertBefore(filterContainer, parent.firstChild);
+            }
+        }
+    };
+
+    // Filter projects based on selection
+    PortfolioPageEnhancer.prototype.filterProjects = function (filter) {
+        this.currentFilter = filter;
+
+        // 1. Update Button Visuals (using classes instead of inline styles)
+        var buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(function(btn) {
+            if (btn.textContent.toLowerCase() === filter) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // 2. Filter Cards
+        this.projectCards.forEach(function (card) {
+            var element = card;
+            var cardText = (element.textContent || '').toLowerCase();
+            
+            var isMatch = filter === 'all' || cardText.indexOf(filter) !== -1;
+
+            if (isMatch) {
+                element.style.display = ''; // Reset display to default (block/flex)
+                // Small timeout allows display change to register before opacity transition
+                setTimeout(function() {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0) scale(1)';
+                }, 10);
+            } else {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px) scale(0.95)';
+                setTimeout(function () {
+                    // Only hide if it's still supposed to be hidden (prevents rapid clicking bugs)
+                    if (element.style.opacity === '0') {
+                        element.style.display = 'none';
+                    }
+                }, 300);
+            }
+        });
+    };
+    // --- FIXED FILTERING LOGIC END ---
+
+
     // Enhanced project card interactions
     PortfolioPageEnhancer.prototype.setupProjectCards = function () {
         this.projectCards.forEach(function (card, index) {
@@ -65,6 +161,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
             });
         });
     };
+
     // Interactive tech tags with ripple effect
     PortfolioPageEnhancer.prototype.setupTechTags = function () {
         var _this = this;
@@ -80,6 +177,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
             });
         });
     };
+
     // Create ripple effect on click
     PortfolioPageEnhancer.prototype.createRippleEffect = function (event, element) {
         var ripple = document.createElement('span');
@@ -101,6 +199,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
         element.appendChild(ripple);
         setTimeout(function () { return ripple.remove(); }, 600);
     };
+
     // Highlight projects related to clicked tag
     PortfolioPageEnhancer.prototype.highlightRelatedProjects = function (tagText) {
         this.projectCards.forEach(function (card) {
@@ -116,82 +215,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
             }
         });
     };
-    // Filter projects by category/tag
-    PortfolioPageEnhancer.prototype.setupFiltering = function () {
-        var _a;
-        // Create filter buttons if they don't exist
-        var filterContainer = this.createFilterContainer();
-        if (filterContainer) {
-            (_a = document.querySelector('.portfolio-section .markdown-body')) === null || _a === void 0 ? void 0 : _a.insertBefore(filterContainer, document.querySelector('.portfolio-section .markdown-body > h2:first-of-type'));
-        }
-    };
-    // Create filter button container
-    PortfolioPageEnhancer.prototype.createFilterContainer = function () {
-        var _this = this;
-        var existingFilter = document.querySelector('.portfolio-filters');
-        if (existingFilter)
-            return null;
-        var container = document.createElement('div');
-        container.className = 'portfolio-filters';
-        container.style.cssText = "\n            display: flex;\n            gap: 10px;\n            flex-wrap: wrap;\n            margin-bottom: 40px;\n            justify-content: center;\n        ";
-        var filters = ['All', 'Research', 'Publications', 'Awards'];
-        filters.forEach(function (filter) {
-            var button = document.createElement('button');
-            button.textContent = filter;
-            button.className = 'filter-btn';
-            button.style.cssText = "\n                padding: 10px 20px;\n                border: 2px solid #667eea;\n                background: white;\n                color: #667eea;\n                border-radius: 25px;\n                cursor: pointer;\n                font-weight: 600;\n                transition: all 0.3s ease;\n            ";
-            button.addEventListener('click', function () { return _this.filterProjects(filter.toLowerCase()); });
-            button.addEventListener('mouseenter', function () {
-                button.style.background = '#667eea';
-                button.style.color = 'white';
-            });
-            button.addEventListener('mouseleave', function () {
-                if (_this.currentFilter !== filter.toLowerCase()) {
-                    button.style.background = 'white';
-                    button.style.color = '#667eea';
-                }
-            });
-            container.appendChild(button);
-        });
-        return container;
-    };
-    // Filter projects based on selection
-    PortfolioPageEnhancer.prototype.filterProjects = function (filter) {
-        this.currentFilter = filter;
-        this.projectCards.forEach(function (card) {
-            var element = card;
-            var cardText = element.textContent || '';
-            if (filter === 'all') {
-                element.style.display = '';
-                element.style.opacity = '1';
-            }
-            else if (cardText.toLowerCase().indexOf(filter) !== -1) {
-                element.style.display = '';
-                element.style.opacity = '1';
-                element.style.animation = 'fadeIn 0.5s ease';
-            }
-            else {
-                element.style.opacity = '0';
-                element.style.transform = 'scale(0.9)';
-                setTimeout(function () {
-                    element.style.display = 'none';
-                }, 300);
-            }
-        });
-        // Update filter button styles
-        document.querySelectorAll('.filter-btn').forEach(function (btn) {
-            var _a;
-            var button = btn;
-            if (((_a = button.textContent) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === filter) {
-                button.style.background = '#667eea';
-                button.style.color = 'white';
-            }
-            else {
-                button.style.background = 'white';
-                button.style.color = '#667eea';
-            }
-        });
-    };
+
     // Animate project cards on scroll
     PortfolioPageEnhancer.prototype.setupProjectAnimations = function () {
         var observer = new IntersectionObserver(function (entries) {
@@ -208,6 +232,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
         }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
         this.projectCards.forEach(function (card) { return observer.observe(card); });
     };
+
     // Enhanced publication links with preview
     PortfolioPageEnhancer.prototype.setupPublicationLinks = function () {
         var pubLinks = document.querySelectorAll('.publication-item a, .markdown-body a[href*="doi"], .markdown-body a[href*="journal"]');
@@ -228,6 +253,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
             });
         });
     };
+
     // Animate awards with celebration effect
     PortfolioPageEnhancer.prototype.setupAwardAnimations = function () {
         var _this = this;
@@ -253,6 +279,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
             observer.observe(element);
         });
     };
+
     // Celebration animation for awards
     PortfolioPageEnhancer.prototype.celebrateAward = function (element) {
         element.style.animation = 'celebrate 0.6s ease';
@@ -271,6 +298,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
             }, i * 100);
         }
     };
+
     // Lazy load images (if any)
     PortfolioPageEnhancer.prototype.setupImageLazyLoading = function () {
         var images = document.querySelectorAll('.portfolio-section img');
@@ -288,6 +316,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
         });
         images.forEach(function (img) { return imageObserver.observe(img); });
     };
+
     // Add share buttons for projects
     PortfolioPageEnhancer.prototype.setupShareButtons = function () {
         var _this = this;
@@ -316,6 +345,7 @@ var PortfolioPageEnhancer = /** @class */ (function () {
             }
         });
     };
+
     // Share project functionality
     PortfolioPageEnhancer.prototype.shareProject = function (title, url) {
         if (navigator.share) {
@@ -333,10 +363,93 @@ var PortfolioPageEnhancer = /** @class */ (function () {
     };
     return PortfolioPageEnhancer;
 }());
+
 // Add CSS animations dynamically
+// Updated to include robust Button Styles
 var style = document.createElement('style');
-style.textContent = "\n    @keyframes pulse {\n        0%, 100% { transform: scale(1); }\n        50% { transform: scale(1.05); }\n    }\n    \n    @keyframes ripple {\n        to {\n            transform: scale(4);\n            opacity: 0;\n        }\n    }\n    \n    @keyframes fadeIn {\n        from {\n            opacity: 0;\n            transform: translateY(20px);\n        }\n        to {\n            opacity: 1;\n            transform: translateY(0);\n        }\n    }\n    \n    @keyframes celebrate {\n        0%, 100% { transform: scale(1); }\n        50% { transform: scale(1.05) rotate(2deg); }\n    }\n    \n    @keyframes sparkle {\n        0% {\n            opacity: 1;\n            transform: translateY(0) scale(1);\n        }\n        100% {\n            opacity: 0;\n            transform: translateY(-50px) scale(0.5);\n        }\n    }\n";
+style.textContent = `
+    /* Filter Container Layout */
+    .portfolio-filters {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Filter Button Styling */
+    .filter-btn {
+        padding: 10px 24px;
+        border: 2px solid #667eea;
+        background: transparent;
+        color: #667eea;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        font-family: inherit; /* Matches site font */
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
+        -webkit-appearance: none;
+    }
+
+    /* Hover State */
+    .filter-btn:hover {
+        background: rgba(102, 126, 234, 0.1);
+        transform: translateY(-2px);
+    }
+
+    /* Active State */
+    .filter-btn.active {
+        background: #667eea;
+        color: white;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        transform: translateY(-2px);
+    }
+
+    /* Existing Keyframes */
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes celebrate {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05) rotate(2deg); }
+    }
+    
+    @keyframes sparkle {
+        0% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.5);
+        }
+    }
+`;
 document.head.appendChild(style);
+
 // Initialize when DOM is ready
 if (document.querySelector('.portfolio-section')) {
     new PortfolioPageEnhancer();
