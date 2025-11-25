@@ -134,11 +134,11 @@ ui <- dashboardPage(
 )
 
 server <- function(input, output, session) {
-  
+
   sim_results <- eventReactive(input$run_sim, {
     withProgress(message = "Running simulations...", value = 0, {
       setProgress(0.2, detail = "Preparing patient parameters")
-      
+
       patient_params <- data.frame(
         ID = 1:input$n_sims,
         WT = rnorm(input$n_sims, input$weight, input$weight * 0.2),
@@ -150,11 +150,11 @@ server <- function(input, output, session) {
           AGE = pmax(0.1, pmin(18, AGE)),
           CRCL = pmax(10, pmin(200, CRCL))
         )
-      
+
       setProgress(0.4, detail = "Simulating PK profiles")
-      
+
       dose_mg <- input$dose * patient_params$WT
-      
+
       sim_data <- lapply(1:input$n_sims, function(i) {
         ev <- ev(amt = dose_mg[i], ii = as.numeric(input$interval), addl = 3)
         out <- mod %>%
@@ -169,9 +169,9 @@ server <- function(input, output, session) {
         return(out)
       }) %>%
         bind_rows()
-      
+
       setProgress(0.8, detail = "Calculating PK metrics")
-      
+
       pk_metrics <- sim_data %>%
         group_by(ID) %>%
         summarise(
@@ -182,17 +182,17 @@ server <- function(input, output, session) {
           WT = first(WT),
           CRCL = first(CRCL)
         )
-      
+
       setProgress(1.0, detail = "Complete")
-      
+
       list(sim_data = sim_data, pk_metrics = pk_metrics, patient_params = patient_params)
     })
   })
-  
+
   output$conc_plot <- renderPlotly({
     results <- sim_results()
     if (is.null(results)) return(NULL)
-    
+
     p <- results$sim_data %>%
       filter(ID <= 10) %>%
       ggplot(aes(x = time, y = CP, group = ID, color = factor(ID))) +
@@ -203,32 +203,32 @@ server <- function(input, output, session) {
            title = "Concentration-Time Profiles (Sample of 10 patients)") +
       theme_minimal() +
       theme(legend.position = "none")
-    
+
     ggplotly(p, tooltip = c("time", "CP", "ID"))
   })
-  
+
   output$auc <- renderText({
     results <- sim_results()
     if (is.null(results)) return("--")
     paste0(round(mean(results$pk_metrics$AUC, na.rm = TRUE), 1), " mg·h/L")
   })
-  
+
   output$cmax <- renderText({
     results <- sim_results()
     if (is.null(results)) return("--")
     paste0(round(mean(results$pk_metrics$Cmax, na.rm = TRUE), 1), " mg/L")
   })
-  
+
   output$cmin <- renderText({
     results <- sim_results()
     if (is.null(results)) return("--")
     paste0(round(mean(results$pk_metrics$Cmin, na.rm = TRUE), 1), " mg/L")
   })
-  
+
   output$summary_table <- DT::renderDataTable({
     results <- sim_results()
     if (is.null(results)) return(NULL)
-    
+
     results$pk_metrics %>%
       summarise(
         Metric = c("AUC (mg·h/L)", "Cmax (mg/L)", "Cmin (mg/L)"),
@@ -240,18 +240,18 @@ server <- function(input, output, session) {
       DT::datatable(options = list(pageLength = 10, dom = 't'), rownames = FALSE) %>%
       DT::formatRound(columns = 2:5, digits = 2)
   })
-  
+
   output$dose_response <- renderPlotly({
     results <- sim_results()
     if (is.null(results)) return(NULL)
-    
+
     dose_range <- seq(50, 150, by = 25)
     dose_effects <- data.frame(
       Dose = rep(dose_range, each = input$n_sims),
       AUC = NA,
       Cmin = NA
     )
-    
+
     p <- results$pk_metrics %>%
       ggplot(aes(x = WT, y = AUC, color = CRCL)) +
       geom_point(alpha = 0.6) +
@@ -260,18 +260,18 @@ server <- function(input, output, session) {
       labs(x = "Weight (kg)", y = "AUC (mg·h/L)",
            title = "AUC vs Body Weight (colored by Creatinine Clearance)") +
       theme_minimal()
-    
+
     ggplotly(p)
   })
-  
+
   output$optimal_dose <- renderText({
     results <- sim_results()
     if (is.null(results)) return("Run simulation first")
-    
+
     target_pta <- results$pk_metrics %>%
       mutate(PTA = ifelse(Cmin >= 64, 1, 0)) %>%
       summarise(PTA = mean(PTA))
-    
+
     if (target_pta$PTA >= 0.9) {
       paste0(input$dose, " mg/kg every ", input$interval, " hours\n",
              "PTA: ", round(target_pta$PTA * 100, 1), "%")
@@ -281,11 +281,11 @@ server <- function(input, output, session) {
              "Current PTA: ", round(target_pta$PTA * 100, 1), "%")
     }
   })
-  
+
   output$pta_plot <- renderPlotly({
     results <- sim_results()
     if (is.null(results)) return(NULL)
-    
+
     pta_data <- results$pk_metrics %>%
       mutate(
         PTA_64 = ifelse(Cmin >= 64, 1, 0),
@@ -297,7 +297,7 @@ server <- function(input, output, session) {
         PTA_32 = mean(PTA_32),
         .groups = 'drop'
       )
-    
+
     p <- pta_data %>%
       pivot_longer(cols = c(PTA_64, PTA_32), names_to = "Target", values_to = "PTA") %>%
       ggplot(aes(x = WT, y = PTA, fill = Target)) +
@@ -309,23 +309,23 @@ server <- function(input, output, session) {
            title = "PTA by Weight Category") +
       theme_minimal() +
       theme(axis.text.x = element_text(angle = 45, hjust = 1))
-    
+
     ggplotly(p)
   })
-  
+
   output$patient_table <- DT::renderDataTable({
     results <- sim_results()
     if (is.null(results)) return(NULL)
-    
+
     results$patient_params %>%
       DT::datatable(options = list(pageLength = 15, scrollX = TRUE)) %>%
       DT::formatRound(columns = c("WT", "AGE", "CRCL"), digits = 2)
   })
-  
+
   output$covariate_cl <- renderPlotly({
     results <- sim_results()
     if (is.null(results)) return(NULL)
-    
+
     p <- results$pk_metrics %>%
       ggplot(aes(x = CRCL, y = AUC, color = WT)) +
       geom_point(alpha = 0.6) +
@@ -334,14 +334,14 @@ server <- function(input, output, session) {
       labs(x = "Creatinine Clearance (mL/min)", y = "AUC (mg·h/L)",
            title = "Effect of Renal Function on Exposure") +
       theme_minimal()
-    
+
     ggplotly(p)
   })
-  
+
   output$covariate_vd <- renderPlotly({
     results <- sim_results()
     if (is.null(results)) return(NULL)
-    
+
     p <- results$pk_metrics %>%
       ggplot(aes(x = WT, y = Cmax, color = CRCL)) +
       geom_point(alpha = 0.6) +
@@ -350,11 +350,10 @@ server <- function(input, output, session) {
       labs(x = "Weight (kg)", y = "Cmax (mg/L)",
            title = "Effect of Body Size on Peak Concentration") +
       theme_minimal()
-    
+
     ggplotly(p)
   })
 }
 
 shinyApp(ui = ui, server = server)
 ```
-

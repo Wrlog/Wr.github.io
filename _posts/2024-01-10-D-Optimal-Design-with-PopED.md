@@ -17,7 +17,7 @@ pkmod <- function(model_switch, xt, parameters, poped.db) {
   with(as.list(parameters), {
     y <- xt
     N <- floor(xt/TAU) + 1
-    y <- (DOSE/V) * (KA/(KA - CL/V)) * 
+    y <- (DOSE/V) * (KA/(KA - CL/V)) *
          (exp(-(CL/V) * (xt - (N - 1) * TAU)) - exp(-KA * (xt - (N - 1) * TAU)))
     return(list(y = y, poped.db = poped.db))
   })
@@ -38,7 +38,7 @@ ff <- function(model_switch, xt, parameters, poped.db) {
   with(as.list(parameters), {
     y <- xt
     N <- floor(xt/TAU) + 1
-    y <- (DOSE/V) * (KA/(KA - CL/V)) * 
+    y <- (DOSE/V) * (KA/(KA - CL/V)) *
          (exp(-(CL/V) * (xt - (N - 1) * TAU)) - exp(-KA * (xt - (N - 1) * TAU)))
     return(list(y = y, poped.db = poped.db))
   })
@@ -48,7 +48,7 @@ feps <- function(model_switch, xt, parameters, epsi, poped.db) {
   returnArgs <- ff(model_switch, xt, parameters, poped.db)
   y <- returnArgs[[1]]
   poped.db <- returnArgs[[2]]
-  
+
   y <- y * (1 + epsi[, 1]) + epsi[, 2]
   return(list(y = y, poped.db = poped.db))
 }
@@ -76,8 +76,8 @@ poped.db <- create.poped.database(
   ourzero = 0
 )
 
-output <- poped_optim(poped.db, opt_xt = TRUE, opt_a = FALSE, 
-                      method = c("DOSE"), 
+output <- poped_optim(poped.db, opt_xt = TRUE, opt_a = FALSE,
+                      method = c("DOSE"),
                       control = list(iter_max = 50))
 
 plot_model_prediction(poped.db, model_num_points = 500)
@@ -89,29 +89,29 @@ evaluate_design <- function(poped.db, n_samples = c(3, 4, 5, 6)) {
     Efficiency = numeric(),
     stringsAsFactors = FALSE
   )
-  
+
   for (n in n_samples) {
     design_space <- expand.grid(
       Group = 1:2,
       Sample = 1:n
     )
-    
+
     candidate_times <- list(
       "Sparse" = c(0.5, 6, 24),
       "Moderate" = c(0.5, 2, 6, 12, 24),
       "Dense" = c(0.5, 1, 2, 4, 6, 12, 18, 24),
       "Optimal" = output$xt
     )
-    
+
     for (design_name in names(candidate_times)) {
       if (length(candidate_times[[design_name]]) == n) {
         poped.db.tmp <- poped.db
-        poped.db.tmp$xt <- matrix(rep(candidate_times[[design_name]], 2), 
+        poped.db.tmp$xt <- matrix(rep(candidate_times[[design_name]], 2),
                                   nrow = 2, byrow = TRUE)
-        
+
         ofv <- evaluate_design(poped.db.tmp)$ofv
         efficiency <- (ofv / evaluate_design(poped.db)$ofv) * 100
-        
+
         results <- rbind(results, data.frame(
           N_Samples = n,
           Design = design_name,
@@ -121,7 +121,7 @@ evaluate_design <- function(poped.db, n_samples = c(3, 4, 5, 6)) {
       }
     }
   }
-  
+
   results
 }
 
@@ -131,7 +131,7 @@ p1 <- design_comparison %>%
   ggplot(aes(x = factor(N_Samples), y = Efficiency, fill = Design)) +
   geom_bar(stat = "identity", position = "dodge", alpha = 0.8) +
   geom_hline(yintercept = 100, linetype = "dashed", color = "red") +
-  annotate("text", x = 2, y = 105, label = "Reference (6 samples)", 
+  annotate("text", x = 2, y = 105, label = "Reference (6 samples)",
            color = "red", size = 3) +
   scale_fill_viridis_d(begin = 0.2, end = 0.8) +
   labs(x = "Number of Samples", y = "Design Efficiency (%)",
@@ -218,4 +218,3 @@ cat("  - Captures absorption, distribution, and elimination phases\n")
 cat("  - Minimizes patient visits while maintaining statistical power\n")
 cat("  - Robust to parameter uncertainty\n")
 ```
-
