@@ -148,8 +148,7 @@ Interested in collaborating on pharmacometric research or learning more about my
 I welcome opportunities for:
 - Research collaborations in PK/PD modeling
 - Methodological discussions in pharmacometrics
-- Academic and industry partnerships
-- Consulting opportunities in quantitative pharmacology
+- Internship or job opportunity
 
 ---
 

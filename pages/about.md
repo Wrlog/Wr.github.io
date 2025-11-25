@@ -138,10 +138,8 @@ Feel free to reach out if you'd like to collaborate on research projects, discus
 
 I'm always interested in:
 - Research collaborations in PK/PD modeling
-- Discussions on pharmacometric methodologies
-- Opportunities in pharmaceutical research and development
-- Academic and industry partnerships
-- Model-informed precision dosing initiatives
+- Methodological discussions in pharmacometrics
+- Internship or job opportunity
 
 ---
 
