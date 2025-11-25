@@ -1,12 +1,11 @@
 ---
 layout: post
-title: 【Pharmacodynamic】Hysteresis: Understanding Delayed and Time-Dependent Drug Effects
+title: "【Pharmacodynamic】Hysteresis: Understanding Delayed and Time-Dependent Drug Effects"
 categories: Pharmacodynamic
 description: Comprehensive overview of hysteresis in pharmacodynamics, including counter-clockwise and clockwise loops, their causes, and modeling approaches
 keywords: Hysteresis, Pharmacodynamics, PK/PD Modeling, Effect Compartment, Indirect Response Models, Tolerance, Tachyphylaxis
 date: 2022-07-05
 ---
-
 ## What is Hysteresis?
 
 **Hysteresis** is defined as the retardation or lagging of an effect behind the cause of the effect. In pharmacodynamics, hysteresis occurs when there is a temporal disconnect between drug concentration in plasma and the observed pharmacological effect. This creates a "loop" when plotting concentration versus effect over time, rather than a simple direct relationship.
