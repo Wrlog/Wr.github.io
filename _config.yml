@@ -84,7 +84,7 @@ repository: https://wrlog.github.io/Wr.github.io/
 #      Comments    #
 # ---------------- #
 # support provider: disqus, gitment, gitalk, utterances, beaudar
-comments_provider: gitment
+comments_provider: 
 # gitment 配置参考：https://imsun.net/posts/gitment-introduction/
 
 disqus:
