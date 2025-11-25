@@ -4,6 +4,7 @@ title: 【Pharmacokinetic】Drug Development and Drug-Drug Interactions
 categories: Pharmacokinetic
 description: 药物-药物相互作用
 keywords:  Pharmacokinetic,Clinical,Drug Development, Drug Interactions
+date: 2022-07-03
 ---
 
 This short essay summarizes some information on drug-drug interactions focusing on CYP enzymes based on FDA guidance. (Available :<https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers> )

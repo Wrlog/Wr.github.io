@@ -4,6 +4,7 @@ title: 【Pharmacokinetic】Pharmacokinetic Notes for Special Populations
 categories: Pharmacokinetic
 description: 特殊人群药代动力学笔记
 keywords:  Pharmacokinetic,Clinical
+date: 2022-07-04
 ---
 
 ##  Special Population

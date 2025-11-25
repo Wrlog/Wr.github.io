@@ -4,6 +4,7 @@ title: 【Statistics】Maximum Likelihood Estimation (MLE) vs. Maximum A Posteri
 categories: Statistics
 description: Understanding the core differences between MLE, MAP, and Bayesian inference.
 keywords: Maximum likelihood estimation, MAP, Bayesian, Probability vs Statistics
+date: 2022-09-03
 ---
 
 Maximum Likelihood Estimation (**MLE**) and Maximum A Posteriori (**MAP**) are two common methods for parameter estimation. Because they perform similar tasks, they are often confused.

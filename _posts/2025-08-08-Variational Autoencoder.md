@@ -4,6 +4,7 @@ title: 【Deep Learning】Variational Autoencoder (VAE) for Model-Informed Preci
 categories: ML/DL, Pharmacometrics
 description: Application of Variational Autoencoders for precision dosing and modeling pharmacokinetic profiles that cannot be adequately described by traditional ODE-based models
 keywords: Variational Autoencoder, VAE, Model-Informed Precision Dosing, MIPD, Deep Learning, Pharmacokinetics, Neural Networks, ODE Alternatives
+date: 2025-08-08
 ---
 
 ## Introduction
