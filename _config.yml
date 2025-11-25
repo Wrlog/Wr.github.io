@@ -4,23 +4,26 @@
 baseurl:
 url: https://wrlog.github.io/Wr.github.io/
 date_format: "ordinal"
-title: Hi,I'm Wen-Rui Tan,
-subtitle: "Short Notes"
-description: "Short Notes"
-keywords: Wenrui
-timezone: United State/Eastern Time Zone
+title: Wen-Rui Tan
+subtitle: "PhD Candidate | Clinical Pharmacologist | Pharmacometrician"
+description: "Personal website and portfolio of Wen-Rui Tan - PhD candidate, clinical pharmacologist, and pharmacometrician. Explore my research, publications, blog posts, and professional journey in pharmacokinetics and pharmacodynamics."
+keywords: Wen-Rui Tan, PhD, Clinical Pharmacologist, Pharmacometrician, PK/PD, Pharmacokinetics, Pharmacodynamics, Research, NONMEM
+timezone: United States/Eastern Time Zone
 encoding: "utf-8"
 side_bar_repo_limit: 0
 
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: WenRui
+author: Wen-Rui Tan
 organization: 
 organization_url: 
 github_username: WenruiTan
-location: United State
+location: United States
 email: tan.wenrui213@gmail.com
+linkedin: 
+twitter: 
+website: https://wrlog.github.io/Wr.github.io/
 
 # ---------------- #
 #    Navigation    #
@@ -32,24 +35,20 @@ navs:
     label: Home
 
   -
+    href: /about/
+    label: About
+
+  -
+    href: /portfolio/
+    label: Portfolio
+
+  -
     href: /categories/
-    label: Category
-
-#   -
-#     href: /archives/
-#     label: Archives
-
-#   -
-#     href: /open-source/
-#     label: open-source
+    label: Blog
 
   -
     href: /wiki/
     label: Wiki
-    
-  -
-    href: /about/
-    label: About
 
 # ---------------- #
 #       RSS        #
@@ -71,12 +70,10 @@ permalink: /:year/:month/:day/:title/
 plugins:
     - jekyll-github-metadata
     - rouge
-#     - jekyll-html-pipeline
     - jekyll-paginate
     - jekyll-sitemap
     - jekyll-feed
     - jemoji
-#     - jekyll-mentions
 collections:
     wiki:
         output: true
@@ -117,4 +114,5 @@ simple_jekyll_search:
 #      Google      #
 # ---------------- #
 google:
-    analytics_id:G-7WJEV91PM7
+    analytics_id: G-7WJEV91PM7
+
