@@ -21,6 +21,7 @@ $$
 $$
 
 where:
+
 - $R(t)$ is the response variable (e.g., biomarker level, physiological measure)
 - $k_{in}(t)$ is the zero-order synthesis rate (may be drug-modulated)
 - $k_{out}(t)$ is the first-order elimination rate constant (may be drug-modulated)
@@ -169,14 +170,16 @@ where `A(1)` represents drug amount, `A(2)` represents response, `KIN` and `KOUT
 ## Model Selection and Validation
 
 Selection among the four IDR models requires:
+
 - **Biological knowledge** of drug mechanism
 - **Visual inspection** of concentration-effect plots
 - **Statistical comparison** via objective function value (OFV) or information criteria (AIC, BIC)
 - **Goodness-of-fit** assessment including visual predictive checks (VPC) and prediction-corrected VPC
 
 Key diagnostic plots include:
+
 - Concentration-time profiles
-- Response-time profiles  
+- Response-time profiles
 - Concentration-response plots (hysteresis loops)
 - Individual fits and residuals
 
