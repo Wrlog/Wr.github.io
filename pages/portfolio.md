@@ -138,7 +138,7 @@ Welcome to my portfolio! Here you'll find a collection of my projects, research 
 
 Interested in collaborating on pharmacometric research or learning more about my work? Feel free to reach out!
 
-- **Email**: [tan.wenrui213@gmail.com](mailto:tan.wenrui213@gmail.com)
+- **Email**: [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org)
 - **GitHub**: [@WenruiTan](https://github.com/WenruiTan)
 
 I welcome opportunities for:

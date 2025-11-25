@@ -76,7 +76,7 @@ My research focuses on:
 
 Feel free to reach out if you'd like to collaborate on research projects, discuss pharmacometric methodologies, or connect professionally!
 
-- **Email**: [tan.wenrui213@gmail.com](mailto:tan.wenrui213@gmail.com)
+- **Email**: [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org)
 - **GitHub**: [@WenruiTan](https://github.com/WenruiTan)
 - **Location**: United States
 
