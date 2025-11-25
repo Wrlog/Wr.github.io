@@ -46,32 +46,36 @@ $$
 
 Let's break down the terminology:
 
-* **$P(A | B)$ (Posterior):** "What is the probability of $A$ *after* I see evidence $B$?"
+* **$P(A | B)$ (Posterior):** "What is the probability of $A$ after I see evidence $B$?"
 * **$P(B | A)$ (Likelihood):** "If $A$ were true, what is the probability I would see evidence $B$?"
-* **$P(A)$ (Prior):** "What did I believe about $A$ *before* I saw any evidence?"
+* **$P(A)$ (Prior):** "What did I believe about $A$ before I saw any evidence?"
 * **$P(B)$ (Evidence):** The total probability of seeing the evidence.
 
 ### The Car Alarm Analogy
-Let $A$ be **"Car Stolen"** and $B$ be **"Alarm Ringing"**.
+
+Let $A$ be **"Car Stolen"** and $B$ be **"Alarm Ringing"**.  
 We want to know $P(\text{Stolen} | \text{Alarm})$.
 
-1.  **Likelihood ($P(\text{Alarm} | \text{Stolen})$):** If your car is being stolen, the alarm will almost certainly ring (high probability).
-2.  **Prior ($P(\text{Stolen})$):** How likely is it that a car is stolen on any random day? Very low.
-3.  **Posterior ($P(\text{Stolen} | \text{Alarm})$):** Even though the alarm is ringing, the probability your car is actually being stolen is still relatively low, because the **Prior** (the general rarity of theft) weighs the probability down. It is more likely a false alarm.
+1. **Likelihood ($P(\text{Alarm} | \text{Stolen})$):** If your car is being stolen, the alarm will almost certainly ring (high probability).
+
+2. **Prior ($P(\text{Stolen})$):** How likely is it that a car is stolen on any random day? Very low.
+
+3. **Posterior ($P(\text{Stolen} | \text{Alarm})$):** Even though the alarm is ringing, the probability your car is actually being stolen is still relatively low, because the **Prior** (the general rarity of theft) weighs the probability down. It is more likely a false alarm.
 
 ---
 
 ## 3. The Likelihood Function
 
-The expression $P(x | \theta)$ involves Data ($x$) and Parameters ($\theta$). It can be interpreted in two ways:
+The expression $P(x \mid \theta)$ involves Data ($x$) and Parameters ($\theta$). It can be interpreted in two ways:
 
-1.  **Probability Function (fixed $\theta$, variable $x$):** If the coin is fair ($\theta=0.5$), what is the probability of getting Heads ($x$)?
-2.  **Likelihood Function (fixed $x$, variable $\theta$):** If I observed Heads ($x$), what is the likelihood that the coin parameter was $\theta$?
+1. **Probability Function (fixed $\theta$, variable $x$):** If the coin is fair ($\theta=0.5$), what is the probability of getting Heads ($x$)?
+
+2. **Likelihood Function (fixed $x$, variable $\theta$):** If I observed Heads ($x$), what is the likelihood that the coin parameter was $\theta$?
 
 In statistics, we use the second definition. We define the Likelihood Function as:
 
 $$
-L(\theta) = P(x | \theta)
+L(\theta) = P(x \mid \theta)
 $$
 
 ---
@@ -82,16 +86,19 @@ $$
 **The Philosophy:** "Let the data speak for itself. Ignore prior beliefs."
 
 $$
-\theta_{MLE} = \operatorname*{argmax}_\theta P(x | \theta)
+\theta_{MLE} = \operatorname*{argmax}_\theta P(x \mid \theta)
 $$
 
 ### Example: The Coin Toss
+
 You flip a coin 10 times.
+
 * **Data ($x$):** 7 Heads, 3 Tails.
 * **Parameter ($\theta$):** Probability of Heads (Unknown).
 
 We want to maximize the likelihood:
-$$P(x | \theta) = \theta^7 (1-\theta)^3$$
+
+$$P(x \mid \theta) = \theta^7 (1-\theta)^3$$
 
 * If we guess $\theta = 0.5$: $0.5^7 \times 0.5^3 \approx 0.0009$
 * If we guess $\theta = 0.7$: $0.7^7 \times 0.3^3 \approx 0.0022$
@@ -108,16 +115,16 @@ The likelihood function peaks at $\theta = 0.7$. Therefore, the MLE estimate is 
 MAP uses Bayes' Theorem. We want to maximize the **Posterior**:
 
 $$
-\text{Maximize } P(\theta | x) \approx P(x | \theta) \times P(\theta)
+P(\theta | x) = \frac{P(x | \theta) \times P(\theta)}{P(x)}
 $$
 
-*(We ignore the denominator $P(x)$ because it is constant with respect to $\theta$.)*
-
-So, MAP maximizes: **Likelihood $\times$ Prior**, or equivalently:
+Since $P(x)$ is constant with respect to $\theta$, we can ignore it when maximizing. Therefore, MAP maximizes:
 
 $$
-\theta_{MAP} = \operatorname*{argmax}_\theta P(\theta | x) = \operatorname*{argmax}_\theta [P(x | \theta) \times P(\theta)]
+\theta_{MAP} = \operatorname*{argmax}_\theta P(\theta \mid x) = \operatorname*{argmax}_\theta [P(x \mid \theta) \times P(\theta)]
 $$
+
+In words: MAP maximizes **Likelihood $\times$ Prior**.
 
 ### Example: The "Fair" Coin
 * **Data ($x$):** 7 Heads, 3 Tails.
@@ -146,8 +153,8 @@ The likelihood term $\theta^{700}(1-\theta)^{300}$ becomes highly concentrated a
 ## Summary
 
 | Feature | Maximum Likelihood (MLE) | Maximum A Posteriori (MAP) |
-| :--- | :--- | :--- |
-| **Formula** | $\operatorname*{argmax}_\theta P(x \| \theta)$ | $\operatorname*{argmax}_\theta P(x \| \theta) \times P(\theta)$ |
+|---------|--------------------------|-----------------------------|
+| **Formula** | $\theta_{MLE} = \operatorname*{argmax}_\theta P(x \mid \theta)$ | $\theta_{MAP} = \operatorname*{argmax}_\theta P(x \mid \theta) \times P(\theta)$ |
 | **Philosophy** | Only the data matters. | Data + Prior Knowledge matters. |
 | **Prior** | Does not incorporate prior information (equivalent to uniform prior). | Explicitly incorporates prior distribution (e.g., Gaussian, Beta). |
 | **Best Used When** | You have large sample sizes or no prior knowledge. | You have small sample sizes or strong domain knowledge. |
