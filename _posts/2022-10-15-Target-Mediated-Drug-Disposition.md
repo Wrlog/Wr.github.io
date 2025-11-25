@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【Pharmacokinetic】Target-Mediated Drug Disposition (TMDD): Nonlinear Pharmacokinetics at Low Concentrations
+title: "【Pharmacokinetic】Target-Mediated Drug Disposition (TMDD): Nonlinear Pharmacokinetics at Low Concentrations"
 categories: Pharmacokinetic
 description: Comprehensive overview of target-mediated drug disposition, its mathematical framework, and implications for biologics pharmacokinetics
 keywords: TMDD, Target-Mediated Drug Disposition, Nonlinear Pharmacokinetics, Biologics, Monoclonal Antibodies, Michaelis-Menten, Pharmacokinetics
