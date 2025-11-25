@@ -10,7 +10,7 @@ permalink: /about/
 
 # Wen Rui Tan
 
-**Phone:** +1(513)-501-3089 | **Email:** [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org) | **LinkedIn:** [wenrui97](https://www.linkedin.com/in/wenrui97/)
+**Phone:** +1(513)-501-3089 | **Email:** [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org) | **LinkedIn:** [wenrui97](https://www.linkedin.com/in/wenrui97/) | **Location:** Cincinnati, OH, United States
 
 ---
 
@@ -134,11 +134,7 @@ My research focuses on:
 
 Feel free to reach out if you'd like to collaborate on research projects, discuss pharmacometric methodologies, or connect professionally!
 
-- **Email**: [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org)
-- **Phone**: +1(513)-501-3089
-- **LinkedIn**: [wenrui97](https://www.linkedin.com/in/wenrui97/)
-- **GitHub**: [@WenruiTan](https://github.com/WenruiTan)
-- **Location**: Cincinnati, OH, United States
+- **Email**: [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org) | **Phone**: +1(513)-501-3089 | **LinkedIn**: [wenrui97](https://www.linkedin.com/in/wenrui97/) | **GitHub**: [@WenruiTan](https://github.com/WenruiTan) | **Location**: Cincinnati, OH, United States
 
 I'm always interested in:
 - Research collaborations in PK/PD modeling
