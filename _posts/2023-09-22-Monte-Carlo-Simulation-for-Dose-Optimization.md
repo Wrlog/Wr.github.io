@@ -22,7 +22,7 @@ generate_virtual_population <- function(n = 1000, age_range = c(0.5, 18)) {
   bsa <- 0.024265 * (weight^0.5378) * ((age * 12)^0.3964)
   crcl <- 0.48 * weight * (140 - age) / (0.7 * 1.0)
   crcl <- pmax(10, pmin(200, crcl))
-  
+
   data.frame(
     ID = 1:n,
     AGE = age,
@@ -35,32 +35,32 @@ generate_virtual_population <- function(n = 1000, age_range = c(0.5, 18)) {
 
 run_mc_simulation <- function(model, population, dose_mgkg, interval_hours, n_doses = 4) {
   results <- list()
-  
+
   for (i in 1:nrow(population)) {
     patient <- population[i, ]
-    
-    CL <- 2.5 * (patient$CRCL/80)^0.75 * (patient$WT/20)^0.75 * 
+
+    CL <- 2.5 * (patient$CRCL/80)^0.75 * (patient$WT/20)^0.75 *
           exp(rnorm(1, 0, 0.3))
     V <- 15 * (patient$WT/20) * exp(rnorm(1, 0, 0.25))
-    
-    ev <- ev(amt = dose_mgkg * patient$WT, 
-             ii = interval_hours, 
+
+    ev <- ev(amt = dose_mgkg * patient$WT,
+             ii = interval_hours,
              addl = n_doses - 1)
-    
+
     out <- model %>%
       param(CL = CL, V = V) %>%
       ev(ev) %>%
       mrgsim(end = interval_hours * n_doses, delta = 0.5) %>%
       as.data.frame()
-    
+
     out$ID <- patient$ID
     out$WT <- patient$WT
     out$CRCL <- patient$CRCL
     out$AGE <- patient$AGE
-    
+
     results[[i]] <- out
   }
-  
+
   bind_rows(results)
 }
 
@@ -69,7 +69,7 @@ calculate_pta <- function(sim_data, target_threshold, time_window = NULL) {
     sim_data <- sim_data %>%
       filter(time >= time_window[1] & time <= time_window[2])
   }
-  
+
   sim_data %>%
     group_by(ID) %>%
     summarise(
@@ -86,10 +86,10 @@ calculate_pta <- function(sim_data, target_threshold, time_window = NULL) {
 
 evaluate_dosing_regimens <- function(model, population, regimens) {
   results_list <- list()
-  
+
   for (regimen_name in names(regimens)) {
     regimen <- regimens[[regimen_name]]
-    
+
     sim_data <- run_mc_simulation(
       model = model,
       population = population,
@@ -97,10 +97,10 @@ evaluate_dosing_regimens <- function(model, population, regimens) {
       interval_hours = regimen$interval,
       n_doses = regimen$n_doses
     )
-    
+
     pta_64 <- calculate_pta(sim_data, target_threshold = 64)
     pta_32 <- calculate_pta(sim_data, target_threshold = 32)
-    
+
     results_list[[regimen_name]] <- list(
       sim_data = sim_data,
       pta_64 = pta_64,
@@ -108,7 +108,7 @@ evaluate_dosing_regimens <- function(model, population, regimens) {
       regimen = regimen
     )
   }
-  
+
   results_list
 }
 
@@ -209,7 +209,6 @@ cat(sprintf("Dose: %d mg/kg\n", optimal_regimen$Dose_mgkg))
 cat(sprintf("Interval: %d hours\n", optimal_regimen$Interval_h))
 cat(sprintf("PTA (≥64 mg/L): %.1f%%\n", optimal_regimen$PTA_64 * 100))
 cat(sprintf("Mean Cmin: %.1f mg/L\n", optimal_regimen$Mean_Cmin))
-cat(sprintf("5th-95th Percentile Cmin: %.1f - %.1f mg/L\n", 
+cat(sprintf("5th-95th Percentile Cmin: %.1f - %.1f mg/L\n",
             optimal_regimen$P5_Cmin, optimal_regimen$P95_Cmin))
 ```
-
