@@ -8,11 +8,6 @@ interface Project {
     description: string;
 }
 
-interface FilterOption {
-    label: string;
-    value: string;
-    count: number;
-}
 
 class PortfolioPageEnhancer {
     private projectCards: NodeListOf<Element>;
