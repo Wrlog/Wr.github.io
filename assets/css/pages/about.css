@@ -66,10 +66,10 @@
     line-height: 1.9;
     margin-bottom: 40px;
     padding: 25px 30px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
     border-radius: 12px;
     border-left: 5px solid #667eea;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
     text-align: center;
 }
 
@@ -161,11 +161,24 @@
     border-radius: 8px;
     border-left: 4px solid #667eea;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.about-section .markdown-body h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px 0 0 8px;
 }
 
 .about-section .markdown-body h3:hover {
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.12) 100%);
     transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
 }
 
 .about-section .markdown-body p {
@@ -212,14 +225,21 @@
     font-weight: bold;
     font-size: 1.1em;
     transition: all 0.3s ease;
+    text-shadow: 0 0 3px rgba(102, 126, 234, 0.3);
 }
 
 .about-section .markdown-body ul li:hover,
 .about-section .markdown-body ol li:hover {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
     border-left-color: #667eea;
     transform: translateX(5px);
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.about-section .markdown-body ul li strong,
+.about-section .markdown-body ol li strong {
+    color: #667eea;
+    font-weight: 600;
 }
 
 .about-section .markdown-body ul li:hover::before,
