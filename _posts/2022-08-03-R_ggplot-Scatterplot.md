@@ -21,7 +21,7 @@ college <- read_csv('http://672258.youcanlearnit.net/college.csv') %>%
     control = as.factor(control),
     gender = as.factor(gender),
     loan_default_rate = as.numeric(loan_default_rate),
-    tuition_tier = cut(tuition, breaks = quantile(tuition, probs = seq(0, 1, 0.25), na.rm = TRUE), 
+    tuition_tier = cut(tuition, breaks = quantile(tuition, probs = seq(0, 1, 0.25), na.rm = TRUE),
                       labels = c("Low", "Medium-Low", "Medium-High", "High"), include.lowest = TRUE),
     sat_category = case_when(
       sat_avg >= 1400 ~ "Elite",
@@ -44,26 +44,26 @@ college_summary <- college %>%
 p1 <- college %>%
   filter(!is.na(tuition), !is.na(sat_avg)) %>%
   ggplot(aes(x = tuition, y = sat_avg)) +
-  geom_point(aes(color = control, size = undergrads, alpha = loan_default_rate), 
+  geom_point(aes(color = control, size = undergrads, alpha = loan_default_rate),
              position = position_jitter(width = 200, height = 5)) +
-  geom_smooth(method = "lm", se = TRUE, aes(color = control, fill = control), 
+  geom_smooth(method = "lm", se = TRUE, aes(color = control, fill = control),
               alpha = 0.2, linetype = "dashed") +
-  geom_hline(data = college_summary, aes(yintercept = mean_sat, color = control), 
+  geom_hline(data = college_summary, aes(yintercept = mean_sat, color = control),
              linetype = "dotted", alpha = 0.7) +
-  geom_vline(data = college_summary, aes(xintercept = mean_tuition, color = control), 
+  geom_vline(data = college_summary, aes(xintercept = mean_tuition, color = control),
              linetype = "dotted", alpha = 0.7) +
-  geom_text(data = college_summary, 
+  geom_text(data = college_summary,
             aes(x = mean_tuition, y = mean_sat, label = paste0("n=", n)),
             size = 3, hjust = -0.1, vjust = -0.5, fontface = "bold") +
   scale_color_viridis_d(name = "Institution\nType", option = "plasma", begin = 0.2, end = 0.8) +
   scale_fill_viridis_d(name = "Institution\nType", option = "plasma", begin = 0.2, end = 0.8) +
-  scale_size_continuous(name = "Undergraduates", 
+  scale_size_continuous(name = "Undergraduates",
                        breaks = c(1000, 5000, 10000, 20000),
                        labels = c("1K", "5K", "10K", "20K"),
                        range = c(1, 8),
                        trans = "log10") +
   scale_alpha_continuous(name = "Default\nRate", range = c(0.3, 0.9)) +
-  scale_x_continuous(name = "Tuition (USD)", 
+  scale_x_continuous(name = "Tuition (USD)",
                     labels = dollar_format(),
                     breaks = seq(0, 60000, 10000),
                     expand = expansion(mult = c(0.02, 0.05))) +
@@ -115,7 +115,7 @@ p3 <- college %>%
   theme_minimal() +
   theme(legend.position = "none")
 
-final_plot <- (p1 / (p2 | p3)) + 
+final_plot <- (p1 / (p2 | p3)) +
   plot_annotation(
     title = "Comprehensive Analysis of College Tuition vs SAT Scores",
     subtitle = "Exploring relationships across institution types and regions",
@@ -130,4 +130,3 @@ ggsave("college_analysis.png", final_plot, width = 16, height = 12, dpi = 300, b
 Plot
 
 ![](https://github.com/Wrlog/Wr.github.io/blob/master/images/posts/R/scatterplot.png?raw=true)
-

@@ -1,20 +1,17 @@
 ---
 layout: default
-css: ['pages/portfolio.css']
+css: ["pages/portfolio.css"]
 ---
 
 <section class="portfolio-section">
-    <div class="container">
-        <div class="columns">
-            <div class="column two-thirds">
-                <article class="article-content markdown-body fade-in-on-scroll">
-                    {{ content }}
-                </article>
-            </div>
-            <div class="column one-third">
-                {% include sidebar-search.html %}
-            </div>
-        </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column two-thirds">
+        <article class="article-content markdown-body fade-in-on-scroll">
+          {{ content }}
+        </article>
+      </div>
+      <div class="column one-third">{% include sidebar-search.html %}</div>
     </div>
+  </div>
 </section>
-
