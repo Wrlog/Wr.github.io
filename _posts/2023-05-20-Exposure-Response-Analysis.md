@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【Pharmacodynamic】Exposure-Response Analysis: Linking Pharmacokinetics to Clinical Outcomes
+title: "【Pharmacodynamic】Exposure-Response Analysis: Linking Pharmacokinetics to Clinical Outcomes"
 categories: Pharmacodynamic
-description: Comprehensive framework for establishing quantitative relationships between drug exposure metrics and clinical endpoints to guide dosing decisions
-keywords: Exposure-Response, PK/PD Modeling, Pharmacodynamics, AUC, Trough Concentration, Clinical Endpoints, Dose Optimization
+description: "Comprehensive framework for establishing quantitative relationships between drug exposure metrics and clinical endpoints to guide dosing decisions"
+keywords: "Exposure-Response, PK/PD Modeling, Pharmacodynamics, AUC, Trough Concentration, Clinical Endpoints, Dose Optimization"
 date: 2023-05-20
 ---
 

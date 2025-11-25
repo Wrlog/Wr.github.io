@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【R】Building Interactive R-Shiny Dashboards for Pharmacokinetic Simulation Visualization
+title: "【R】Building Interactive R-Shiny Dashboards for Pharmacokinetic Simulation Visualization"
 categories: R
-description: Developing interactive dashboards for PK simulation data visualization and clinical decision support
-keywords: R, R-Shiny, Pharmacokinetics, Dashboard, Visualization, Clinical Decision Support
+description: "Developing interactive dashboards for PK simulation data visualization and clinical decision support"
+keywords: "R, R-Shiny, Pharmacokinetics, Dashboard, Visualization, Clinical Decision Support"
 date: 2023-06-15
 ---
 

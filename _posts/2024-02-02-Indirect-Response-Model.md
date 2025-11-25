@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【Pharmacodynamic】Indirect Response Models: Mechanistic Framework for Delayed Pharmacodynamic Effects
+title: "【Pharmacodynamic】Indirect Response Models: Mechanistic Framework for Delayed Pharmacodynamic Effects"
 categories: Pharmacodynamic
-description: Comprehensive overview of indirect response (IDR) models, their mathematical foundations, and applications in pharmacometric modeling
-keywords: Indirect Response Models, Pharmacodynamics, PK/PD Modeling, Hysteresis, Mechanism-Based Modeling, NONMEM
+description: "Comprehensive overview of indirect response (IDR) models, their mathematical foundations, and applications in pharmacometric modeling"
+keywords: "Indirect Response Models, Pharmacodynamics, PK/PD Modeling, Hysteresis, Mechanism-Based Modeling, NONMEM"
 date: 2024-02-02
 ---
 

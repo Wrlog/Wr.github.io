@@ -167,6 +167,3 @@ class WebsiteEnhancer {
 // Initialize when DOM is ready
 new WebsiteEnhancer();
 
-// Export for potential module use
-export default WebsiteEnhancer;
-

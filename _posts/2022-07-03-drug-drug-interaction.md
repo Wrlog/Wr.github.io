@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【Pharmacokinetic】Drug Development and Drug-Drug Interactions
+title: "【Pharmacokinetic】Drug Development and Drug-Drug Interactions"
 categories: Pharmacokinetic
-description: 药物-药物相互作用
-keywords:  Pharmacokinetic,Clinical,Drug Development, Drug Interactions
+description: "药物-药物相互作用"
+keywords: "Pharmacokinetic, Clinical, Drug Development, Drug Interactions"
 date: 2022-07-03
 ---
 

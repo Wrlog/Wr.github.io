@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【Pharmacokinetic】Target-Mediated Drug Disposition (TMDD): Nonlinear Pharmacokinetics at Low Concentrations
+title: "Target-Mediated Drug Disposition (TMDD) - Nonlinear Pharmacokinetics at Low Concentrations"
 categories: Pharmacokinetic
-description: Comprehensive overview of target-mediated drug disposition, its mathematical framework, and implications for biologics pharmacokinetics
-keywords: TMDD, Target-Mediated Drug Disposition, Nonlinear Pharmacokinetics, Biologics, Monoclonal Antibodies, Michaelis-Menten, Pharmacokinetics
+description: "Comprehensive overview of target-mediated drug disposition, its mathematical framework, and implications for biologics pharmacokinetics"
+keywords: "TMDD, Target-Mediated Drug Disposition, Nonlinear Pharmacokinetics, Biologics, Monoclonal Antibodies, Michaelis-Menten, Pharmacokinetics"
 date: 2022-10-15
 ---
 
@@ -265,4 +265,3 @@ Understanding TMDD enables:
 Target-Mediated Drug Disposition represents a fundamental mechanism of nonlinear pharmacokinetics that is particularly relevant for biologics and targeted therapeutics. The saturable, concentration-dependent elimination via target binding leads to complex dose-exposure relationships that differ substantially from linear pharmacokinetic predictions.
 
 Mastery of TMDD modeling is essential for pharmacometricians working with biologics, as it enables accurate prediction of pharmacokinetic behavior across the therapeutic dose range, optimal dosing strategy design, and proper interpretation of clinical pharmacokinetic data. The mathematical framework, while complex, provides a mechanistic basis for understanding and predicting the nonlinear pharmacokinetics observed with many modern targeted therapies.
-

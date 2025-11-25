@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【Pharmacodynamic】Hysteresis: Understanding Delayed and Time-Dependent Drug Effects
+title: "【Pharmacodynamic】Hysteresis: Understanding Delayed and Time-Dependent Drug Effects"
 categories: Pharmacodynamic
-description: Comprehensive overview of hysteresis in pharmacodynamics, including counter-clockwise and clockwise loops, their causes, and modeling approaches
-keywords: Hysteresis, Pharmacodynamics, PK/PD Modeling, Effect Compartment, Indirect Response Models, Tolerance, Tachyphylaxis
+description: "Comprehensive overview of hysteresis in pharmacodynamics, including counter-clockwise and clockwise loops, their causes, and modeling approaches"
+keywords: "Hysteresis, Pharmacodynamics, PK/PD Modeling, Effect Compartment, Indirect Response Models, Tolerance, Tachyphylaxis"
 date: 2022-07-05
 ---
 
@@ -18,7 +18,7 @@ When plotting drug concentration ($C$) versus effect ($E$) over time, a direct r
 - **Going up** (as concentration rises): The effect follows one path
 - **Coming down** (as concentration falls): The effect follows a different path
 
-This creates a closed loop in the concentration-effect plane.
+This creates a closed loop in the concentration-effect plane. The direction of the loop (counter-clockwise vs. clockwise) provides critical information about the underlying mechanism.
 
 ---
 
@@ -29,21 +29,10 @@ There are two primary types of hysteresis loops, each indicating different under
 ### 1. Counter-Clockwise Hysteresis (Most Common)
 
 **Visual Description:**
-```
-Effect (E)
-    ↑
-    |     ╱───╲
-    |    ╱     ╲
-    |   ╱       ╲
-    |  ╱         ╲
-    | ╱           ╲
-    |╱             ╲
-    └───────────────→ Concentration (C)
-         ↑
-    Counter-clockwise direction
-```
 
-**Characteristics:**
+In a concentration-effect plot, counter-clockwise hysteresis appears as a loop that traces **counter-clockwise** when following the time course. The path starts at low concentration/low effect, rises along the ascending concentration curve, but when concentration decreases, the effect follows a different path that is shifted upward, creating a loop that opens in the counter-clockwise direction.
+
+**Key Visual Characteristics:**
 - As plasma concentration rises (the "up" curve), the effect lags behind
 - After plasma concentration peaks and starts to fall (the "down" curve), the effect continues to increase or decreases much more slowly
 - **Key observation:** You see a **greater effect** at a later time point for the **same plasma concentration**
@@ -84,21 +73,10 @@ The drug doesn't cause the effect directly. Instead, it triggers a slow, downstr
 ### 2. Clockwise Hysteresis (Less Common but Important)
 
 **Visual Description:**
-```
-Effect (E)
-    ↑
-    |             ╱───╲
-    |            ╱     ╲
-    |           ╱       ╲
-    |          ╱         ╲
-    |         ╱           ╲
-    |        ╱             ╲
-    └───────────────────────→ Concentration (C)
-         ↑
-    Clockwise direction
-```
 
-**Characteristics:**
+In a concentration-effect plot, clockwise hysteresis appears as a loop that traces **clockwise** when following the time course. The path starts at low concentration/low effect, rises along the ascending concentration curve with strong initial effects, but when concentration decreases or remains constant, the effect follows a different path that is shifted downward, creating a loop that opens in the clockwise direction.
+
+**Key Visual Characteristics:**
 - As plasma concentration rises, you get a strong initial effect
 - However, as time goes on, the effect starts to decrease, even if the plasma concentration stays high or is falling
 - **Key observation:** You see a **lesser effect** at a later time point for the **same plasma concentration**

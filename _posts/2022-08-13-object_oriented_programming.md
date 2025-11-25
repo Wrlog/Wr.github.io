@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【Python】Object Oriented Programming
+title: "【Python】Object Oriented Programming"
 categories: Programming
-description: Programming
-keywords:  Python, Object Oriented Programming,
+description: "Programming"
+keywords: "Python, Object Oriented Programming"
 date: 2022-08-13
 ---
 

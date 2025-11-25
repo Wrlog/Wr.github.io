@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【R】ggplot--Scatterplot
+title: "【R】ggplot--Scatterplot"
 categories: R
-description: ggplot作图
-keywords:  R, visualization ,scatterplot
+description: "ggplot作图"
+keywords: "R, visualization, scatterplot"
 date: 2022-08-03
 ---
 

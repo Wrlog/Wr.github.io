@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 【Genomic】Basic Transcription Note
+title: "【Genomic】Basic Transcription Note"
 categories: Genomic
-description: Transcription
-keywords:  Transcription factor,RNA polymerase,DNA,genomic
+description: "Transcription"
+keywords: "Transcription factor, RNA polymerase, DNA, genomic"
 date: 2022-07-09
 ---
 
