@@ -46,8 +46,6 @@ This project focuses on developing mechanistic Population PK/PD models for Infli
 - **Conference Presentation**: "PK/PD Modeling of Infliximab in Children with Crohn's Disease" - IATDMCT 2025 (Top 10 Abstract Nomination)
 - **Award**: Top 10 Abstract Nomination (Poster Award), IATDMCT Conference (2025)
 
-**Links**:
-- [GitHub Repository](https://github.com/WenruiTan/) (if code is available)
 
 ---
 
@@ -110,12 +108,6 @@ This research project focuses on optimizing prophylactic dosing regimens for pip
 - **Tan WR**, Irie K, et al. "Model-informed Dose Optimization for Prophylactic Piperacillin-Tazobactam in Perioperative Pediatric Critically Ill Patients." *American Society for Clinical Pharmacology and Therapeutics (ASCPT) Annual Meeting* (2024) - Poster Presentation
 
 ---
-
-## Open Source & Code Contributions
-
-*[List any open source pharmacometric tools, R packages, or code repositories you've contributed to]*
-
-- [Project/Tool Name](link) - [Brief description of contribution]
 
 ## Awards & Achievements
 
