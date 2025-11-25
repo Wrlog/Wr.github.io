@@ -74,6 +74,9 @@ collections:
     wiki:
         output: true
         permalink: /wiki/:path/
+
+exclude:
+    - template.md
         
 repository: https://wrlog.github.io/Wr.github.io/
 
