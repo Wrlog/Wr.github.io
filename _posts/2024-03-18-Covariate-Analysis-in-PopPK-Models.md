@@ -96,18 +96,18 @@ run_covariate_analysis <- function(base_model_code, covariate_models, data_file)
     BIC = numeric(),
     stringsAsFactors = FALSE
   )
-  
+
   base_ofv <- 1250.5
-  
+
   for (model_name in names(covariate_models)) {
-    model_code <- str_replace(base_model_code, 
+    model_code <- str_replace(base_model_code,
                              "TVCL = THETA\\(1\\)\nTVV = THETA\\(2\\)",
                              covariate_models[[model_name]])
-    
+
     ofv <- base_ofv - runif(1, 5, 25)
     aic <- ofv + 2 * (length(str_extract_all(model_code, "THETA\\(\\d+\\)")[[1]]) + 2)
     bic <- ofv + log(nrow(pk_data)) * (length(str_extract_all(model_code, "THETA\\(\\d+\\)")[[1]]) + 2)
-    
+
     results <- rbind(results, data.frame(
       Model = model_name,
       OFV = ofv,
@@ -116,7 +116,7 @@ run_covariate_analysis <- function(base_model_code, covariate_models, data_file)
       BIC = bic
     ))
   }
-  
+
   results %>%
     arrange(desc(dOFV)) %>%
     mutate(
@@ -241,4 +241,3 @@ cat("  - Clearance increases with body weight and renal function\n")
 cat("  - Volume of distribution scales linearly with body weight\n")
 cat("  - Model supports weight-based and renal function-adjusted dosing\n")
 ```
-
