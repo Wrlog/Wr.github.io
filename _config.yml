@@ -46,10 +46,6 @@ navs:
     href: /categories/
     label: Blog
 
-  -
-    href: /wiki/
-    label: Wiki
-
 # ---------------- #
 #       RSS        #
 # ---------------- #
