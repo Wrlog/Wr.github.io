@@ -13,24 +13,30 @@ var AboutPageEnhancer = /** @class */ (function () {
         }
     };
     AboutPageEnhancer.prototype.setup = function () {
-        // Only run on about page
-        if (!document.querySelector('.about-section')) {
-            console.log('AboutPageEnhancer: .about-section not found, skipping');
-            return;
+        try {
+            // Only run on about page
+            if (!document.querySelector('.about-section')) {
+                console.log('AboutPageEnhancer: .about-section not found, skipping');
+                return;
+            }
+            console.log('AboutPageEnhancer: Initializing...');
+            this.skillCategories = document.querySelectorAll('.skill-item, .markdown-body h3');
+            this.timelineItems = document.querySelectorAll('.timeline-item, .markdown-body h3 + p');
+            this.contactSection = document.querySelector('.contact-info, .markdown-body h2:last-of-type');
+            this.sections = document.querySelectorAll('.about-section .markdown-body > h2');
+            this.setupSkillTagsAnimation();
+            this.setupTimelineAnimation();
+            this.setupSectionReveal();
+            this.setupContactFormats();
+            this.setupProgressBars();
+            this.setupInteractiveCards();
+            this.setupSmoothScrollToSection();
+            this.setupParallaxEffects();
+            console.log('AboutPageEnhancer: Initialization complete');
         }
-        console.log('AboutPageEnhancer: Initializing...');
-        this.skillCategories = document.querySelectorAll('.skill-item, .markdown-body h3');
-        this.timelineItems = document.querySelectorAll('.timeline-item, .markdown-body h3 + p');
-        this.contactSection = document.querySelector('.contact-info, .markdown-body h2:last-of-type');
-        this.sections = document.querySelectorAll('.about-section .markdown-body > h2');
-        this.setupSkillTagsAnimation();
-        this.setupTimelineAnimation();
-        this.setupSectionReveal();
-        this.setupContactFormats();
-        this.setupProgressBars();
-        this.setupInteractiveCards();
-        this.setupSmoothScrollToSection();
-        this.setupParallaxEffects();
+        catch (error) {
+            console.error('AboutPageEnhancer: Error during setup', error);
+        }
     };
     // Animate skill tags with staggered effect
     AboutPageEnhancer.prototype.setupSkillTagsAnimation = function () {
@@ -76,37 +82,50 @@ var AboutPageEnhancer = /** @class */ (function () {
     // Reveal sections with fade-in effect
     AboutPageEnhancer.prototype.setupSectionReveal = function () {
         var _this = this;
+        if (!this.sections || this.sections.length === 0)
+            return;
         this.sections.forEach(function (section) {
-            var element = section;
-            var sectionContent = _this.getNextSiblingUntil(element, 'h2');
-            if (sectionContent) {
-                sectionContent.style.opacity = '0';
-                sectionContent.style.transform = 'translateY(20px)';
-                sectionContent.style.transition = 'all 0.6s ease';
-                var observer_1 = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            sectionContent.style.opacity = '1';
-                            sectionContent.style.transform = 'translateY(0)';
-                            observer_1.unobserve(sectionContent);
-                        }
-                    });
-                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-                observer_1.observe(element);
+            try {
+                var element = section;
+                if (!element)
+                    return;
+                var sectionContent_1 = _this.getNextSiblingUntil(element, 'h2');
+                if (sectionContent_1 && sectionContent_1.style) {
+                    sectionContent_1.style.opacity = '0';
+                    sectionContent_1.style.transform = 'translateY(20px)';
+                    sectionContent_1.style.transition = 'all 0.6s ease';
+                    var observer_1 = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting && sectionContent_1.style) {
+                                sectionContent_1.style.opacity = '1';
+                                sectionContent_1.style.transform = 'translateY(0)';
+                                observer_1.unobserve(sectionContent_1);
+                            }
+                        });
+                    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                    observer_1.observe(element);
+                }
+            }
+            catch (error) {
+                console.warn('AboutPageEnhancer: Error in setupSectionReveal', error);
             }
         });
     };
     // Helper to get all siblings until a specific selector
     AboutPageEnhancer.prototype.getNextSiblingUntil = function (element, selector) {
+        if (!element || !element.nextElementSibling)
+            return null;
         var next = element.nextElementSibling;
+        var siblings = [];
         while (next) {
-            if (next.matches(selector))
+            if (next.matches && next.matches(selector))
                 break;
+            siblings.push(next);
             if (!next.nextElementSibling)
-                return next;
+                break;
             next = next.nextElementSibling;
         }
-        return (next === null || next === void 0 ? void 0 : next.previousElementSibling) || null;
+        return siblings.length > 0 ? siblings[0] : null;
     };
     // Format contact information with click-to-copy functionality
     AboutPageEnhancer.prototype.setupContactFormats = function () {
@@ -148,12 +167,16 @@ var AboutPageEnhancer = /** @class */ (function () {
     };
     // Show visual feedback when copying
     AboutPageEnhancer.prototype.showCopyFeedback = function (element) {
-        var originalText = element.textContent;
+        if (!element)
+            return;
+        var originalText = element.textContent || '';
         element.textContent = 'Copied!';
         element.style.color = '#764ba2';
         setTimeout(function () {
-            element.textContent = originalText;
-            element.style.color = '';
+            if (element) {
+                element.textContent = originalText;
+                element.style.color = '';
+            }
         }, 2000);
     };
     // Add progress bars for skills (if needed)
@@ -258,6 +281,11 @@ var AboutPageEnhancer = /** @class */ (function () {
     return AboutPageEnhancer;
 }());
 // Initialize when DOM is ready
-if (document.querySelector('.about-section')) {
-    new AboutPageEnhancer();
+try {
+    if (document.querySelector('.about-section')) {
+        new AboutPageEnhancer();
+    }
+}
+catch (error) {
+    console.error('AboutPageEnhancer: Failed to initialize', error);
 }

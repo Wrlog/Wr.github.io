@@ -33,26 +33,32 @@ class AboutPageEnhancer {
     }
 
     private setup(): void {
-        // Only run on about page
-        if (!document.querySelector('.about-section')) {
-            console.log('AboutPageEnhancer: .about-section not found, skipping');
-            return;
+        try {
+            // Only run on about page
+            if (!document.querySelector('.about-section')) {
+                console.log('AboutPageEnhancer: .about-section not found, skipping');
+                return;
+            }
+            console.log('AboutPageEnhancer: Initializing...');
+
+            this.skillCategories = document.querySelectorAll('.skill-item, .markdown-body h3');
+            this.timelineItems = document.querySelectorAll('.timeline-item, .markdown-body h3 + p');
+            this.contactSection = document.querySelector('.contact-info, .markdown-body h2:last-of-type');
+            this.sections = document.querySelectorAll('.about-section .markdown-body > h2');
+
+            this.setupSkillTagsAnimation();
+            this.setupTimelineAnimation();
+            this.setupSectionReveal();
+            this.setupContactFormats();
+            this.setupProgressBars();
+            this.setupInteractiveCards();
+            this.setupSmoothScrollToSection();
+            this.setupParallaxEffects();
+            
+            console.log('AboutPageEnhancer: Initialization complete');
+        } catch (error) {
+            console.error('AboutPageEnhancer: Error during setup', error);
         }
-        console.log('AboutPageEnhancer: Initializing...');
-
-        this.skillCategories = document.querySelectorAll('.skill-item, .markdown-body h3');
-        this.timelineItems = document.querySelectorAll('.timeline-item, .markdown-body h3 + p');
-        this.contactSection = document.querySelector('.contact-info, .markdown-body h2:last-of-type');
-        this.sections = document.querySelectorAll('.about-section .markdown-body > h2');
-
-        this.setupSkillTagsAnimation();
-        this.setupTimelineAnimation();
-        this.setupSectionReveal();
-        this.setupContactFormats();
-        this.setupProgressBars();
-        this.setupInteractiveCards();
-        this.setupSmoothScrollToSection();
-        this.setupParallaxEffects();
     }
 
     // Animate skill tags with staggered effect
@@ -106,39 +112,53 @@ class AboutPageEnhancer {
 
     // Reveal sections with fade-in effect
     private setupSectionReveal(): void {
+        if (!this.sections || this.sections.length === 0) return;
+        
         this.sections.forEach((section) => {
-            const element = section as HTMLElement;
-            const sectionContent = this.getNextSiblingUntil(element, 'h2') as HTMLElement;
-            
-            if (sectionContent) {
-                sectionContent.style.opacity = '0';
-                sectionContent.style.transform = 'translateY(20px)';
-                sectionContent.style.transition = 'all 0.6s ease';
+            try {
+                const element = section as HTMLElement;
+                if (!element) return;
+                
+                const sectionContent = this.getNextSiblingUntil(element, 'h2') as HTMLElement;
+                
+                if (sectionContent && sectionContent.style) {
+                    sectionContent.style.opacity = '0';
+                    sectionContent.style.transform = 'translateY(20px)';
+                    sectionContent.style.transition = 'all 0.6s ease';
 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            sectionContent.style.opacity = '1';
-                            sectionContent.style.transform = 'translateY(0)';
-                            observer.unobserve(sectionContent);
-                        }
-                    });
-                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && sectionContent.style) {
+                                sectionContent.style.opacity = '1';
+                                sectionContent.style.transform = 'translateY(0)';
+                                observer.unobserve(sectionContent);
+                            }
+                        });
+                    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-                observer.observe(element);
+                    observer.observe(element);
+                }
+            } catch (error) {
+                console.warn('AboutPageEnhancer: Error in setupSectionReveal', error);
             }
         });
     }
 
     // Helper to get all siblings until a specific selector
     private getNextSiblingUntil(element: Element, selector: string): Element | null {
+        if (!element || !element.nextElementSibling) return null;
+        
         let next = element.nextElementSibling;
+        const siblings: Element[] = [];
+        
         while (next) {
-            if (next.matches(selector)) break;
-            if (!next.nextElementSibling) return next;
+            if (next.matches && next.matches(selector)) break;
+            siblings.push(next);
+            if (!next.nextElementSibling) break;
             next = next.nextElementSibling;
         }
-        return next?.previousElementSibling || null;
+        
+        return siblings.length > 0 ? siblings[0] : null;
     }
 
     // Format contact information with click-to-copy functionality
@@ -183,13 +203,17 @@ class AboutPageEnhancer {
 
     // Show visual feedback when copying
     private showCopyFeedback(element: HTMLElement): void {
-        const originalText = element.textContent;
+        if (!element) return;
+        
+        const originalText = element.textContent || '';
         element.textContent = 'Copied!';
         element.style.color = '#764ba2';
         
         setTimeout(() => {
-            element.textContent = originalText;
-            element.style.color = '';
+            if (element) {
+                element.textContent = originalText;
+                element.style.color = '';
+            }
         }, 2000);
     }
 
@@ -313,7 +337,11 @@ class AboutPageEnhancer {
 }
 
 // Initialize when DOM is ready
-if (document.querySelector('.about-section')) {
-    new AboutPageEnhancer();
+try {
+    if (document.querySelector('.about-section')) {
+        new AboutPageEnhancer();
+    }
+} catch (error) {
+    console.error('AboutPageEnhancer: Failed to initialize', error);
 }
 
