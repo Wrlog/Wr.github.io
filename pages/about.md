@@ -15,13 +15,13 @@ Hello! I'm **Wen-Rui Tan**, a PhD candidate specializing in clinical pharmacolog
 ## Education
 
 **PhD Candidate**  
-*Current*
+_Current_
 
 **Master's Degree**  
-*[Add your degree details here]*
+_[Add your degree details here]_
 
 **Bachelor's Degree**  
-*[Add your degree details here]*
+_[Add your degree details here]_
 
 ## Research Interests
 
@@ -37,18 +37,21 @@ My research focuses on:
 ## Professional Experience
 
 ### [Current/Recent Position]
-*[Add your current position, dates, and description]*
+
+_[Add your current position, dates, and description]_
 
 - Key achievements and responsibilities
 - Projects and contributions
 - Technologies used
 
 ### [Previous Position]
-*[Add previous position details]*
+
+_[Add previous position details]_
 
 ## Skills
 
 ### Pharmacometric & Analytical Tools
+
 - **Modeling Software**: NONMEM, R (nlme, nlmixr), Python (scipy, pandas), mrgsolve
 - **Statistical Analysis**: Population PK/PD modeling, nonlinear mixed-effects modeling, Bayesian methods
 - **Data Analysis**: Clinical trial data analysis, pharmacokinetic data processing, pharmacodynamic endpoint analysis
@@ -56,6 +59,7 @@ My research focuses on:
 - **Version Control**: Git, GitHub
 
 ### Core Competencies
+
 - **Pharmacokinetic Modeling**: Compartmental and non-compartmental analysis, population PK modeling
 - **Pharmacodynamic Modeling**: Exposure-response relationships, biomarker modeling, disease progression modeling
 - **Model Development**: Covariate analysis, model selection and validation, visual predictive checks (VPC)
@@ -64,13 +68,15 @@ My research focuses on:
 
 ## Publications & Research Projects
 
-*[Add links to your publications, research projects, or GitHub repositories]*
+_[Add links to your publications, research projects, or GitHub repositories]_
 
 ### Publications
-*[List your peer-reviewed publications, conference presentations, and abstracts here]*
+
+_[List your peer-reviewed publications, conference presentations, and abstracts here]_
 
 ### Research Projects
-*[Describe your key research projects, including PK/PD modeling studies, clinical trial analyses, and methodological developments]*
+
+_[Describe your key research projects, including PK/PD modeling studies, clinical trial analyses, and methodological developments]_
 
 ## Contact
 
@@ -81,6 +87,7 @@ Feel free to reach out if you'd like to collaborate on research projects, discus
 - **Location**: United States
 
 I'm always interested in:
+
 - Research collaborations in PK/PD modeling
 - Discussions on pharmacometric methodologies
 - Opportunities in pharmaceutical research and development
@@ -88,5 +95,4 @@ I'm always interested in:
 
 ---
 
-*Last updated: {{ site.time | date: "%B %Y" }}*
-
+_Last updated: {{ site.time | date: "%B %Y" }}_
