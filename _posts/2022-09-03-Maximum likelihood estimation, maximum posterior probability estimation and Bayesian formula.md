@@ -1,145 +1,147 @@
 ---
 layout: post
-title: 【Statistic】Maximum likelihood estimation, Maximum a posteriori probability estimation
-categories: Statistic 
-description: MLE,MAP,Bayesian
-keywords:  Maximum likelihood estimation
+title: 【Statistics】Maximum Likelihood Estimation (MLE) vs. Maximum A Posteriori (MAP)
+categories: Statistics
+description: Understanding the core differences between MLE, MAP, and Bayesian inference.
+keywords: Maximum likelihood estimation, MAP, Bayesian, Probability vs Statistics
 ---
 
-Maximum likelihood estimation (MLE) and maximum a posteriori estimation (MAP) are two very common methods for parameter estimation, and it is easy to confuse them if you do not understand the ideas of these two methods. 
-The following section will explain the ideas and differences of MLE and MAP in detail.
+Maximum Likelihood Estimation (**MLE**) and Maximum A Posteriori (**MAP**) are two common methods for parameter estimation. Because they perform similar tasks, they are often confused.
 
-Let's start with the difference between probability and statistics.
+The following section explains the intuition and mathematical differences between MLE and MAP. To understand them, we must first clarify the relationship between Probability and Statistics.
 
+---
 
-## Probability and Statistics are the same thing?
+## 1. Probability vs. Statistics: The Cookie Jar Analogy
 
-Probability and statistics may seem like two similar concepts, but they actually study the opposite research question.
+Probability and statistics may seem like identical concepts, but they actually ask opposite questions.
 
-The problem of probabilistic research is how to predict the characteristics of the results produced by a model (e.g. mean, variance, covariance, etc.) when the model and parameters are known. For example, I want to study how to raise swine (the model is pigs), 
-I have chosen the breed I want to raise, the feeding method, the design of the shed, etc. (choose the parameters), and I want to know approximately how fat and how good the meat will be when I raise the swine (predict the outcome).
+### The Probability Question
+**"Given the Model, predict the Data."**
 
-The problem with statistical studies is the opposite. Statistics is that there is a pile of data that has to be used to predict models and parameters. 
-Still using the swine as an example. Now I get a pile of meat and through observation and judgment I determine that it is pork (which determines the model.) 
-In the actual research, also by observing the data to speculate the model is / like Gaussian distribution, exponential distribution, Laplace distribution, etc.), then, 
-you can further research to determine the breed of this pig, this is a captive pig or a Wild Boar or other species, and so on (predict model parameters).
+Imagine you have a **Cookie Jar (The Model)**. You know exactly what is inside: 90 chocolate chip cookies and 10 oatmeal raisin cookies (The Parameters). You reach in and grab a handful of cookies.
+* *Probability asks:* "What is the likelihood that I will pull out 3 chocolate chip cookies and 1 oatmeal raisin?"
 
-**In a nutshell: probability is to predict the data with known model and parameters. Statistics is known data, predicting the model and parameters.**
+### The Statistics Question
+**"Given the Data, predict the Model."**
 
-Obviously, both MLE and MAP explained in this paper are problems in the field of **statistics**. 
-They are both methods used to infer parameters. Why do two different methods exist? This requires an understanding of Bayesian thinking. 
-Let's take a look at the Bayesian formulation.
+Now, imagine you are blindfolded. You are presented with a jar, but you don't know what is inside. You reach in and pull out a handful of cookies: 3 chocolate chip and 1 oatmeal raisin (**The Data**).
+* *Statistics asks:* "Based on these cookies in my hand, what is the likely ratio of cookies inside the jar?"
 
+**In a nutshell:**
+* **Probability:** Model $\rightarrow$ Data (Deduction)
+* **Statistics:** Data $\rightarrow$ Model (Induction)
 
-### Bayes' Theorem: Updating Your Beliefs
+Both MLE and MAP are **Statistical** problems. We have data, and we are trying to infer the parameters of the model.
 
-Bayes' theorem is the engine that powers MAP. At its heart, it's a simple, powerful rule for updating your beliefs in light of new evidence.
+---
 
-The formula is:
+## 2. Bayes' Theorem: Updating Beliefs
+
+To understand MAP, you must understand Bayes' Theorem. It is a rule for updating your beliefs after seeing evidence.
+
 $$
-P(A | B) = \fracP(B | A) \times P(A)}{P(B)}
+P(A | B) = \frac{P(B | A) \times P(A)}{P(B)}
 $$
-Let's label these parts, as they have special names:
 
-* **$P(A | B)$ = Posterior:** "What is the probability of $A$ *after* I see evidence $B$?"
-* **$P(B | A)$ = Likelihood:** "If $A$ were true, what is the probability I would see evidence $B$?"
-* **$P(A)$ = Prior:** "What did I believe about $A$ *before* I saw any evidence?"
-* **$P(B)$ = Evidence:** "What is the total probability of seeing evidence $B$?"
+Let's break down the terminology:
 
-#### The Car Alarm Analogy
+* **$P(A | B)$ (Posterior):** "What is the probability of $A$ *after* I see evidence $B$?"
+* **$P(B | A)$ (Likelihood):** "If $A$ were true, what is the probability I would see evidence $B$?"
+* **$P(A)$ (Prior):** "What did I believe about $A$ *before* I saw any evidence?"
+* **$P(B)$ (Evidence):** The total probability of seeing the evidence.
 
-Let's use your great example:
-* $A$ = Your car was smashed.
-* $B$ = Your car alarm is going off.
+### The Car Alarm Analogy
+Let $A$ be **"Car Stolen"** and $B$ be **"Alarm Ringing"**.
+We want to know $P(\text{Stolen} | \text{Alarm})$.
 
-We want to find $P(\text{Smashed} | \text{Alarm})$. How likely is your car smashed *given* you hear the alarm?
-
-1.  **Prior $P(A)$ = $P(\text{Smashed})$:** What's the probability your car is smashed on any random day? It's *extremely low*. Maybe 0.001%. This is your prior belief.
-2.  **Likelihood $P(B | A)$ = $P(\text{Alarm} | \text{Smashed})$:** If your car *was* smashed, what's the chance the alarm would go off? It's very high. Let's say 99%.
-3.  **Evidence $P(B)$ = $P(\text{Alarm})$:** What's the *total* probability your car alarm goes off? This includes all reasons: kids playing, a cat, a malfunction, *and* being smashed. Because false alarms are common, this probability is much higher than you'd think, maybe 1%.
-
-Bayes' theorem forces you to consider the **prior** (smashing is rare) and the **evidence** (alarms go off for many reasons) instead of just the **likelihood** (smashing causes alarms). This is why you (correctly) don't panic every time you hear an alarm.
+1.  **Likelihood ($P(\text{Alarm} | \text{Stolen})$):** If your car is being stolen, the alarm will almost certainly ring (high probability).
+2.  **Prior ($P(\text{Stolen})$):** How likely is it that a car is stolen on any random day? Very low.
+3.  **Posterior ($P(\text{Stolen} | \text{Alarm})$):** Even though the alarm is ringing, the probability your car is actually being stolen is still relatively low, because the **Prior** (the general rarity of theft) weighs the probability down. It is more likely a false alarm.
 
 ---
 
-### The Likelihood Function: A Shift in Perspective
+## 3. The Likelihood Function
 
-This is a key concept. The expression $P(x | \theta)$ can be read in two ways, where $x$ is our data and $\theta$ is our parameter.
+The expression $P(x | \theta)$ involves Data ($x$) and Parameters ($\theta$). It can be interpreted in two ways:
 
-* **As a Probability Function:** If you **fix the parameter $\theta$** (e.g., a fair coin, $\theta=0.5$), this function tells you the probability of different data $x$ (e.g., the probability of getting 3 heads).
-* **As a Likelihood Function:** In statistics, we do the opposite. We **fix the data $x$** (we already did the coin flips) and treat the **parameter $\theta$ as the variable**. This function, $L(\theta) = P(x | \theta)$, tells us how "likely" different parameter values are, given the data we saw.
+1.  **Probability Function (fixed $\theta$, variable $x$):** If the coin is fair ($\theta=0.5$), what are the odds of getting Heads ($x$)?
+2.  **Likelihood Function (fixed $x$, variable $\theta$):** If I flipped Heads ($x$), what is the likelihood the coin was fair ($\theta$)?
 
-Your $x^y$ analogy is perfect. The function $f(x, y) = x^y$ is:
+In statistics, we use the second definition. We define the Likelihood Function as:
 
-* An exponential function if you fix $x$ (e.g., $2^y$).
-* A power function if you fix $y$ (e.g., $x^2$).
-
-It's the same formula, just a different perspective.
-
----
-
-### Maximum Likelihood Estimation (MLE)
-
-**The Goal:** Find the one parameter value ($\theta$) that makes your observed data ($x$) **most probable**.
-
-**The Question:** "What parameter $\theta$ best explains the data I saw, ignoring any and all of my prior beliefs?"
-
-**The Method:** You maximize the **likelihood function** $L(\theta) = P(x | \theta)$.
-
-#### The Coin Toss Example
-
-* **Data ($x$):** You flip a coin 10 times and get 7 Heads, 3 Tails.
-* **Parameter ($\theta$):** The (unknown) probability of getting Heads.
-* **Likelihood Function:** The probability of getting this *exact* sequence is:
-    
-    $$P(\theta | x) \propto P(x | \theta) \times P(\theta)$$
-    
-* **MLE:** What value of $\theta$ makes this function $L(\theta)$ as large as possible?
-    * If you guess $\theta = 0.5$, $L(0.5) = (0.5)^7 (0.5)^3 \approx 0.00097$
-    * If you guess $\theta = 0.7$, $L(0.7) = (0.7)^7 (0.3)^3 \approx 0.00222$
-* As your graph showed, the function peaks at **$\theta = 0.7$**. This is the MLE. It's the most intuitive answer: the best guess for the coin's probability is the frequency you observed.
-
----
-
-###  Maximum A Posteriori (MAP) Estimation
-
-**The Goal:** Find the one parameter value ($\theta$) that is **most probable** given the data *and* your prior beliefs.
-
-**The Question:** "What parameter $\theta$ provides the best *balance* between explaining the data and fitting what I already believed to be true?"
-
-**The Method:** You use Bayes' theorem to find the **posterior probability**, $P(\theta | x)$, and maximize that.
 $$
-\text{Maximize } P(\theta | x) \propto P(x | \theta) \times P(\theta)
+L(\theta) = P(x | \theta)
 $$
-We ignore the denominator $P(x)$ because it's just a normalizing constant and doesn't change *where* the peak is.
-
-So, MAP maximizes: **$\text{Likelihood} \times \text{Prior}$**.
-
-#### The Coin Toss Example (Revisited)
-
-Data ($x$): 7 Heads, 3 Tails.
-
-Likelihood $P(x | \theta)$: Same as before, $\theta^7 (1-\theta)^3$.
-
-Prior $P(\theta)$: Now, you add your belief. You believe coins are almost always fair. You could represent this belief with a probability distribution peaked at $\theta = 0.5$ (like the Gaussian in your example).
-
-MAP: You are now maximizing the product:$$  \text{Maximize } [\theta^7 (1-\theta)^3] \times [\text{Your Gaussian function peaked at 0.5}]$$
-
-The Result: The likelihood "pulls" the estimate toward 0.7 (the data). The prior "pulls" it toward 0.5 (your belief). The final MAP estimate is a compromise between the two, landing somewhere like $\theta = 0.68$ (as in your graph).
-
-#### What if You Have More Data?
-Your last example is the most important part!
-* If you flip 1000 times and get 700 Heads, the likelihood becomes $\theta^{700} (1-\theta)^{300}$.
-* This function is *incredibly* sharply peaked at $\theta = 0.7$. It's so strong that it completely overwhelms your "gentle" prior belief.
-* The MAP estimate will now be extremely close to 0.7 (e.g., $\theta = 0.699$). This shows that **with enough data, the data speaks for itself and overcomes your initial beliefs.**
 
 ---
 
-### Summary: MLE vs. MAP
+## 4. Maximum Likelihood Estimation (MLE)
+
+**The Goal:** Find the parameter $\theta$ that makes the observed data **most probable**.
+**The Philosophy:** "Let the data speak for itself. Ignore subjective beliefs."
+
+$$
+\theta_{MLE} = \operatorname*{argmax}_\theta P(x | \theta)
+$$
+
+### Example: The Coin Toss
+You flip a coin 10 times.
+* **Data ($x$):** 7 Heads, 3 Tails.
+* **Parameter ($\theta$):** Probability of Heads (Unknown).
+
+We want to maximize the likelihood:
+$$P(x | \theta) = \theta^7 (1-\theta)^3$$
+
+* If we guess $\theta = 0.5$: $0.5^7 \times 0.5^3 \approx 0.0009$
+* If we guess $\theta = 0.7$: $0.7^7 \times 0.3^3 \approx 0.0022$
+
+The function peaks at **0.7**. Therefore, the MLE estimate is **0.7**.
+
+---
+
+## 5. Maximum A Posteriori (MAP)
+
+**The Goal:** Find the parameter $\theta$ that is most probable given the data **AND** our prior knowledge.
+**The Philosophy:** "The data is important, but extraordinary claims require extraordinary evidence."
+
+MAP uses Bayes' Theorem. We want to maximize the **Posterior**:
+
+$$
+\text{Maximize } P(\theta | x) \approx P(x | \theta) \times P(\theta)
+$$
+
+*(We ignore the denominator $P(x)$ because it is constant).*
+
+So, MAP maximizes: **Likelihood $\times$ Prior**.
+
+### Example: The "Fair" Coin
+* **Data ($x$):** 7 Heads, 3 Tails.
+* **Prior ($P(\theta)$):** You know from experience that most coins are fair. You represent this belief with a Gaussian distribution peaked at $\theta=0.5$.
+
+Now we maximize:
+$$
+(\theta^7 (1-\theta)^3) \times (\text{Gaussian Prior at 0.5})
+$$
+
+* The **Likelihood** pulls the estimate toward **0.7**.
+* The **Prior** pulls the estimate toward **0.5**.
+* The **MAP Result** settles somewhere in the middle, perhaps **0.65**.
+
+### When Data Overcomes Belief
+What happens if you flip the coin 1,000 times and get 700 heads?
+
+The Likelihood term $\theta^{700}(1-\theta)^{300}$ becomes incredibly sharp and specific. It becomes so strong that it overpowers the Prior.
+* **Small Data:** Prior matters (MAP $\neq$ MLE).
+* **Infinite Data:** Prior is ignored (MAP $\approx$ MLE).
+
+---
+
+## Summary
 
 | Feature | Maximum Likelihood (MLE) | Maximum A Posteriori (MAP) |
 | :--- | :--- | :--- |
-| **What it Maximizes** | **Likelihood:** $P(x | \theta)$ | **Posterior:** $P(\theta | x) \propto P(x | \theta) P(\theta)$ |
-| **Philosophical Idea** | "Find the parameter that best explains the data." | "Find the parameter that best balances the data and my prior beliefs." |
-| **What it Considers** | Data only. | Data + Prior Belief. |
-| **Connection** | MLE is a special case of MAP where the **prior $P(\theta)$ is a uniform distribution** (meaning you have no prior belief and assume all $\theta$ values are equally likely). | |
+| **Formula** | $P(x | \theta)$ | $P(x | \theta) \times P(\theta)$ |
+| **Philosophy** | Only the data matters. | Data + Prior Knowledge matters. |
+| **Assumptions** | Assumes a **Uniform Prior** (all parameter values are equally likely). | Assumes a specific **Prior Distribution** (e.g., Gaussian). |
+| **Best Used When** | You have lots of data. | You have scarce data or strong domain knowledge. |
