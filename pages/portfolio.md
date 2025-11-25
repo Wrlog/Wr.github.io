@@ -15,74 +15,91 @@ Welcome to my portfolio! Here you'll find a collection of my projects, research 
 ## Featured Research Projects
 
 ### Research Project 1: [Project Title]
-*[Institution/Organization, Date/Timeframe]*
+
+_[Institution/Organization, Date/Timeframe]_
 
 **Description**: [Brief description of your PK/PD modeling research project]
 
-**Objectives**: 
+**Objectives**:
+
 - [Primary objective]
 - [Secondary objective]
 
-**Methodology**: 
+**Methodology**:
+
 - [Modeling approach used]
 - [Software/tools utilized]
 
 **Key Findings**:
+
 - [Key finding 1]
 - [Key finding 2]
 - [Key finding 3]
 
-**Publications/Presentations**: 
+**Publications/Presentations**:
+
 - [Link to publication or presentation if available]
 
 **Links**:
+
 - [GitHub Repository](https://github.com/WenruiTan/) (if code is available)
 - [Related Publications](#) (if applicable)
 
 ---
 
 ### Research Project 2: [Project Title]
-*[Institution/Organization, Date/Timeframe]*
+
+_[Institution/Organization, Date/Timeframe]_
 
 **Description**: [Brief description of your research project]
 
-**Objectives**: 
+**Objectives**:
+
 - [Primary objective]
 - [Secondary objective]
 
-**Methodology**: 
+**Methodology**:
+
 - [Modeling approach used]
 - [Software/tools utilized]
 
 **Key Findings**:
+
 - [Key finding 1]
 - [Key finding 2]
 
-**Publications/Presentations**: 
+**Publications/Presentations**:
+
 - [Link to publication or presentation if available]
 
 **Links**:
+
 - [GitHub Repository](https://github.com/WenruiTan/) (if code is available)
 
 ---
 
 ### Research Project 3: [Project Title]
-*[Institution/Organization, Date/Timeframe]*
+
+_[Institution/Organization, Date/Timeframe]_
 
 **Description**: [Brief description of your research project]
 
-**Objectives**: 
+**Objectives**:
+
 - [Primary objective]
 
-**Methodology**: 
+**Methodology**:
+
 - [Modeling approach used]
 - [Software/tools utilized]
 
 **Key Findings**:
+
 - [Key finding 1]
 - [Key finding 2]
 
 **Links**:
+
 - [GitHub Repository](https://github.com/WenruiTan/) (if code is available)
 
 ---
@@ -90,41 +107,45 @@ Welcome to my portfolio! Here you'll find a collection of my projects, research 
 ## Publications
 
 ### Peer-Reviewed Publications
-*[List your peer-reviewed journal articles here]*
 
-- **[Publication Title]** - *Journal Name, Year* - [DOI/Link]
-- **[Publication Title]** - *Journal Name, Year* - [DOI/Link]
+_[List your peer-reviewed journal articles here]_
+
+- **[Publication Title]** - _Journal Name, Year_ - [DOI/Link]
+- **[Publication Title]** - _Journal Name, Year_ - [DOI/Link]
 
 ### Conference Presentations & Abstracts
-*[List your conference presentations, posters, and abstracts here]*
 
-- **[Presentation Title]** - *Conference Name, Year* - [Link if available]
-- **[Poster Title]** - *Conference Name, Year* - [Link if available]
+_[List your conference presentations, posters, and abstracts here]_
+
+- **[Presentation Title]** - _Conference Name, Year_ - [Link if available]
+- **[Poster Title]** - _Conference Name, Year_ - [Link if available]
 
 ---
 
 ## Open Source & Code Contributions
 
-*[List any open source pharmacometric tools, R packages, or code repositories you've contributed to]*
+_[List any open source pharmacometric tools, R packages, or code repositories you've contributed to]_
 
 - [Project/Tool Name](link) - [Brief description of contribution]
 
 ## Certifications & Achievements
 
-*[List any relevant certifications, awards, or achievements]*
+_[List any relevant certifications, awards, or achievements]_
 
-- Certification/Award Name - *Date*
-- Certification/Award Name - *Date*
+- Certification/Award Name - _Date_
+- Certification/Award Name - _Date_
 
 ## Skills Summary
 
 ### Pharmacometric & Analytical Skills
+
 - **Modeling Software**: NONMEM, R (nlme, nlmixr), Python, mrgsolve
 - **PK/PD Analysis**: Population pharmacokinetics, pharmacodynamic modeling, exposure-response analysis
 - **Statistical Methods**: Nonlinear mixed-effects modeling, Bayesian inference, simulation techniques
 - **Tools**: Git, GitHub, Jupyter Notebooks, RStudio, PsN, Xpose
 
 ### Research & Professional Skills
+
 - Pharmacokinetic/pharmacodynamic model development and validation
 - Clinical trial data analysis and interpretation
 - Population modeling and covariate analysis
@@ -142,6 +163,7 @@ Interested in collaborating on pharmacometric research or learning more about my
 - **GitHub**: [@WenruiTan](https://github.com/WenruiTan)
 
 I welcome opportunities for:
+
 - Research collaborations in PK/PD modeling
 - Methodological discussions in pharmacometrics
 - Academic and industry partnerships
@@ -149,5 +171,4 @@ I welcome opportunities for:
 
 ---
 
-*Last updated: {{ site.time | date: "%B %Y" }}*
-
+_Last updated: {{ site.time | date: "%B %Y" }}_
