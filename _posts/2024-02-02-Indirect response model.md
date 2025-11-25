@@ -6,6 +6,36 @@ description: Comprehensive overview of indirect response (IDR) models, their mat
 keywords: Indirect Response Models, Pharmacodynamics, PK/PD Modeling, Hysteresis, Mechanism-Based Modeling, NONMEM
 ---
 
+## What Are Indirect Response Models?
+
+Indirect Response (IDR) models are a class of pharmacodynamic models used when drugs do **not** act directly on the measured effect. Instead, the drug influences the **turnover** (synthesis or degradation) of an endogenous substance, and it's the level of this substance that we measure as the effect.
+
+### Key Distinction: Direct vs. Indirect Response
+
+**Direct Response Models:**
+- Drug concentration → Immediate effect
+- Example: Anesthetic agents where higher concentration = deeper anesthesia
+- Mathematical form: $E = f(C(t))$ where effect directly depends on concentration
+
+**Indirect Response Models:**
+- Drug concentration → Modulates turnover → Changes in mediator level → Measured effect
+- Example: Warfarin doesn't directly affect clotting time; it inhibits synthesis of clotting factors, and the factor levels determine clotting time
+- Mathematical form: Drug affects $k_{in}$ or $k_{out}$, which then affects response $R(t)$
+
+### The "Bathtub" Analogy
+
+Think of the response (e.g., biomarker level, clotting factor concentration) as water in a bathtub:
+
+- **$k_{in}$ (or $R_{syn}$):** The faucet - constant rate of production/synthesis
+- **$k_{out}$:** The drain - constant rate of elimination/degradation  
+- **Baseline ($R_0$):** At steady-state, faucet and drain are balanced, water level is stable
+
+The drug does **not** directly change the water level. Instead, the drug:
+- **Turns the faucet up or down** (affects $k_{in}$), OR
+- **Clogs or opens the drain** (affects $k_{out}$)
+
+The water level (response) changes **slowly** as a result of this interference, creating the characteristic delay between drug concentration and effect.
+
 ## Introduction
 
 Indirect Response (IDR) models represent a fundamental class of mechanism-based pharmacodynamic models that describe drug effects through modulation of endogenous substance turnover rather than direct concentration-effect relationships. These models are essential for characterizing delayed pharmacodynamic responses, explaining hysteresis phenomena, and predicting time-dependent effects in clinical pharmacology.
