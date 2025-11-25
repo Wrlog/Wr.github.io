@@ -27,6 +27,7 @@ $$
 $$
 
 However, many pharmacokinetic profiles exhibit:
+
 - **Multi-exponential decay** with non-standard exponents
 - **Delayed absorption** with complex lag-time distributions
 - **Non-compartmental behavior** (e.g., enterohepatic recirculation, target-mediated disposition)
@@ -46,11 +47,13 @@ q_\phi(z \mid x) = \mathcal{N}(\mu_\phi(x), \sigma_\phi^2(x))
 $$
 
 where:
+
 - $x = \{C_{obs}(t_1), C_{obs}(t_2), ..., C_{obs}(t_n), \text{covariates}\}$ represents observed data
 - $z$ is the latent vector encoding patient-specific PK characteristics
 - $\mu_\phi(x)$ and $\sigma_\phi(x)$ are neural network outputs parameterizing the latent distribution
 
 The encoder learns to extract:
+
 - **Patient-specific clearance patterns**
 - **Volume of distribution characteristics**
 - **Absorption rate profiles**
@@ -71,6 +74,7 @@ C_{pred}(t) = \text{Decoder}(z, \text{Dose}, t)
 $$
 
 Unlike ODE models constrained to exponential or polynomial forms, the decoder can learn:
+
 - **Arbitrary concentration-time curves**
 - **Multi-modal distributions**
 - **Non-standard absorption patterns**
@@ -93,6 +97,7 @@ This enables gradient-based optimization while maintaining probabilistic interpr
 For MIPD applications, the VAE learns individual patient pharmacokinetic characteristics from sparse observational data:
 
 **Training Phase:**
+
 1. Encoder processes observed concentrations: $z_i = \text{Encoder}(C_{obs,i}, \text{covariates}_i)$
 2. Each patient's latent vector $z_i$ captures their unique PK profile shape
 3. Decoder learns to predict full profiles: $C_{pred,i} = \text{Decoder}(z_i, \text{Dose}_i)$
@@ -128,7 +133,7 @@ class PKVAE(nn.Module):
             nn.ReLU(),
             nn.Linear(32, latent_dim * 2)  # mean and log-variance
         )
-        
+
         # Decoder: latent + dose -> concentration profile
         self.decoder = nn.Sequential(
             nn.Linear(latent_dim + 1, 32),  # +1 for dose
@@ -137,20 +142,20 @@ class PKVAE(nn.Module):
             nn.ReLU(),
             nn.Linear(64, time_points)
         )
-    
+
     def encode(self, x):
         h = self.encoder(x)
         mu, logvar = h[:, :latent_dim], h[:, latent_dim:]
         return mu, logvar
-    
+
     def reparameterize(self, mu, logvar):
         std = torch.exp(0.5 * logvar)
         eps = torch.randn_like(std)
         return mu + eps * std
-    
+
     def decode(self, z, dose):
         return self.decoder(torch.cat([z, dose.unsqueeze(1)], dim=1))
-    
+
     def forward(self, x, dose):
         mu, logvar = self.encode(x)
         z = self.reparameterize(mu, logvar)
@@ -202,6 +207,7 @@ $$
 $$
 
 where:
+
 - First term: Reconstruction loss (fidelity to observed data)
 - Second term: KL divergence (regularization toward prior distribution $p(z) = \mathcal{N}(0, I)$)
 - $\beta$: Weighting factor balancing the two objectives
@@ -211,10 +217,12 @@ where:
 The VAE can quantify profile complexity through:
 
 **Latent Space Dimensionality:**
+
 - Higher-dimensional $z$ captures more complex profile variations
 - Dimensionality can be optimized via information-theoretic criteria
 
 **Reconstruction Error:**
+
 $$
 \text{Complexity} = \frac{1}{N} \sum_{i=1}^{N} ||C_{obs,i} - C_{pred,i}||^2
 $$
@@ -233,14 +241,14 @@ VAE models can complement traditional ODE models:
 
 ### Comparison with ODE Models
 
-| Aspect | ODE Models | VAE Models |
-|--------|-----------|-----------|
-| **Mathematical Form** | Fixed (exponential, polynomial) | Learned (arbitrary) |
-| **Profile Flexibility** | Limited to assumed structure | High flexibility |
-| **Interpretability** | High (clear parameters) | Moderate (latent space) |
-| **Data Requirements** | Moderate | Higher (for training) |
-| **Extrapolation** | Good (mechanistic) | Moderate (data-driven) |
-| **Complex Profiles** | Limited | Excellent |
+| Aspect                  | ODE Models                      | VAE Models              |
+| ----------------------- | ------------------------------- | ----------------------- |
+| **Mathematical Form**   | Fixed (exponential, polynomial) | Learned (arbitrary)     |
+| **Profile Flexibility** | Limited to assumed structure    | High flexibility        |
+| **Interpretability**    | High (clear parameters)         | Moderate (latent space) |
+| **Data Requirements**   | Moderate                        | Higher (for training)   |
+| **Extrapolation**       | Good (mechanistic)              | Moderate (data-driven)  |
+| **Complex Profiles**    | Limited                         | Excellent               |
 
 ## Clinical Applications
 
