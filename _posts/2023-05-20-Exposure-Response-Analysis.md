@@ -67,6 +67,7 @@ E = E_0 + \alpha \cdot Exposure
 $$
 
 where:
+
 - $E$ = response endpoint
 - $E_0$ = baseline response
 - $\alpha$ = slope parameter
@@ -97,6 +98,7 @@ E = E_0 + \frac{E_{max} \cdot Exposure^{\gamma}}{EC_{50}^{\gamma} + Exposure^{\g
 $$
 
 where:
+
 - $E_{max}$ = maximum drug effect
 - $EC_{50}$ = exposure producing 50% of maximum effect
 - $\gamma$ = Hill coefficient (steepness of curve)
@@ -126,6 +128,7 @@ E_{ij} = f(Exposure_{ij}, \theta_i) + \epsilon_{ij}
 $$
 
 where:
+
 - $E_{ij}$ = response for individual $i$ at observation $j$
 - $\theta_i$ = individual-specific parameters
 - $\epsilon_{ij}$ = residual error
@@ -342,4 +345,3 @@ E-R analysis typically follows PK model development:
 Exposure-Response analysis provides a quantitative framework for linking drug exposure to clinical outcomes, enabling evidence-based dose optimization and individualized dosing strategies. By establishing robust E-R relationships, pharmacometricians support optimal therapeutic decision-making and contribute to improved patient outcomes through precision dosing approaches.
 
 Mastery of E-R analysis is essential for pharmacometric modelers, as it bridges the gap between pharmacokinetic characterization and clinical efficacy/safety, providing the quantitative foundation for rational dose selection and therapeutic individualization.
-
