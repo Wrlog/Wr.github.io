@@ -65,6 +65,14 @@
     <script type="text/javascript" src="https://basis-learning.github.io/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     {% endif %}
 
+    <!-- Page-specific enhancements - Load at end for better performance -->
+    {% if page.menu == 'About' or page.permalink == '/about/' or page.url == '/about/' or page.url == '/about/index.html' %}
+    <script src="{{ site.url }}/assets/js/about-page.js"></script>
+    {% endif %}
+    {% if page.menu == 'Portfolio' or page.permalink == '/portfolio/' or page.url == '/portfolio/' or page.url == '/portfolio/index.html' %}
+    <script src="{{ site.url }}/assets/js/portfolio-page.js"></script>
+    {% endif %}
+
     {% if site.google.analytics_id %}
     <div style="display:none">
       <script>

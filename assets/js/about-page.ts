@@ -34,7 +34,11 @@ class AboutPageEnhancer {
 
     private setup(): void {
         // Only run on about page
-        if (!document.querySelector('.about-section')) return;
+        if (!document.querySelector('.about-section')) {
+            console.log('AboutPageEnhancer: .about-section not found, skipping');
+            return;
+        }
+        console.log('AboutPageEnhancer: Initializing...');
 
         this.skillCategories = document.querySelectorAll('.skill-item, .markdown-body h3');
         this.timelineItems = document.querySelectorAll('.timeline-item, .markdown-body h3 + p');

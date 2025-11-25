@@ -35,7 +35,11 @@ class PortfolioPageEnhancer {
 
     private setup(): void {
         // Only run on portfolio page
-        if (!document.querySelector('.portfolio-section')) return;
+        if (!document.querySelector('.portfolio-section')) {
+            console.log('PortfolioPageEnhancer: .portfolio-section not found, skipping');
+            return;
+        }
+        console.log('PortfolioPageEnhancer: Initializing...');
 
         this.projectCards = document.querySelectorAll('.project-card, .markdown-body h3');
         this.techTags = document.querySelectorAll('.tech-tag, .markdown-body ul li');
