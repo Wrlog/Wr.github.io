@@ -5,6 +5,7 @@ categories: Pharmacodynamic
 description: Comprehensive overview of indirect response (IDR) models, their mathematical foundations, and applications in pharmacometric modeling
 keywords: Indirect Response Models, Pharmacodynamics, PK/PD Modeling, Hysteresis, Mechanism-Based Modeling, NONMEM
 date: 2024-02-02
+published: true
 ---
 
 ## What Are Indirect Response Models?
