@@ -17,20 +17,25 @@ The following section explains the intuition and mathematical differences betwee
 Probability and statistics may seem like identical concepts, but they actually ask opposite questions.
 
 ### The Probability Question
+
 **"Given the Model, predict the Data."**
 
 Imagine you have a **Cookie Jar (The Model)**. You know exactly what is inside: 90 chocolate chip cookies and 10 oatmeal raisin cookies (The Parameters). You reach in and grab a handful of cookies.
-* *Probability asks:* "What is the probability that I will pull out 3 chocolate chip cookies and 1 oatmeal raisin?"
+
+- _Probability asks:_ "What is the probability that I will pull out 3 chocolate chip cookies and 1 oatmeal raisin?"
 
 ### The Statistics Question
+
 **"Given the Data, predict the Model."**
 
 Now, imagine you are blindfolded. You are presented with a jar, but you don't know what is inside. You reach in and pull out a handful of cookies: 3 chocolate chip and 1 oatmeal raisin (**The Data**).
-* *Statistics asks:* "Based on these cookies in my hand, what is the likely ratio of cookies inside the jar?"
+
+- _Statistics asks:_ "Based on these cookies in my hand, what is the likely ratio of cookies inside the jar?"
 
 **In a nutshell:**
-* **Probability:** Model $\rightarrow$ Data (Deduction)
-* **Statistics:** Data $\rightarrow$ Model (Induction)
+
+- **Probability:** Model $\rightarrow$ Data (Deduction)
+- **Statistics:** Data $\rightarrow$ Model (Induction)
 
 Both MLE and MAP are **Statistical** problems. We have data, and we are trying to infer the parameters of the model.
 
@@ -46,12 +51,13 @@ $$
 
 Let's break down the terminology:
 
-* **$P(A | B)$ (Posterior):** "What is the probability of $A$ *after* I see evidence $B$?"
-* **$P(B | A)$ (Likelihood):** "If $A$ were true, what is the probability I would see evidence $B$?"
-* **$P(A)$ (Prior):** "What did I believe about $A$ *before* I saw any evidence?"
-* **$P(B)$ (Evidence):** The total probability of seeing the evidence.
+- **$P(A | B)$ (Posterior):** "What is the probability of $A$ _after_ I see evidence $B$?"
+- **$P(B | A)$ (Likelihood):** "If $A$ were true, what is the probability I would see evidence $B$?"
+- **$P(A)$ (Prior):** "What did I believe about $A$ _before_ I saw any evidence?"
+- **$P(B)$ (Evidence):** The total probability of seeing the evidence.
 
 ### The Car Alarm Analogy
+
 Let $A$ be **"Car Stolen"** and $B$ be **"Alarm Ringing"**.
 We want to know $P(\text{Stolen} | \text{Alarm})$.
 
@@ -86,15 +92,17 @@ $$
 $$
 
 ### Example: The Coin Toss
+
 You flip a coin 10 times.
-* **Data ($x$):** 7 Heads, 3 Tails.
-* **Parameter ($\theta$):** Probability of Heads (Unknown).
+
+- **Data ($x$):** 7 Heads, 3 Tails.
+- **Parameter ($\theta$):** Probability of Heads (Unknown).
 
 We want to maximize the likelihood:
 $$P(x | \theta) = \theta^7 (1-\theta)^3$$
 
-* If we guess $\theta = 0.5$: $0.5^7 \times 0.5^3 \approx 0.0009$
-* If we guess $\theta = 0.7$: $0.7^7 \times 0.3^3 \approx 0.0022$
+- If we guess $\theta = 0.5$: $0.5^7 \times 0.5^3 \approx 0.0009$
+- If we guess $\theta = 0.7$: $0.7^7 \times 0.3^3 \approx 0.0022$
 
 The likelihood function peaks at $\theta = 0.7$. Therefore, the MLE estimate is $\hat{\theta}_{MLE} = 0.7$.
 
@@ -111,7 +119,7 @@ $$
 \text{Maximize } P(\theta | x) \approx P(x | \theta) \times P(\theta)
 $$
 
-*(We ignore the denominator $P(x)$ because it is constant with respect to $\theta$.)*
+_(We ignore the denominator $P(x)$ because it is constant with respect to $\theta$.)_
 
 So, MAP maximizes: **Likelihood $\times$ Prior**, or equivalently:
 
@@ -120,34 +128,38 @@ $$
 $$
 
 ### Example: The "Fair" Coin
-* **Data ($x$):** 7 Heads, 3 Tails.
-* **Prior ($P(\theta)$):** You know from experience that most coins are fair. You represent this belief with a Gaussian (Beta) prior distribution centered at $\theta=0.5$.
+
+- **Data ($x$):** 7 Heads, 3 Tails.
+- **Prior ($P(\theta)$):** You know from experience that most coins are fair. You represent this belief with a Gaussian (Beta) prior distribution centered at $\theta=0.5$.
 
 Now we maximize:
+
 $$
 (\theta^7 (1-\theta)^3) \times P(\theta)
 $$
 
 where $P(\theta)$ is a prior distribution centered at 0.5.
 
-* The **Likelihood** pulls the estimate toward **0.7**.
-* The **Prior** pulls the estimate toward **0.5**.
-* The **MAP Result** is a compromise between the two, perhaps around **0.65**, depending on the strength of the prior.
+- The **Likelihood** pulls the estimate toward **0.7**.
+- The **Prior** pulls the estimate toward **0.5**.
+- The **MAP Result** is a compromise between the two, perhaps around **0.65**, depending on the strength of the prior.
 
 ### When Data Overcomes Prior Belief
+
 What happens if you flip the coin 1,000 times and get 700 heads?
 
 The likelihood term $\theta^{700}(1-\theta)^{300}$ becomes highly concentrated around $\theta = 0.7$. With sufficient data, the likelihood dominates the prior, and the posterior distribution becomes dominated by the data.
-* **Small Sample Size:** Prior has substantial influence (MAP $\neq$ MLE).
-* **Large Sample Size:** Prior influence diminishes (MAP $\approx$ MLE).
+
+- **Small Sample Size:** Prior has substantial influence (MAP $\neq$ MLE).
+- **Large Sample Size:** Prior influence diminishes (MAP $\approx$ MLE).
 
 ---
 
 ## Summary
 
-| Feature | Maximum Likelihood (MLE) | Maximum A Posteriori (MAP) |
-| :--- | :--- | :--- |
-| **Formula** | $\operatorname*{argmax}_\theta P(x \| \theta)$ | $\operatorname*{argmax}_\theta P(x \| \theta) \times P(\theta)$ |
-| **Philosophy** | Only the data matters. | Data + Prior Knowledge matters. |
-| **Prior** | Does not incorporate prior information (equivalent to uniform prior). | Explicitly incorporates prior distribution (e.g., Gaussian, Beta). |
-| **Best Used When** | You have large sample sizes or no prior knowledge. | You have small sample sizes or strong domain knowledge. |
+| Feature            | Maximum Likelihood (MLE)                                              | Maximum A Posteriori (MAP)                                         |
+| :----------------- | :-------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| **Formula**        | $\operatorname*{argmax}_\theta P(x \| \theta)$                        | $\operatorname*{argmax}_\theta P(x \| \theta) \times P(\theta)$    |
+| **Philosophy**     | Only the data matters.                                                | Data + Prior Knowledge matters.                                    |
+| **Prior**          | Does not incorporate prior information (equivalent to uniform prior). | Explicitly incorporates prior distribution (e.g., Gaussian, Beta). |
+| **Best Used When** | You have large sample sizes or no prior knowledge.                    | You have small sample sizes or strong domain knowledge.            |
