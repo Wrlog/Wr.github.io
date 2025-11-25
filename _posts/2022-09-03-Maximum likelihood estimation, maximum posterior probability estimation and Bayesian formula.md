@@ -20,7 +20,7 @@ Probability and statistics may seem like identical concepts, but they actually a
 **"Given the Model, predict the Data."**
 
 Imagine you have a **Cookie Jar (The Model)**. You know exactly what is inside: 90 chocolate chip cookies and 10 oatmeal raisin cookies (The Parameters). You reach in and grab a handful of cookies.
-* *Probability asks:* "What is the likelihood that I will pull out 3 chocolate chip cookies and 1 oatmeal raisin?"
+* *Probability asks:* "What is the probability that I will pull out 3 chocolate chip cookies and 1 oatmeal raisin?"
 
 ### The Statistics Question
 **"Given the Data, predict the Model."**
@@ -65,8 +65,8 @@ We want to know $P(\text{Stolen} | \text{Alarm})$.
 
 The expression $P(x | \theta)$ involves Data ($x$) and Parameters ($\theta$). It can be interpreted in two ways:
 
-1.  **Probability Function (fixed $\theta$, variable $x$):** If the coin is fair ($\theta=0.5$), what are the odds of getting Heads ($x$)?
-2.  **Likelihood Function (fixed $x$, variable $\theta$):** If I flipped Heads ($x$), what is the likelihood the coin was fair ($\theta$)?
+1.  **Probability Function (fixed $\theta$, variable $x$):** If the coin is fair ($\theta=0.5$), what is the probability of getting Heads ($x$)?
+2.  **Likelihood Function (fixed $x$, variable $\theta$):** If I observed Heads ($x$), what is the likelihood that the coin parameter was $\theta$?
 
 In statistics, we use the second definition. We define the Likelihood Function as:
 
@@ -78,8 +78,8 @@ $$
 
 ## 4. Maximum Likelihood Estimation (MLE)
 
-**The Goal:** Find the parameter $\theta$ that makes the observed data **most probable**.
-**The Philosophy:** "Let the data speak for itself. Ignore subjective beliefs."
+**The Goal:** Find the parameter $\theta$ that makes the observed data **most likely**.
+**The Philosophy:** "Let the data speak for itself. Ignore prior beliefs."
 
 $$
 \theta_{MLE} = \operatorname*{argmax}_\theta P(x | \theta)
@@ -96,7 +96,7 @@ $$P(x | \theta) = \theta^7 (1-\theta)^3$$
 * If we guess $\theta = 0.5$: $0.5^7 \times 0.5^3 \approx 0.0009$
 * If we guess $\theta = 0.7$: $0.7^7 \times 0.3^3 \approx 0.0022$
 
-The function peaks at **0.7**. Therefore, the MLE estimate is **0.7**.
+The likelihood function peaks at $\theta = 0.7$. Therefore, the MLE estimate is $\hat{\theta}_{MLE} = 0.7$.
 
 ---
 
@@ -111,29 +111,35 @@ $$
 \text{Maximize } P(\theta | x) \approx P(x | \theta) \times P(\theta)
 $$
 
-*(We ignore the denominator $P(x)$ because it is constant).*
+*(We ignore the denominator $P(x)$ because it is constant with respect to $\theta$.)*
 
-So, MAP maximizes: **Likelihood $\times$ Prior**.
+So, MAP maximizes: **Likelihood $\times$ Prior**, or equivalently:
+
+$$
+\theta_{MAP} = \operatorname*{argmax}_\theta P(\theta | x) = \operatorname*{argmax}_\theta [P(x | \theta) \times P(\theta)]
+$$
 
 ### Example: The "Fair" Coin
 * **Data ($x$):** 7 Heads, 3 Tails.
-* **Prior ($P(\theta)$):** You know from experience that most coins are fair. You represent this belief with a Gaussian distribution peaked at $\theta=0.5$.
+* **Prior ($P(\theta)$):** You know from experience that most coins are fair. You represent this belief with a Gaussian (Beta) prior distribution centered at $\theta=0.5$.
 
 Now we maximize:
 $$
-(\theta^7 (1-\theta)^3) \times (\text{Gaussian Prior at 0.5})
+(\theta^7 (1-\theta)^3) \times P(\theta)
 $$
+
+where $P(\theta)$ is a prior distribution centered at 0.5.
 
 * The **Likelihood** pulls the estimate toward **0.7**.
 * The **Prior** pulls the estimate toward **0.5**.
-* The **MAP Result** settles somewhere in the middle, perhaps **0.65**.
+* The **MAP Result** is a compromise between the two, perhaps around **0.65**, depending on the strength of the prior.
 
-### When Data Overcomes Belief
+### When Data Overcomes Prior Belief
 What happens if you flip the coin 1,000 times and get 700 heads?
 
-The Likelihood term $\theta^{700}(1-\theta)^{300}$ becomes incredibly sharp and specific. It becomes so strong that it overpowers the Prior.
-* **Small Data:** Prior matters (MAP $\neq$ MLE).
-* **Infinite Data:** Prior is ignored (MAP $\approx$ MLE).
+The likelihood term $\theta^{700}(1-\theta)^{300}$ becomes highly concentrated around $\theta = 0.7$. With sufficient data, the likelihood dominates the prior, and the posterior distribution becomes dominated by the data.
+* **Small Sample Size:** Prior has substantial influence (MAP $\neq$ MLE).
+* **Large Sample Size:** Prior influence diminishes (MAP $\approx$ MLE).
 
 ---
 
@@ -141,7 +147,7 @@ The Likelihood term $\theta^{700}(1-\theta)^{300}$ becomes incredibly sharp and 
 
 | Feature | Maximum Likelihood (MLE) | Maximum A Posteriori (MAP) |
 | :--- | :--- | :--- |
-| **Formula** | $P(x | \theta)$ | $P(x | \theta) \times P(\theta)$ |
+| **Formula** | $\operatorname*{argmax}_\theta P(x \| \theta)$ | $\operatorname*{argmax}_\theta P(x \| \theta) \times P(\theta)$ |
 | **Philosophy** | Only the data matters. | Data + Prior Knowledge matters. |
-| **Assumptions** | Assumes a **Uniform Prior** (all parameter values are equally likely). | Assumes a specific **Prior Distribution** (e.g., Gaussian). |
-| **Best Used When** | You have lots of data. | You have scarce data or strong domain knowledge. |
+| **Prior** | Does not incorporate prior information (equivalent to uniform prior). | Explicitly incorporates prior distribution (e.g., Gaussian, Beta). |
+| **Best Used When** | You have large sample sizes or no prior knowledge. | You have small sample sizes or strong domain knowledge. |
