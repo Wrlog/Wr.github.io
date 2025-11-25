@@ -33,8 +33,7 @@ This project focuses on developing mechanistic Population PK/PD models for Infli
 - **Exposure-Response Analysis**: Established quantitative relationships between drug exposure metrics (AUC, trough concentrations) and clinical endpoints (disease activity scores, biomarker responses)
 - **Machine Learning Integration**: 
   - Implemented XGBoost (gradient boosting) and Random Forest (bagging) algorithms to predict disease response
-  - Developed Variational Autoencoder (VAE) models for feature extraction and dimensionality reduction
-  - Compared ML model performance with traditional PK/PD models
+  - Compared PK/PD enriched dataset performance with common ML models to evaluate the added value of pharmacometric features
 - **Software/Tools**: NONMEM, R (Tidyverse, ggplot2), Python (scikit-learn, TensorFlow/PyTorch), mrgsolve
 
 **Key Findings**:
