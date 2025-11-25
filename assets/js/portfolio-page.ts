@@ -17,9 +17,6 @@ interface FilterOption {
 class PortfolioPageEnhancer {
     private projectCards: NodeListOf<Element>;
     private techTags: NodeListOf<Element>;
-    private filterButtons: HTMLElement[];
-    private projects: Project[];
-    private currentFilter: string = 'all';
 
     constructor() {
         this.init();
@@ -46,7 +43,7 @@ class PortfolioPageEnhancer {
         
         this.setupProjectCards();
         this.setupTechTags();
-        this.setupFiltering();
+        // Removed setupFiltering() - filter buttons not working
         this.setupProjectAnimations();
         this.setupPublicationLinks();
         this.setupAwardAnimations();
