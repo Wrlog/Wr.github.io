@@ -29,6 +29,7 @@ This project focuses on developing mechanistic Population PK/PD models for Infli
 
 **Methodology**: 
 - **Population PK/PD Modeling**: Developed mechanistic population PK/PD models using NONMEM, incorporating patient-specific covariates (body size, disease status, immunogenicity)
+- **Indirect Response Models**: Implemented indirect response (IDR) models to characterize the delayed pharmacodynamic effects of Infliximab on disease biomarkers and clinical endpoints
 - **Exposure-Response Analysis**: Established quantitative relationships between drug exposure metrics (AUC, trough concentrations) and clinical endpoints (disease activity scores, biomarker responses)
 - **Machine Learning Integration**: 
   - Implemented XGBoost (gradient boosting) and Random Forest (bagging) algorithms to predict disease response
