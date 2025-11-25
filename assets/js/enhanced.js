@@ -147,6 +147,16 @@
         return WebsiteEnhancer;
     })();
 
-    new WebsiteEnhancer();
+    // Initialize the enhancer
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            new WebsiteEnhancer();
+        });
+    } else {
+        new WebsiteEnhancer();
+    }
+    
+    // Debug: Log that script loaded
+    console.log('Enhanced.js loaded successfully');
 })();
 
