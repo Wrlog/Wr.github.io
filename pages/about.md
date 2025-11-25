@@ -78,36 +78,7 @@ permalink: /about/
 
 ---
 
-## Selected Publications & Presentations
-
-### Peer-Reviewed Journals
-
-- **Tan WR**, Irie K, McIntire C, Luna Torres J, Jones R, Gibson A, Mizuno T, Tang Girdwood SC. "Model-informed dose optimization for prophylactic piperacillin-tazobactam in perioperative pediatric critically ill patients." *Antimicrobial Agents and Chemotherapy* (2025).
-
-- Morales Jr R, Mizuno T, **Tan WR**, et al. "From PICU to NICU: Extrapolating Meropenem Exposure From Pediatric to Neonatal Intensive Care Patients." *Journal of Clinical Pharmacology* (2025).
-
-- Yang Z, **Tan WR**, et al. "Population pharmacokinetic study of the effect of polymorphisms in the ABCB1 and CES1 genes on the pharmacokinetics of dabigatran." *Frontiers in Pharmacology* (2024).
-
-- **Tan WR**, et al. "Systematic Review of Population Pharmacokinetic Models of Isoniazid." *Malaysian Journal of Pharmacy* (2022).
-
-### Selected Conference Presentations
-
-- **Tan WR**, Irie K, et al. "PK/PD Modeling of Infliximab in Children with Crohn's Disease." *International Association of Therapeutic Drug Monitoring and Clinical Toxicology (IATDMCT) Conference* (2025) - **Top 10 Abstract Nomination**
-
-- **Tan WR**, Irie K, et al. "Model-Informed Simulations to Determine Optimal Piperacillin/Tazobactam Dosing Regimens in Pediatric Perioperative Care: Effect of Body Size and Renal Function." *American Conference on Pharmacometrics (ACOP)* (2024) - Poster Presentation
-
-- **Tan WR**, Irie K, et al. "Model-informed Dose Optimization for Prophylactic Piperacillin-Tazobactam in Perioperative Pediatric Critically Ill Patients." *American Society for Clinical Pharmacology and Therapeutics (ASCPT) Annual Meeting* (2024) - Poster Presentation
-
----
-
-## Awards & Services
-
-### Awards
-- **Top 10 Abstract Nomination (Poster Award)**, International Association of Therapeutic Drug Monitoring and Clinical Toxicology (IATDMCT) Conference (2025)
-- **Computational Professional Development Award**, University of Cincinnati (2023-2025)
-- **First Prize (Junior Category)**, Graduate Student Research Forum, University of Cincinnati (2023)
-
-### Professional Service
+## Professional Service
 - **Peer Reviewer** for:
   - Clinical Pharmacology & Therapeutics (CPT)
   - American Society for Clinical Pharmacology and Therapeutics (ASCPT)

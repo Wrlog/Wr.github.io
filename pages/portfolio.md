@@ -120,22 +120,6 @@ This research project focuses on optimizing prophylactic dosing regimens for pip
 
 - **Peer Reviewer**: Clinical Pharmacology & Therapeutics (CPT), American Society for Clinical Pharmacology and Therapeutics (ASCPT), American Conference on Pharmacometrics (ACOP)
 
-## Skills Summary
-
-### Pharmacometric & Analytical Skills
-- **Modeling Software**: NONMEM, R (nlme, nlmixr), Python, mrgsolve
-- **PK/PD Analysis**: Population pharmacokinetics, pharmacodynamic modeling, exposure-response analysis
-- **Statistical Methods**: Nonlinear mixed-effects modeling, Bayesian inference, simulation techniques
-- **Tools**: Git, GitHub, Jupyter Notebooks, RStudio, PsN, Xpose
-
-### Research & Professional Skills
-- Pharmacokinetic/pharmacodynamic model development and validation
-- Clinical trial data analysis and interpretation
-- Population modeling and covariate analysis
-- Model-based drug development and dose optimization
-- Scientific writing and peer review
-- Regulatory documentation and submissions support
-
 ---
 
 ## Get in Touch
@@ -144,11 +128,6 @@ Interested in collaborating on pharmacometric research or learning more about my
 
 - **Email**: [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org)
 - **GitHub**: [@WenruiTan](https://github.com/WenruiTan)
-
-I welcome opportunities for:
-- Research collaborations in PK/PD modeling
-- Methodological discussions in pharmacometrics
-- Internship or job opportunity
 
 ---
 
