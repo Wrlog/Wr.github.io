@@ -2,45 +2,90 @@
 layout: post
 title: "【Genomic】Basic Transcription Note"
 categories: Genomic
-description: "Transcription"
-keywords: "Transcription factor, RNA polymerase, DNA, genomic"
+description: "Fundamental concepts of transcription, transcription factors, chromatin structure, and regulatory sequences in gene expression"
+keywords: "Transcription factor, RNA polymerase, DNA, chromatin, nucleosome, cis-regulatory, trans-regulatory, genomic"
 date: 2022-07-09
 ---
 
-**Transcription Factor**
+## Transcription Factors
 
+Transcription factors are proteins that play a crucial role in the process of **transcription**, which converts DNA into RNA. While RNA polymerase performs the actual synthesis of RNA, transcription factors (excluding RNA polymerase itself) initiate and regulate gene transcription.
 
-Transcription factors are proteins involved in the process of converting, or transcribing, DNA into RNA. Transcription factors include a wide number of proteins, excluding RNA polymerase, that initiate and regulate the transcription of genes. One distinct feature of transcription factors is that they have DNA-binding domains 
-that give them the ability to bind to specific sequences of DNA called enhancer or promoter sequences.
+### Key Characteristics
 
-Some transcription factors bind to a DNA promoter sequence near the transcription start site and help form the transcription initiation complex. 
-Other transcription factors bind to regulatory sequences, such as enhancer sequences, and can either stimulate or repress transcription of the related gene.
+- **DNA-binding domains**: Transcription factors possess specialized domains that enable them to recognize and bind to specific DNA sequences
+- **Regulatory sequences**: They bind to **promoter sequences** (near transcription start sites) or **enhancer sequences** (often distant from the gene)
 
-These regulatory sequences can be thousands of base pairs upstream or downstream from the gene being transcribed. Regulation of transcription is the most common form of gene control. 
-The action of transcription factors allows for unique expression of each gene in different cell types and during development.
+### Functions
 
+1. **Transcription initiation**: Some transcription factors bind to promoter sequences and help assemble the transcription initiation complex
+2. **Gene regulation**: Other transcription factors bind to enhancer sequences and can either:
+   - **Activate** (stimulate) transcription
+   - **Repress** (inhibit) transcription
 
-**Chromatin and Nucleosome**
+### Importance
 
-Chromatin is a complex of DNA and proteins that forms chromosomes within the nucleus of eukaryotic cells. The main purpose of chromatin is to tightly pack the DNA inside the cell nucleus. 
-Chromatin regulates the gene expression and allows DNA replication in addition to the packaging. It also prevents DNA damage. 
+- Regulatory sequences can be located thousands of base pairs upstream or downstream from the target gene
+- Transcription regulation is the most common mechanism of gene control
+- Transcription factors enable cell-type-specific and developmental stage-specific gene expression patterns
 
-Nucleosome refers to the main structural unit of the eukaryotic chromatin that consists of a length of DNA coiled around a core of histones. This means the core particles that form chromatin are the nucleosomes. A nucleosome consists of 146 base pairs long DNA stretches, wrapped around a core of histone. 
-The histone core is made up of eight histone proteins. The histone octamer is formed by combining two of each four histones, H2A, H2B, H3, and H4. 
+---
 
+## Chromatin and Nucleosomes
 
-**Trans-regulatory sequences**
+### Chromatin
 
-Trans-regulatory sequences are transcription factor proteins that regulate the process of transcription such as general TFs and RNA pol2, sequence specific TFs, co-activators/co-repressor and histones.
+**Chromatin** is a complex of DNA and proteins that forms chromosomes within the nucleus of eukaryotic cells. Its primary functions include:
 
+1. **DNA packaging**: Compacts DNA to fit within the cell nucleus
+2. **Gene expression regulation**: Controls access to DNA, thereby regulating gene expression
+3. **DNA replication**: Facilitates the replication process
+4. **DNA protection**: Prevents DNA damage
 
+### Nucleosomes
 
-**Cis-regulatory sequences**
+**Nucleosomes** are the fundamental structural units of chromatin. Each nucleosome consists of:
 
-Cis-regulatory sequences are noncoding DNA sequences in or near a gene required for proper spatiotemporal expression of that gene, often containing binding sites for transcription factors such as enhancers promoters and insulator, control development and physiology by regulating gene expression. 
+- **DNA component**: Approximately 146 base pairs of DNA wrapped around a histone core
+- **Histone core**: An octamer composed of eight histone proteins:
+  - Two copies each of H2A, H2B, H3, and H4
 
+Nucleosomes serve as the building blocks that organize DNA into higher-order chromatin structures.
 
+---
 
-**Primary Cell**
+## Regulatory Sequences
 
-Primary cells are cells taken directly from living tissue (e.g. biopsy material) and established for growth in vitro.
+### Cis-Regulatory Sequences
+
+**Cis-regulatory sequences** are non-coding DNA sequences located in or near a gene that control its expression. Key features:
+
+- **Location**: Found on the same chromosome as the gene they regulate
+- **Function**: Required for proper spatiotemporal (spatial and temporal) gene expression
+- **Components**: Include:
+  - **Enhancers**: Sequences that enhance transcription
+  - **Promoters**: Sequences that initiate transcription
+  - **Insulators**: Sequences that block enhancer-promoter interactions
+
+These sequences contain binding sites for transcription factors and play critical roles in development and physiology by regulating gene expression patterns.
+
+### Trans-Regulatory Sequences
+
+**Trans-regulatory sequences** (more accurately called **trans-regulatory factors**) are proteins that regulate transcription by binding to cis-regulatory sequences. They include:
+
+- **General transcription factors** (TFs) and **RNA polymerase II** (RNA pol2)
+- **Sequence-specific transcription factors**
+- **Co-activators** and **co-repressors**
+- **Histones** and histone-modifying enzymes
+
+Unlike cis-regulatory sequences, trans-regulatory factors are encoded by genes that may be located on different chromosomes from the genes they regulate.
+
+---
+
+## Primary Cells
+
+**Primary cells** are cells isolated directly from living tissue (e.g., biopsy material) and cultured in vitro. Unlike immortalized cell lines, primary cells:
+
+- Maintain characteristics closer to their in vivo state
+- Have a limited lifespan in culture
+- Are valuable for research that requires cells with natural biological properties
