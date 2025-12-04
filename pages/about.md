@@ -37,7 +37,7 @@ permalink: /about/
 - Neural ODEs
 
 ### Programming
-- R (Tidyverse, ggplot2)
+- R
 - Python
 - C++
 - R-Shiny
@@ -115,3 +115,4 @@ I'm always interested in:
 ---
 
 *Last updated: {{ site.time | date: "%B %Y" }}*
+
