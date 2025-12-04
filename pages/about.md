@@ -17,26 +17,31 @@ permalink: /about/
 ## Education Background
 
 ### University of Cincinnati College of Medicine | Cincinnati, OH
-**Ph.D. in Pharmacology and Systems Physiology** | *Expected May 2027*
+
+**Ph.D. in Pharmacology and Systems Physiology** | _Expected May 2027_
 
 **Focus:** Pharmacometrics, Model-Informed Precision Dosing (MIPD), Pediatric Clinical Pharmacology
 
 ### Universiti Sains Malaysia | Penang, Malaysia
-**Bachelor of Pharmacy (Hons)** | *September 2020*
+
+**Bachelor of Pharmacy (Hons)** | _September 2020_
 
 ---
 
 ## Technical Skills
 
 ### Pharmacometrics
+
 - NONMEM, Pirana, mrgsolve, PopED, Compartmental Analysis
 
 ### Data Science & AI
+
 - Machine Learning (Boosting, Bagging)
 - Deep Learning (Variational Autoencoders)
 - Neural ODEs
 
 ### Programming
+
 - R
 - Python
 - C++
@@ -44,6 +49,7 @@ permalink: /about/
 - Git/GitHub
 
 ### Therapeutic Areas
+
 - Pediatrics
 - Infectious Diseases (Antibiotics)
 - Immunology (Biologics)
@@ -54,7 +60,8 @@ permalink: /about/
 ## Professional Experience
 
 ### Cincinnati Children's Hospital Medical Center | Cincinnati, OH
-**Graduate Research Assistant (Pharmacometrics)** | *August 2022 - Present*
+
+**Graduate Research Assistant (Pharmacometrics)** | _August 2022 - Present_
 
 - **PopPK/PD Modeling:** Spearheaded the development of mechanistic Population PK/PD models for Infliximab (biologic) and Piperacillin (small molecule) using NONMEM, identifying key covariates to optimize dosing regimens for pediatric patients.
 
@@ -67,18 +74,21 @@ permalink: /about/
 - **Study Design Optimization:** Executed a D-optimal design study using PopED to determine optimal sampling timepoints for Dupilumab, maximizing information gain while minimizing patient burden in pediatric EoE trials.
 
 ### University of Malaya | Kuala Lumpur, Malaysia
-**Research Assistant** | *March 2022 - May 2022*
+
+**Research Assistant** | _March 2022 - May 2022_
 
 - Performed rigorous data cleaning and Exploratory Data Analysis (EDA) on large-scale patient datasets to support a Model-Informed Precision Dosing (MIPD) initiative for Vancomycin.
 
 ### Universiti Sains Malaysia | Penang, Malaysia
-**Research Assistant** | *May 2021 - May 2022*
+
+**Research Assistant** | _May 2021 - May 2022_
 
 - Conducted a systematic review and meta-analysis of Isoniazid Population PK models, establishing a framework for tuberculosis dosing in diverse populations.
 
 ---
 
 ## Professional Service
+
 - **Peer Reviewer** for:
   - Clinical Pharmacology & Therapeutics (CPT)
   - American Society for Clinical Pharmacology and Therapeutics (ASCPT)
@@ -108,11 +118,11 @@ Feel free to reach out if you'd like to collaborate on research projects, discus
 - **Email**: [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org) | **Phone**: +1(513)-501-3089 | **LinkedIn**: [wenrui97](https://www.linkedin.com/in/wenrui97/) | **GitHub**: [@WenruiTan](https://github.com/WenruiTan) | **Location**: Cincinnati, OH, United States
 
 I'm always interested in:
+
 - Research collaborations in PK/PD modeling
 - Methodological discussions in pharmacometrics
 - Internship or job opportunity
 
 ---
 
-*Last updated: {{ site.time | date: "%B %Y" }}*
-
+_Last updated: {{ site.time | date: "%B %Y" }}_
