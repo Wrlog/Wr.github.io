@@ -37,7 +37,7 @@ permalink: /about/
 - Neural ODEs
 
 ### Programming
-- R (Tidyverse, ggplot2)
+- R
 - Python
 - C++
 - R-Shiny
