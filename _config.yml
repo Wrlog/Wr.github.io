@@ -78,7 +78,7 @@ collections:
 exclude:
     - template.md
         
-repository: https://wrlog.github.io/Wr.github.io/
+repository: Wrlog/Wr.github.io
 
 # ---------------- #
 #      Comments    #
