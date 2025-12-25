@@ -37,7 +37,7 @@ This project focuses on developing mechanistic Population PK/PD models for Infli
 - **Software/Tools**: NONMEM, R (Tidyverse, ggplot2), Python (scikit-learn, TensorFlow/PyTorch), mrgsolve
 
 **Key Findings**:
-- Identified critical covariates affecting Infliximab pharmacokinetics in pediatric patients
+- Identified critical covariates affecting Infliximab pharmacokinetics and pharmacodynamic in pediatric patients
 - Established exposure-response relationships that inform optimal dosing strategies
 - Demonstrated improved predictive performance through ML/DL model integration
 - Contributed to personalized dosing recommendations for pediatric patients
@@ -126,7 +126,7 @@ This research project focuses on optimizing prophylactic dosing regimens for pip
 Interested in collaborating on pharmacometric research or learning more about my work? Feel free to reach out!
 
 - **Email**: [Wen.Tan@cchmc.org](mailto:Wen.Tan@cchmc.org)
-- **GitHub**: [@WenruiTan](https://github.com/WenruiTan)
+- **GitHub**: [@Wrlog](https://github.com/Wrlog)
 
 ---
 

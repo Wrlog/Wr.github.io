@@ -18,7 +18,7 @@ side_bar_repo_limit: 0
 author: Wen-Rui Tan
 organization: 
 organization_url: 
-github_username: WenruiTan
+github_username: Wrlog
 location: United States
 email: Wen.Tan@cchmc.org
 linkedin: 
@@ -91,7 +91,7 @@ disqus:
     username: 
 
 gitment:
-    owner: WenruiTan
+    owner: Wrlog
     repo: blog-comments
     oauth:
         client_id: ce2239587a9dc9830236

@@ -20,7 +20,7 @@ Drugs may require adjustment when:
 
 **Pregnancy**
 
-![](https://github.com/WenruiTan/Wr.github.io/blob/master/images/posts/pharmacokinetic/PK%20in%20pregnancy.png?raw=true)
+![](https://github.com/Wrlog/Wr.github.io/blob/master/images/posts/pharmacokinetic/PK%20in%20pregnancy.png?raw=true)
 
 
 **Pediatric**
